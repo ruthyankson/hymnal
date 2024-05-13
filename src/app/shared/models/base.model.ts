@@ -1,14 +1,14 @@
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 
-export abstract class BaseModel {
-  // Abstract method, must be implemented by any subclass
-  abstract loadData(): void;
+// export abstract class BaseModel {
+//   // Abstract method, must be implemented by any subclass
+//   abstract loadData(): void;
 
-  id: UUID;
+//   id: UUID;
 
-  constructor() {
-    this.id =uuidv4();
-  }
+//   constructor() {
+//     this.id =uuidv4();
+//   }
 
-}
+// }
