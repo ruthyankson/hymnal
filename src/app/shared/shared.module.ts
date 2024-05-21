@@ -4,10 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { SongComponent } from './components/song/song.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
 
 @NgModule({
   declarations: [
@@ -17,10 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
+    FormsModule
   ],
   exports: [
     CommonModule,

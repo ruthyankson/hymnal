@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { SongPageComponent } from './song-page/song-page.component';
 import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CarouselComponent } from './standalone-components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    CarouselComponent
   ],
   providers: [
-    provideClientHydration(),
-    provideAnimationsAsync()
+    // provideHttpClient(withFetch()),
+    // provideClientHydration(),
+    // provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
