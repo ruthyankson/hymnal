@@ -13,11 +13,40 @@ html, body {
 
 .slick-dots li button:before {
   font-size: 10px !important;
-  color: blue !important;
+  color: #3db6f2 !important;
 }
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.icon {
+  width: 1.5rem;
+}
+
+.pr-1 {
+  padding-right: 5px;
+}
+
+.button-icon {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: 0.5s all;
+}
+
+.item__routing {
+  cursor: pointer;
+}
+
+.button-icon:active {
+  background-color: #dfe4ff71;
+  opacity: 0.5;
 }
 
 

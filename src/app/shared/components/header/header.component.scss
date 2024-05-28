@@ -6,15 +6,31 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #3f51b5;
+  // background-color: #3f51b5;
+  background-color: #3db6f2;
   color: #fff;
+  // color: #f2d43d;
   display: flex;
-  padding: 0 16px;
+  padding: 0 30px;
   align-items: center;
   height: 56px;
   font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
 }
 
-.search-icon {
-  margin-right: 35px;
+.search-button {
+  margin-right: 50px;
+  color: white;
 }
+
+.search-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    padding: 0 16px;
+  }
+}
+
+
