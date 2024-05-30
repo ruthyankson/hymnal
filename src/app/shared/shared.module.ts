@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { SongComponent } from './components/song/song.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SearchComponent,
-    SongComponent
+    SongComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

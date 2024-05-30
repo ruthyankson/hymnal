@@ -13,7 +13,7 @@ export class SongComponent {
   song_chorus: ChorusModel | undefined = this.hymns[0].chorus;;
   // verse1: string = this.hymns[0].stanzas[0].verse;
   ngOnInit() {
-    // console.log(this.hymns[0]);
+    console.log("................",this.hymns[0]);
     // this.song_chorus = this.hymns[0].chorus;
   }
 

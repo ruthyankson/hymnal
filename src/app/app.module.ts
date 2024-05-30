@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CarouselComponent } from './standalone-components/carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CarouselComponent } from './standalone-components/carousel/carousel.com
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    CarouselComponent
+    CarouselComponent,
+    NgbModule
   ],
   providers: [
     // provideHttpClient(withFetch()),

@@ -44,12 +44,14 @@ html, body {
   cursor: pointer;
 }
 
-.button-icon:active {
-  background-color: #dfe4ff71;
-  opacity: 0.5;
+.button-icon:active, .button-icon:hover {
+  // background-color: #dfe4ff71;
+  background-color: #c8e5f488;
 }
 
-
+.button-icon:active {
+  opacity: 0.5;
+}
 
 
 @media (max-width: 800px) {
@@ -59,3 +61,6 @@ html, body {
 }
 
 
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

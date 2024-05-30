@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 
-.nav {
+nav {
   position: sticky;
   top: 0;
   width: 100%;
@@ -27,8 +27,15 @@
   font-weight: bold;
 }
 
+nav a:active, a[routerLinkActive] {
+  background: -webkit-linear-gradient(white, #FFE08A);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 800px) {
-  .nav {
+  nav {
     padding: 0 16px;
   }
 }
