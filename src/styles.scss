@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
+// style-vars
+
+@use './app/shared/partial-styles/style-vars';
+
 html, body {
   height: 100%;
-  font-family: "Inter", "Reddit Sans", Roboto, "Helvetica Neue", sans-serif;
-  overflow: hidden;
+  font-family: style-vars.$font-stack;
+  // overflow: hidden;
+  z-index: 0;
   margin: 0;
 }
 
-.container {
+.custom-container {
   padding: 15px 100px;
 }
 
+// For Carousel
 .slick-dots li button:before {
   font-size: 10px !important;
   color: #3db6f2 !important;
@@ -21,7 +27,7 @@ html, body {
 }
 
 .icon {
-  width: 1.5rem;
+  font-size: 27px;
 }
 
 .pr-1 {
@@ -35,8 +41,10 @@ html, body {
   cursor: pointer;
   padding: 7px;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
+  font-weight: bold;
+  color: white;
   transition: 0.5s all;
 }
 
@@ -54,10 +62,20 @@ html, body {
 }
 
 
+
 @media (max-width: 800px) {
-  .container {
+  .custom-container {
     padding: 15px;
   }
+
+  body.modal-open {
+    padding-right: 0 !important;
+  }
+
+  ngb-modal-window {
+    padding-right: 11px;
+  }
+
 }
 
 

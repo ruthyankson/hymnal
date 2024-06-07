@@ -1,3 +1,8 @@
+// header.component.scss
+
+// styles.scss
+@use '../../partial-styles/style-vars';
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -11,33 +16,31 @@ nav {
   color: #fff;
   // color: #f2d43d;
   display: flex;
-  padding: 0 30px;
+  padding: 35px 60px;
   align-items: center;
   height: 56px;
-  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  font: 500 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
+  z-index: 2;
+  
+  a:active, a[routerLinkActive] {
+    background: -webkit-linear-gradient(white, #FFE08A);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-.search-button {
-  margin-right: 50px;
-  color: white;
-}
+// .search-icon {
+//   font-size: 20px;
+//   font-weight: bold;
+// }
 
-.search-icon {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-nav a:active, a[routerLinkActive] {
-  background: -webkit-linear-gradient(white, #FFE08A);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 @media (max-width: 800px) {
   nav {
-    padding: 0 16px;
+    padding: 10px 16px;
   }
+
 }
 
 
