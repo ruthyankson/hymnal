@@ -21,7 +21,7 @@ nav {
   height: 56px;
   font: 500 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
   z-index: 2;
-  
+
   a:active, a[routerLinkActive] {
     background: -webkit-linear-gradient(white, #FFE08A);
     -webkit-background-clip: text;
@@ -29,12 +29,6 @@ nav {
     -webkit-text-fill-color: transparent;
   }
 }
-
-// .search-icon {
-//   font-size: 20px;
-//   font-weight: bold;
-// }
-
 
 @media (max-width: 800px) {
   nav {
