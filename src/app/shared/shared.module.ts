@@ -6,6 +6,8 @@ import { SearchComponent } from './components/search/search.component';
 import { SongComponent } from './components/song/song.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { RouterLink } from '@angular/router';
+import { HymnsService } from './services/hymns.service';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,11 @@ import { RouterLink } from '@angular/router';
     RouterLink,
     HeaderComponent,
     SearchComponent,
-    SongComponent
+    SongComponent,
   ],
-  providers:[]
+  providers:[
+    HymnsService,
+    MessageService
+  ]
 })
 export class SharedModule { }

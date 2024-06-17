@@ -4,6 +4,7 @@ import { Observable, catchError, of, tap } from 'rxjs';
 import { HymnModel } from '../models/hymn.model';
 import { MessageService } from './message.service';
 import { UUID } from 'crypto';
+import { HYMNS } from '../constants/hymns';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class HymnsService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private hymnsUrl = 'api/hymns';
+  private hymnsUrl = 'api/hymns'; // URL to web api
 
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
@@ -47,11 +48,14 @@ export class HymnsService {
 
   /** GET: Get hymns from the server */
   getHymns(): Observable<HymnModel[]> {
+    // const heroes = of(HYMNS);
+    // return heroes;
     return this.http.get<HymnModel[]>(this.hymnsUrl)
-      .pipe(
-        tap(_ => this.log('Fetched hymns')),
-        catchError(this.handleError<HymnModel[]>('getHymns', []))
-      );
+    // return this.http.get<HymnModel[]>(this.hymnsUrl)
+    //   .pipe(
+    //     tap(_ => this.log('Fetched hymns')),
+    //     catchError(this.handleError<HymnModel[]>('getHymns', []))
+    //   );
   }
 
   getHymn(id: UUID): Observable<HymnModel> {
@@ -89,16 +93,16 @@ export class HymnsService {
   // }
 
   /* GET hymns whose name contains search term */
-  searchHymnes(term: string): Observable<HymnModel[]> {
+  searchHymns(term: string): Observable<HymnModel[]> {
     if (!term.trim()) {
       // if not search term, return empty hymn array.
       return of([]);
     }
-    return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?name=${term}`).pipe(
+    return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?title=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found hymnes matching "${term}"`) :
-        this.log(`no hymnes matching "${term}"`)),
-      catchError(this.handleError<HymnModel[]>('searchHymnes', []))
+        this.log(`Found hymns matching "${term}"`) :
+        this.log(`No such hymn "${term}"`)),
+      catchError(this.handleError<HymnModel[]>('searchHymns', []))
     );
   }
 }

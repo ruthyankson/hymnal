@@ -2,6 +2,14 @@
   <div class="carousel-section">
     <app-carousel></app-carousel>
   </div>
+  <div class="spacer"></div>
+  <h2>Top Hymns</h2>
+  <div class="heroes-menu" *ngFor="let hymn of hymns">
+    <a class="capitalize"
+        routerLink="/detail/{{hymn.id}}">
+        {{hymn.title}}  
+    </a>
+  </div>
   <div class="search-box">
     <app-search></app-search>
   </div>
