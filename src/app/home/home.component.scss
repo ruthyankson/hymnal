@@ -6,3 +6,15 @@
     padding-top: 30px;
   }
 }
+
+@media (max-width: 800px) {
+  .carousel-section {
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section {
+    padding-top: 0;
+  }
+}

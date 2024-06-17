@@ -14,12 +14,11 @@ export class HomeComponent {
   constructor(protected hymnsService: HymnsService){}
 
   ngOnInit(): void  {
-    this.getHymns();
-    // console.log("*************", this.hymns);
+    this.getHymns()
   }
 
   getHymns(): void {
     this.hymnsService.getHymns()
-      .subscribe(hymns => this.hymns = hymns);
+      .subscribe(hymns => this.hymns = hymns.slice(1, 25));
   }
 }
