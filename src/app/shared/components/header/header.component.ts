@@ -13,7 +13,7 @@ export class HeaderComponent {
   async openModal() {
     return await this.modalComponent.open();
   }
-  app_name: string = APP_NAME;
+  appName: string = APP_NAME;
 
   public modalConfig: ModalConfig = {
     modalTitle: "Songs",
