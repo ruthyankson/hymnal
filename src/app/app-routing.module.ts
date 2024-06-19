@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { SongComponent } from './shared/components/song/song.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'songs', component: SongComponent },
-  { path: 'song/:id', component: HomeComponent }
+  { path: '', redirectTo: 'app.hymnal', pathMatch: 'full' },
+  { path: 'app.hymnal',
+    loadChildren: () => import('./app-hymnal/app-hymnal.module').then(m => m.AppHymnalModule),
+    data: { title: 'App Hymnal' }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

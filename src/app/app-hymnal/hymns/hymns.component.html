@@ -1,0 +1,6 @@
+<div class="hymn-list" *ngFor="let hymn of hymns">
+  <a class="capitalize"
+      routerLink="hymns/hymn/{{hymn.id}}">
+      {{hymn.title}}
+  </a>
+</div>

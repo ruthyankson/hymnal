@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { SongPageComponent } from './song-page/song-page.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,17 +10,20 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CarouselComponent } from './standalone-components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InMemoryDataService } from './in-memory-data.service';
+import { AppHymnalModule } from './app-hymnal/app-hymnal.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SongPageComponent
+    SongPageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppHymnalModule,
     SharedModule,
     CarouselComponent,
     NgbModule,

@@ -5,10 +5,13 @@
     </span>
   </a>
 
-  <a routerLink="/home" routerLinkActive="active">
+  <a routerLink="/app.hymnal" routerLinkActive="active">
     <span class="capitalize item__routing">{{ appName }}</span>
   </a>
-    <span class="spacer"></span>
+  <span class="spacer"></span>
+  <a routerLink="/hymns" routerLinkActive="active">
+    <span class="capitalize item__routing">Hymns</span>
+  </a>
   <button class="search-button button-icon" (click)="openModal()">
     <i class="bi bi-search search-icon"></i>
   </button>

@@ -27,7 +27,7 @@ import { MessageService } from './services/message.service';
     RouterLink,
     HeaderComponent,
     SearchComponent,
-    SongComponent,
+    SongComponent
   ],
   providers:[
     HymnsService,
