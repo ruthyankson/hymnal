@@ -4,14 +4,9 @@
 
   <ul class="search-result">
     <li *ngFor="let hymn of hymns$ | async" >
-      <a routerLink="/detail/{{hymn.id}}" class="capitalize">
-        {{hymn.title}}
+      <a routerLink="hymn/{{hymn.hymn_number}}">
+        <span> {{ hymn.title | capitalize }} </span>
       </a>
     </li>
-    <!-- <li *ngFor="let hymn of hymns " >
-      <a routerLink="/detail/{{hymn.id}}">
-        {{hymn.title}}
-      </a>
-    </li> -->
   </ul>
 </div>

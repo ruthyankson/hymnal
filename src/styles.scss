@@ -24,8 +24,13 @@ html, body {
 }
 
 .capitalize {
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
+
+// ::ng-deep .capitalize {
+//   text-transform: capitalize;
+// }
 
 .icon {
   font-size: 27px;

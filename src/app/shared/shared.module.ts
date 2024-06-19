@@ -8,13 +8,15 @@ import { ModalComponent } from './components/modal/modal.component';
 import { RouterLink } from '@angular/router';
 import { HymnsService } from './services/hymns.service';
 import { MessageService } from './services/message.service';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SearchComponent,
     SongComponent,
-    ModalComponent
+    ModalComponent,
+    CapitalizePipe
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { MessageService } from './services/message.service';
     RouterLink,
     HeaderComponent,
     SearchComponent,
-    SongComponent
+    SongComponent,
+    CapitalizePipe
   ],
   providers:[
     HymnsService,
