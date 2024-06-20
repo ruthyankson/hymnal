@@ -5,7 +5,7 @@ export abstract class BaseModel {
   id: string;
 
   constructor() {
-    this.id =uuidv4();
+    this.id =uuidv4().toString();
   }
 
 }

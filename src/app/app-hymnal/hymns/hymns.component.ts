@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HymnModel } from '../../shared/models/hymn.model';
-import { HymnsService } from '../../shared/services/hymns.service';
+import { HymnService } from '../../shared/services/hymn.service';
 
 @Component({
   selector: 'app-hymns',
@@ -9,15 +9,19 @@ import { HymnsService } from '../../shared/services/hymns.service';
 })
 export class HymnsComponent {
   hymns: HymnModel[] = [];
-  constructor(protected hymnsService: HymnsService){}
+  isLoading = true;
+
+  constructor(protected hymnService: HymnService){}
 
   ngOnInit(): void  {
     this.getHymns();
-    console.log("working");
   }
 
   getHymns(): void {
-    this.hymnsService.getHymns()
-      .subscribe(hymns => this.hymns = hymns.slice(1, 25));
+    this.hymnService.getHymns()
+      .subscribe( (hymns) => {
+        this.hymns = hymns.slice(1, 25);
+        this.isLoading = false;
+    });
   }
 }

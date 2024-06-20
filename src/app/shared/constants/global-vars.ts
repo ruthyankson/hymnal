@@ -1,4 +1,4 @@
 
 
-export const APP_NAME: string = "Only Believe Hymnal";
+export const APP_NAME: string = "Only Believe";
 

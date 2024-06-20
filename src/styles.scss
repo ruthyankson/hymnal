@@ -23,21 +23,16 @@ html, body {
   color: #3db6f2 !important;
 }
 
-.capitalize {
-  text-transform: uppercase;
-  font-weight: bolder;
-}
-
-// ::ng-deep .capitalize {
-//   text-transform: capitalize;
-// }
-
 .icon {
   font-size: 27px;
 }
 
 .pr-1 {
   padding-right: 5px;
+}
+
+.pr-4 {
+  padding-right: 15px;
 }
 
 .button-icon {
@@ -67,12 +62,12 @@ html, body {
   opacity: 0.5;
 }
 
-
-// 320px — 480px: Mobile devices.
-// 481px — 768px: iPads, Tablets.
-// 769px — 1024px: Small screens, laptops.
-// 1025px — 1200px: Desktops, large screens.
-// 1201px and more — Extra large screens, TV.
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
 
 
 @media (max-width: 800px) {
@@ -92,12 +87,6 @@ html, body {
   }
 
 }
-
-
-
-  // ngb-modal-window {
-  //   padding-right: 11px;
-  // }
 
 
 /* Importing Bootstrap SCSS file. */

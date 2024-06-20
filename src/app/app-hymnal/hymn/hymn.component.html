@@ -1,1 +1,18 @@
-<p>hymn works!</p>
+<div *ngIf="isLoading" class="loading-container">
+  <img src="../../assets/images/loading.gif" width="70px" alt="Loading...">
+</div>
+
+<div *ngIf="!isLoading">
+  <p>hymn works!</p>
+  <h3>{{ hymnHere?.title }}</h3>
+
+  <div>
+    <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)"></p>
+  </div>
+  <div *ngFor="let verse of hymnHere?.stanzas">
+    <p [innerHTML]="formatText(verse.verse)"></p>
+  </div>
+
+
+  <button (click)=goBack()>Back to hymns</button>
+</div>

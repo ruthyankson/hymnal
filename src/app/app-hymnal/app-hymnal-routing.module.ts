@@ -11,6 +11,18 @@ const routes: Routes = [
       { path: '', component: HomeComponent, data: { title: 'App Hymnal' } },
       { path: 'hymns', component: HymnsComponent, data: { title: 'Hymns' } },
       { path: 'hymn/:hymn_number', component: HymnComponent, data: { title: 'Hymns' } }
+      // {
+      //   path: "old-user-page",
+      //   redirectTo: ({ queryParams }) => {
+      //     const userIdParam = queryParams['userId'];
+      //     if (userIdParam !== undefined) {
+      //       return `/user/${userIdParam}`;
+      //     } else {
+      //       errorHandler.handleError(new Error('Attempted navigation to user page without user ID.'));
+      //       return `/not-found`;
+      //     }
+      //   },
+      // },
     ]
    }
 ]

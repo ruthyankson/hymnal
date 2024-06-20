@@ -10,7 +10,7 @@ import { ChorusModel } from '../../models/chorus.model';
 export class SongComponent {
   hymns: HymnModel[] = HYMNS;
   // string_text:
-  song_chorus: ChorusModel | undefined = this.hymns[0].chorus;;
+  song_chorus: ChorusModel | undefined = this.hymns[0].chorus;
   // verse1: string = this.hymns[0].stanzas[0].verse;
   ngOnInit() {
     // console.log("................",this.hymns[0]);

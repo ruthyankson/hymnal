@@ -7,8 +7,8 @@ const routes: Routes = [
   { path: 'hymnal',
     loadChildren: () => import('./app-hymnal/app-hymnal.module').then(m => m.AppHymnalModule),
     data: { title: 'App Hymnal' }
-  },
-  { path: '**', component: PageNotFoundComponent }
+  }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

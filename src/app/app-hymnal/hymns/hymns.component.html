@@ -1,5 +1,11 @@
-<div class="hymn-list" *ngFor="let hymn of hymns">
-  <a routerLink="hymn/{{hymn.hymn_number}}">
-    <span> {{ hymn.title | capitalize }} </span>
-  </a>
+<div *ngIf="isLoading" class="loading-container">
+  <img src="../../assets/images/loading.gif" width="70px" alt="Loading...">
+</div>
+
+<div *ngIf="!isLoading">
+  <div class="hymn-list" *ngFor="let hymn of hymns">
+    <a routerLink="../hymn/{{hymn.hymn_number}}">
+      <span>{{ hymn.title | capitalize }}</span>
+    </a>
+  </div>
 </div>

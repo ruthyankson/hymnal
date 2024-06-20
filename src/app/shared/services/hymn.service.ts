@@ -9,7 +9,7 @@ import { HYMNS } from '../constants/hymns';
 @Injectable({
   providedIn: 'root'
 })
-export class HymnsService {
+export class HymnService {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -58,13 +58,22 @@ export class HymnsService {
     //   );
   }
 
-  getHymn(id: UUID): Observable<HymnModel> {
-    const url = `${this.hymnsUrl}/{id}`;
+  // getHymn(hymn_number: number): Observable<HymnModel> {
+  //   const url = `${this.hymnsUrl}/${hymn_number}`;
+  //   return this.http.get<HymnModel>(url).pipe(
+  //     tap(_ => this.log(`Fetched hymn hymn_number=${hymn_number}`)),
+  //     catchError(this.handleError<HymnModel>(`getHymn hymn_number=${hymn_number}`))
+  //   );
+  // }
+
+  getHymn(id: number): Observable<HymnModel> {
+    const url = `${this.hymnsUrl}/${id}`;
     return this.http.get<HymnModel>(url).pipe(
-      tap(_ => this.log(`Fetched hymn id=${id}`)),
-      catchError(this.handleError<HymnModel>(`getHymn id=${id}`))
+      tap(_ => this.log(`Fetched hymn id = ${id}`)),
+      catchError(this.handleError<HymnModel>(`getHymn id = ${id}`))
     );
   }
+
 
   /** PUT: update the hymn on the server */
   // updateHymn(hymn: HymnModel): Observable<any> {

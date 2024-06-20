@@ -6,7 +6,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SongComponent } from './components/song/song.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { RouterLink } from '@angular/router';
-import { HymnsService } from './services/hymns.service';
+import { HymnService } from './services/hymn.service';
 import { MessageService } from './services/message.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 
@@ -33,7 +33,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     CapitalizePipe
   ],
   providers:[
-    HymnsService,
+    HymnService,
     MessageService
   ]
 })
