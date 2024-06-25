@@ -1,15 +1,20 @@
+<!-- Carousel -->
 <ngx-slick-carousel
   class="carousel"
   #slickModal="slick-carousel"
   [config]="slideConfig"
 >
   <div ngxSlickItem *ngFor="let slide of slides" class="slider">
+    <!-- Slide top shadow -->
+    <div class="shadow__top"></div>
     <img
       src="{{ slide.img }}"
       alt="Only Believe"
       width="100%"
       height="370px"
     />
+    <!-- Slide bottom shadow -->
+    <div class="shadow__bottom"></div>
   </div>
 </ngx-slick-carousel>
 

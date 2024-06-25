@@ -16,10 +16,10 @@ export class CarouselComponent {
   /* path for the images inside folder*/
   slides = [
     { img: '../../assets/images/wmb.jpg' },
-    { img: '../../assets/images/fire-pillar.jpg' },
-    { img: '../../assets/images/church-ages.jpg' },
+    { img: '../../assets/images/fire_pillar.jpg' },
+    { img: '../../assets/images/church_ages.jpg' },
     { img: '../../assets/images/pyramid.jpg' },
-    { img: '../../assets/images/bride-tree.jpg' }
+    { img: '../../assets/images/bride_tree.jpg' }
   ];
 
   /* configs for the slider */

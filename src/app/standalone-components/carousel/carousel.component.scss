@@ -1,4 +1,14 @@
 
+.shadow__top {
+  padding: 7px;
+  background-image: linear-gradient(white, rgba(0, 0, 0, 0.15));
+}
+
+.shadow__bottom {
+  padding: 7px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.17), white);
+}
+
 .slider {
   padding: 5px;
 }
