@@ -5,10 +5,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { SongComponent } from './components/song/song.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { RouterLink } from '@angular/router';
 import { HymnService } from './services/hymn.service';
 import { MessageService } from './services/message.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,16 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
   imports: [
     CommonModule,
     FormsModule,
-    RouterLink
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
   ],
   exports: [
     CommonModule,
     FormsModule,
+    RouterOutlet,
     RouterLink,
+    RouterLinkActive,
     HeaderComponent,
     SearchComponent,
     SongComponent,

@@ -19,14 +19,33 @@ nav {
   padding: 35px 60px;
   align-items: center;
   height: 56px;
-  font: 500 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
+  font: 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
   z-index: 2;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 
-  a:active, a[routerLinkActive] {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #FFE08A;
+  }
+
+  a.active {
     background: -webkit-linear-gradient(white, #FFE08A);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
+    font-weight: 600;
     -webkit-text-fill-color: transparent;
+  }
+
+  a.app__name {
+    font-weight: 500;
+  }
+
+  a.menu__item {
+    font-weight: 400;
   }
 }
 
