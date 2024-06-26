@@ -1,11 +1,33 @@
+<!-- Search Component -->
 <div id="search-component">
-  <label for="search-box">{{ searchLabel }}</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <label for="search-box">
+      <div class="label-flex">
+        <div><img width="70px" src="./../../../assets/images/music_staff.png" class="pr-2" alt="Music Staff"></div>
+        <div>{{ searchLabel }}</div>
+        <div>
+          <img width="70px" src="./../../../assets/images/music_staff_right.png" class="pl-2" alt="Music Staff">
+        </div>
+      </div>
+    </label>
+  <div class="search-box-wrapper">
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <button type="button" class="clear-button" *ngIf="searchBox.value" (click)="clearSearch(searchBox)">
+      &times;
+    </button>
+  </div>
 
-  <ul class="search-result">
-    <li *ngFor="let hymn of hymns$ | async" >
+  <ul class="search-result" @listAnimation>
+    <li *ngFor="let hymn of hymns$ | async">
+
       <a routerLink="hymn/{{hymn.hymn_number}}">
-        <span> {{ hymn.title | capitalize }} </span>
+        <div class="flex-container">
+          <div class="flex-icon">
+            <i class="bi bi-music-note"></i>
+          </div>
+          <div class="flex-text">
+            {{ hymn.title | capitalize }}
+          </div>
+        </div>
       </a>
       <!-- <a (click)="navigateToHymn(hymn.hymn_number, hymn.id)">
         <span> {{ hymn.title | capitalize }} </span>
@@ -13,3 +35,6 @@
     </li>
   </ul>
 </div>
+
+
+

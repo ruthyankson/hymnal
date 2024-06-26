@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 // style-vars
-
 @use './app/shared/partial-styles/style-vars';
 
 html, body {
@@ -28,11 +27,27 @@ html, body {
 }
 
 .pr-1 {
-  padding-right: 5px;
+  padding-right: style-vars.$padding-default;
+}
+
+.pr-2 {
+  padding-right: style-vars.$padding-default*2;
+}
+
+.pr-3 {
+  padding-right: style-vars.$padding-default*3;
 }
 
 .pr-4 {
-  padding-right: 15px;
+  padding-right: style-vars.$padding-default*4;
+}
+
+.pr-5 {
+  padding-right: style-vars.$padding-default*5;
+}
+
+.pl-2 {
+  padding-left: style-vars.$padding-default*2;
 }
 
 .button-icon {
@@ -67,6 +82,14 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full viewport height */
+}
+
+.centered {
+  text-align: center;
+}
+
+.space-2 {
+  padding-top: 100px;
 }
 
 

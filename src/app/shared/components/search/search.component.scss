@@ -1,43 +1,103 @@
-/* HymnSearch private styles */
+// /* HymnSearch private styles */
+@use './../../partial-styles/style-vars';
+
+#search-component {
+  padding-bottom: 15px;
+}
 
 label {
   display: block;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: style-vars.$font-color-primary;
+  font-weight: 500;
+  font-size: 1.4rem;
   margin-top: 1rem;
   margin-bottom: .5rem;
-
 }
+
+.search-box-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 input {
-  padding: .5rem;
+  color: style-vars.$font-color-primary;
+  padding: .5rem 1rem;
   width: 100%;
-  max-width: 600px;
+  border-color: style-vars.$primary-color-half-transparent;
+  border-radius: 5px;
   box-sizing: border-box;
   display: block;
+  font-size: style-vars.$font-legible;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 input:focus {
-  outline: #336699 auto 1px;
+  outline: none;
+  background-color: style-vars.$primary-color-transparent;
+}
+
+.clear-button {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: style-vars.$font-legible+2px;
+  line-height: 1;
+  cursor: pointer;
+  color: #aaaaaa;
+  padding: 0;
+  margin: 0;
+}
+
+.clear-button:hover {
+  color: style-vars.$font-color-primary;
 }
 
 li {
   list-style-type: none;
 }
+
+.flex-container {
+  display: flex;
+  align-items: start;
+}
+
+.label-flex {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.flex-icon {
+  align-self: flex-end;
+  width: 15%;
+  background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flex-text {
+  width: 85%;
+}
+
 .search-result li a {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  font-size: style-vars.$font-legible;
+  border-radius: 0 0 5px 5px;
   display: inline-block;
   width: 100%;
-  max-width: 600px;
   padding: .5rem;
   box-sizing: border-box;
   text-decoration: none;
-  color: black;
+  color: style-vars.$font-color-primary;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 .search-result li a:hover {
-  background-color: #435A60;
+  background-color: style-vars.$primary-color-hover;
   color: white;
 }
 

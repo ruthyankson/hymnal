@@ -17,7 +17,6 @@ export class HeaderComponent {
 
   public modalConfig: ModalConfig = {
     modalTitle: "Songs",
-    // dismissButtonLabel: string
     closeButtonLabel: "Close",
     disableCloseButton: () => {
       // Add logic to determine if the modal should close
@@ -50,7 +49,9 @@ export class HeaderComponent {
     onDismiss: () => {
       // Add logic for what should happen when the modal dismisses
       return true;
-    }
+    },
+    hideHeader: true,
+    hideFooter: true
   };
 
 }

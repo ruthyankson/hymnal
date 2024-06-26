@@ -1,12 +1,12 @@
 
 <ng-template #modal>
-  <div class="modal-header">
+  <div class="modal-header" *ngIf="!modalConfig.hideHeader">
     <h5 class="modal-title">{{ modalConfig.modalTitle }}</h5>
   </div>
   <div class="modal-body">
     <ng-content></ng-content>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer" *ngIf="!modalConfig.hideFooter">
     <button type="button"
             class="btn btn-outline-secondary"
             (click)="dismiss()"
