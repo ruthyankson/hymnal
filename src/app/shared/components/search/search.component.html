@@ -1,7 +1,7 @@
 <!-- Search Component -->
 <div id="search-component">
-  <div class="back-blend"></div>
-  <label for="search-box" class="heading search-heading">
+  <!-- <div class="back-blend"></div> -->
+  <label for="search-box" class="heading heading__design">
     <div class="label-flex">
       <div><img width="70px" src="./../../../assets/images/music_staff.png" class="pr-2" alt="Music Staff"></div>
       <div class="centered">{{ searchLabel }}</div>
@@ -11,9 +11,9 @@
     </div>
     <!-- <div class="thin-divider"></div> -->
   </label>
-  <!-- <div *ngIf="advanced"> -->
+  <div class="section__design">
     <div class="search__parameters">
-      <span class="centered">Try any word you remember by title or check:</span>
+      <span class="centered">Search hymn by title or:</span>
       <div class="checkbox-flex pl-4">
         <label class="checkbox-container pr-4">
           <span class="emphasized">Verse</span>
@@ -27,41 +27,38 @@
         </label>
       </div>
     </div>
-  <!-- </div> -->
-  <div class="search-box-wrapper">
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-    <button type="button" class="clear-button" *ngIf="searchBox.value" (click)="clearSearch(searchBox)">
-      &times;
-    </button>
-  </div>
+    <div class="search-box-wrapper">
+      <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+      <button type="button" class="clear-button" *ngIf="searchBox.value" (click)="clearSearch(searchBox)">
+        &times;
+      </button>
+    </div>
 
-  <ul class="search-result" @listAnimation>
-    <li *ngFor="let hymn of hymns$ | async">
+    <ul class="search-result" @listAnimation>
+      <li *ngFor="let hymn of hymns$ | async">
 
-      <a routerLink="hymn/{{hymn.hymn_number}}">
-        <div class="flex-container">
-          <div class="flex-icon">
-            <i class="bi bi-music-note"></i>
+        <a routerLink="hymn/{{hymn.hymn_number}}">
+          <div class="flex-container">
+            <div class="flex-icon">
+              <i class="bi bi-music-note"></i>
+            </div>
+            <div class="flex-number">
+              {{ hymn.hymn_number }}
+            </div>
+            <div class="flex-text">
+              {{ hymn.title | capitalize }}
+            </div>
           </div>
-          <div class="flex-number">
-            {{ hymn.hymn_number }}
-          </div>
-          <div class="flex-text">
-            {{ hymn.title | capitalize }}
-          </div>
-        </div>
-      </a>
-      <!-- <a (click)="navigateToHymn(hymn.hymn_number, hymn.id)">
+        </a>
+        <!-- <a (click)="navigateToHymn(hymn.hymn_number, hymn.id)">
         <span> {{ hymn.title | capitalize }} </span>
       </a> -->
-    </li>
-  </ul>
+      </li>
+    </ul>
 
-  <div class="info" *ngIf="showInfo">
-    <span>No hymns found.</span>
-    <button (click)="closeInfo()" class="close-button-info">×</button>
+    <div class="info" *ngIf="showInfo">
+      <span>No hymns found.</span>
+      <button (click)="closeInfo()" class="close-button-info">×</button>
+    </div>
   </div>
 </div>
-
-
-

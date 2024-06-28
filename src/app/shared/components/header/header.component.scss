@@ -18,7 +18,7 @@ nav {
   padding: 35px 70px;
   align-items: center;
   font: 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
-  z-index: 2;
+  z-index: 5;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
 
   a {

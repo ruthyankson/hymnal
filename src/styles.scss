@@ -41,6 +41,18 @@ html{
   font-size: 1.6rem;
 }
 
+.heading__design {
+  // clip-path: polygon(50% 10px, 100% 25%, 100% 75%, 50% 90%, 0% 75%, 0% 25%);
+  clip-path: polygon(100% 0%, 100% 75%, 50% 90%, 0% 75%, 0% 0%);
+  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1, rgba(255, 255, 255, 0));
+  padding: 3rem 0;
+}
+
+.section__design {
+  // background: linear-gradient(white 2%, style-vars.$primary-color-transparent1 10%, white 85%);
+  padding: 0 15px;
+}
+
 .custom-container {
   padding: 15px 200px;
 }
@@ -143,6 +155,10 @@ html{
   padding-top: style-vars.$padding-default*5;
 }
 
+.space-5 {
+  padding-top: style-vars.$padding-default*15;
+}
+
 // Informatio box style
 .info {
   padding: 10px;
@@ -191,7 +207,8 @@ html{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px 0 15px 0;
+  padding-bottom: 15px;
+  font-size: style-vars.$font-legible;
 }
 
 .checkbox-flex {
@@ -272,9 +289,13 @@ html{
 }
 
 .back-blend {
-  margin-top: 15px;
-  padding: 1.5rem;
-  background: linear-gradient(white, style-vars.$primary-color-transparent1);
+  padding: 0.5rem;
+  // background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
+  border-top: 2px solid style-vars.$primary-color-transparent1;
+  border-left: 2px solid style-vars.$primary-color-transparent1;
+  border-right: 2px solid style-vars.$primary-color-transparent1;
+  border-radius: 5px 5px 0 0;
+  // border: 2px solid style-vars.$primary-color-transparent1;
   z-index: -1;
 }
 
