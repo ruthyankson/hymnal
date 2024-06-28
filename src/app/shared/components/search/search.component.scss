@@ -5,13 +5,9 @@
   padding-bottom: 15px;
 }
 
-label {
-  display: block;
-  color: style-vars.$font-color-primary;
-  font-weight: 500;
-  font-size: 1.4rem;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
+.search-heading {
+  background: linear-gradient(style-vars.$primary-color-transparent1, white);
+  padding-bottom: 25px;
 }
 
 .search-box-wrapper {
@@ -38,70 +34,55 @@ input:focus {
   background-color: style-vars.$primary-color-transparent;
 }
 
-.clear-button {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: style-vars.$font-legible+2px;
-  line-height: 1;
-  cursor: pointer;
-  color: #aaaaaa;
-  padding: 0;
-  margin: 0;
-}
-
-.clear-button:hover {
-  color: style-vars.$font-color-primary;
-}
-
 li {
   list-style-type: none;
 }
 
-.flex-container {
-  display: flex;
-  align-items: start;
-}
-
 .label-flex {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
 }
 
 .flex-icon {
-  align-self: flex-end;
-  width: 15%;
+  width: 10%;
+  /* Icon gradient color */
   background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.flex-text {
-  width: 85%;
-}
-
-.search-result li a {
-  font-size: style-vars.$font-legible;
-  border-radius: 0 0 5px 5px;
-  display: inline-block;
-  width: 100%;
-  padding: .5rem;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: style-vars.$font-color-primary;
-  transition: background-color 0.3s ease-out, color 0.3s ease-out;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-}
-
-.search-result li a:hover {
-  background-color: style-vars.$primary-color-hover;
-  color: white;
+.search-result {
+  li {
+    a {
+      font-size: style-vars.$font-legible;
+      border-radius: 0 0 5px 5px;
+      display: inline-block;
+      width: 100%;
+      padding: .5rem;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: style-vars.$font-color-primary;
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+    a:hover {
+      background-color: style-vars.$primary-color-hover;
+      color: white;
+      .flex-icon {
+        /* Change gradient color on hover */
+        background: linear-gradient(to right, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
 }
 
 ul.search-result {
   margin-top: 0;
   padding-left: 0;
 }
+

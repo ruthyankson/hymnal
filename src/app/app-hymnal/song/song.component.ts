@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { HymnModel } from '../../shared/models/hymn.model';
 
 @Component({
   selector: 'app-song',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './song.component.scss'
 })
 export class SongComponent {
+  @Input({required: true}) hymn!: HymnModel;
 
 }

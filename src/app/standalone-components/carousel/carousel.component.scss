@@ -1,14 +1,11 @@
+@use '../../shared/partial-styles/style-vars';
 
-.shadow__top {
-  padding: 7px;
-  background-image: linear-gradient(white, rgba(0, 0, 0, 0.15));
-}
-
-.shadow__bottom {
-  padding: 7px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.17), white);
+.carousel {
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 1px 10px 0 style-vars.$secondary-color-goldenrod-dark inset;
 }
 
 .slider {
-  padding: 5px;
+  padding: 10px 0;
 }

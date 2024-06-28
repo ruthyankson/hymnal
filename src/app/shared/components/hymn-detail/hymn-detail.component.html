@@ -1,0 +1,15 @@
+<!-- <p [innerHTML]="formatText(verse1)"></p> -->
+<div *ngFor="let song of hymns, index">
+  <div >
+    <h3>{{ song.hymn_number }} {{ song.title }} {{ song.keynote }}</h3>
+    <div>
+      <p [innerHTML]="formatUndefinedPossibleText(song.chorus?.refrain)"></p>
+    </div>
+    <div *ngFor="let verse of song.stanzas">
+      <p [innerHTML]="formatText(verse.verse)"></p>
+    </div>
+  </div>
+</div>
+
+<!-- <p [innerHTML]="formatText(song_chorus)"></p> -->
+

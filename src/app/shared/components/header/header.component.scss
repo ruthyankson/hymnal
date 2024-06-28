@@ -1,6 +1,6 @@
 // header.component.scss
 
-// styles.scss
+// partial-styles.scss
 @use '../../partial-styles/style-vars';
 
 .spacer {
@@ -11,17 +11,15 @@ nav {
   position: sticky;
   top: 0;
   width: 100%;
-  // background-color: #3f51b5;
+  height: 60px;
   background-color: style-vars.$primary-color;
   color: #fff;
-  // color: #f2d43d;
   display: flex;
-  padding: 35px 60px;
+  padding: 35px 70px;
   align-items: center;
-  height: 56px;
   font: 20px/32px style-vars.$font-stack; // $font-stack from styles.scss
   z-index: 2;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
 
   a {
     color: white;
@@ -49,7 +47,7 @@ nav {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: style-vars.$tablet-max-width) {
   nav {
     padding: 10px 16px;
   }

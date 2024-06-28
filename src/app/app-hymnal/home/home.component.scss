@@ -1,31 +1,70 @@
+// partial-styles.scss
+@use '../../shared/partial-styles/style-vars';
 
-.search-box {
- padding-top: 30px;
- padding-bottom: 50px;
+
+%divider {
+  display: flex;
+  padding: 16rem;
+  // clip-path: ellipse(60% 30% at 10% 20%);
+  position: relative;
+  isolation: isolate;
+}
+
+.divider1 {
+  @extend %divider;
+  // background-color: style-vars.$primary-color-divider;
+  background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
+  clip-path: polygon(0% 41.01%, 34.48% 66.08%, 50.5% 53.6%, 82.9% 53%, 100% 38%, 100% 75%, 67.26% 88.8%, 0% 71.25%);
+  margin-top: -225px;
+  z-index: -1;
+}
+
+.divider2 {
+  @extend %divider;
+  background-color: style-vars.$primary-color-half-transparent;
+  clip-path: polygon(-0.50% 55.66%, 34.64% 70.58%, 50.17% 53.50%, 82.40% 43.48%, 98.92% 23.58%, 100.14% 60.40%, 68.02% 83.66%, 0.50% 85.76%);
+  margin-top: -515px;
+  z-index: -2;
 }
 
 .hymns-list {
-  background-color: aqua;
+  padding-bottom: 10px;
+  font-size: style-vars.$font-legible;
 }
 
 
 
-
-
-@media (min-width: 1024px) {
+@media (min-width: style-vars.$laptop-max-width) {
   .carousel-section {
     padding-top: 30px;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: style-vars.$tablet-max-width) {
   .carousel-section {
     padding-top: 15px;
   }
+  .divider1 {
+    padding: 10rem;
+    margin-top: -145px;
+  }
+  .divider2 {
+    padding: 10rem;
+    margin-top: -310px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: style-vars.$phone-max-width) {
   .carousel-section {
     padding-top: 0;
   }
+  .divider1, .divider2 {
+    padding: 5rem;
+    margin-top: -95px;
+  }
+  .divider2 {
+    padding: 5rem;
+    margin-top: -155px;
+  }
+
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, forkJoin, map, of, tap } from 'rxjs';
 import { HymnModel } from '../models/hymn.model';
 import { MessageService } from './message.service';
 import { UUID } from 'crypto';
@@ -102,15 +102,81 @@ export class HymnService {
   // }
 
   /* GET hymns whose name contains search term */
-  searchHymns(term: string): Observable<HymnModel[]> {
+  searchHymns(term: string, chorus?:boolean, verse?:boolean): Observable<HymnModel[]> {
     if (!term.trim()) {
       // if not search term, return empty hymn array.
       return of([]);
     }
-    return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?title=${term}`).pipe(
+    if (chorus && !verse) {
+      return this.searchChorus(term);
+    } else if (verse && !chorus) {
+      return this.searchStanzas(term);
+    } else if (chorus && verse) {
+      return this.searchCombinedChorusAndStanzas(term);
+    } else {
+      return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?title=${term}`).pipe(
+        tap(x => x.length ?
+          this.log(`Found hymns matching "${term}"`) :
+          this.log(`No such hymn "${term}"`)),
+        catchError(this.handleError<HymnModel[]>('searchHymns', []))
+      );
+    }
+  }
+
+  // Get term with chorus word
+  // searchChorus (term: string) {
+  //   return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?chorus=${term}`).pipe(
+  //     tap(x => x.length ?
+  //       this.log(`Found hymns matching "${term}"`) :
+  //       this.log(`No such hymn "${term}"`)),
+  //     catchError(this.handleError<HymnModel[]>('searchHymns', []))
+  //   );
+  // }
+  searchChorus(term: string): Observable<HymnModel[]> {
+    return this.http.get<HymnModel[]>(this.hymnsUrl).pipe(
+      map(hymns => hymns.filter(hymn =>
+        hymn.chorus && hymn.chorus.refrain.toLowerCase().includes(term.toLowerCase())
+      )),
       tap(x => x.length ?
-        this.log(`Found hymns matching "${term}"`) :
-        this.log(`No such hymn "${term}"`)),
+        this.log(`Found hymns containing the term "${term}" in the chorus`) :
+        this.log(`No hymn contains the term "${term}" in the chorus`)),
+      catchError(this.handleError<HymnModel[]>('searchHymns', []))
+    );
+  }
+
+  // Get term with verse word
+  // searchStanzas (term: string) {
+  //   return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?stanzas=${term}`).pipe(
+  //     tap(x => x.length ?
+  //       this.log(`Found hymns matching "${term}"`) :
+  //       this.log(`No such hymn "${term}"`)),
+  //     catchError(this.handleError<HymnModel[]>('searchHymns', []))
+  //   );
+  // }
+  searchStanzas(term: string): Observable<HymnModel[]> {
+    return this.http.get<HymnModel[]>(this.hymnsUrl).pipe(
+      map(hymns => hymns.filter(hymn =>
+        hymn.stanzas.some(stanza => stanza.verse.toLowerCase().includes(term.toLowerCase()))
+      )),
+      tap(x => x.length ?
+        this.log(`Found hymns containing the term "${term}"`) :
+        this.log(`No hymn contains the term "${term}"`)),
+      catchError(this.handleError<HymnModel[]>('searchHymns', []))
+    );
+  }
+
+  searchCombinedChorusAndStanzas(term: string): Observable<HymnModel[]> {
+    return forkJoin([this.searchChorus(term), this.searchStanzas(term)]).pipe(
+      map(([chorusResults, stanzaResults]) => {
+        const combinedResults = [...chorusResults, ...stanzaResults];
+        const uniqueResults = combinedResults.filter((hymn, index, self) =>
+          index === self.findIndex(h => h.id === hymn.id)
+        );
+        return uniqueResults;
+      }),
+      tap(x => x.length ?
+        this.log(`Found hymns containing the term "${term}" in the chorus or stanzas`) :
+        this.log(`No hymn contains the term "${term}" in the chorus or stanzas`)),
       catchError(this.handleError<HymnModel[]>('searchHymns', []))
     );
   }

@@ -1,0 +1,6 @@
+@use '../../shared/partial-styles/style-vars';
+
+.song__card {
+  padding: 20px 10px;
+  background-color: style-vars.$primary-color-half-transparent;
+}

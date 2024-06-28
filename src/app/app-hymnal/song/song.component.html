@@ -1,1 +1,15 @@
-<p>song works!</p>
+<div class="song__card">
+  <a routerLink="../hymn/{{hymn.hymn_number}}">
+    <div class="flex-container">
+      <div class="flex-icon">
+        <i class="bi bi-music-note"></i>
+      </div>
+      <div class="flex-number">
+        {{ hymn.hymn_number }}
+      </div>
+      <div class="flex-text">
+        {{ hymn.title | capitalize }}
+      </div>
+    </div>
+  </a>
+</div>

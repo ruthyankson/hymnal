@@ -1,14 +1,33 @@
 <!-- Search Component -->
 <div id="search-component">
-    <label for="search-box">
-      <div class="label-flex">
-        <div><img width="70px" src="./../../../assets/images/music_staff.png" class="pr-2" alt="Music Staff"></div>
-        <div>{{ searchLabel }}</div>
-        <div>
-          <img width="70px" src="./../../../assets/images/music_staff_right.png" class="pl-2" alt="Music Staff">
-        </div>
+  <div class="back-blend"></div>
+  <label for="search-box" class="heading search-heading">
+    <div class="label-flex">
+      <div><img width="70px" src="./../../../assets/images/music_staff.png" class="pr-2" alt="Music Staff"></div>
+      <div class="centered">{{ searchLabel }}</div>
+      <div>
+        <img width="70px" src="./../../../assets/images/music_staff_right.png" class="pl-2" alt="Music Staff">
       </div>
-    </label>
+    </div>
+    <!-- <div class="thin-divider"></div> -->
+  </label>
+  <!-- <div *ngIf="advanced"> -->
+    <div class="search__parameters">
+      <span class="centered">Try any word you remember by title or check:</span>
+      <div class="checkbox-flex pl-4">
+        <label class="checkbox-container pr-4">
+          <span class="emphasized">Verse</span>
+          <input type="checkbox" id="verse" name="verse" #verseCheckbox (click)="getVerseCheckedValue()">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+          <span class="emphasized">Chorus</span>
+          <input type="checkbox" id="chorus" name="chorus" #chorusCheckbox (click)="getChorusCheckedValue()">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  <!-- </div> -->
   <div class="search-box-wrapper">
     <input #searchBox id="search-box" (input)="search(searchBox.value)" />
     <button type="button" class="clear-button" *ngIf="searchBox.value" (click)="clearSearch(searchBox)">
@@ -24,6 +43,9 @@
           <div class="flex-icon">
             <i class="bi bi-music-note"></i>
           </div>
+          <div class="flex-number">
+            {{ hymn.hymn_number }}
+          </div>
           <div class="flex-text">
             {{ hymn.title | capitalize }}
           </div>
@@ -34,6 +56,11 @@
       </a> -->
     </li>
   </ul>
+
+  <div class="info" *ngIf="showInfo">
+    <span>No hymns found.</span>
+    <button (click)="closeInfo()" class="close-button-info">×</button>
+  </div>
 </div>
 
 
