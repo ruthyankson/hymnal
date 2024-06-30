@@ -1,6 +1,42 @@
 @use '../../shared/partial-styles/style-vars';
 
 .song__card {
-  padding: 20px 10px;
-  background-color: style-vars.$primary-color-half-transparent;
+  padding: 0px 15px;
+  font-size: style-vars.$font-legible;
+  // background-color: style-vars.$primary-color-half-transparent;
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: style-vars.$font-color-primary;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+    &:hover {
+      // background-color: style-vars.$primary-color-hover;
+      color: style-vars.$secondary-color-goldenrod-dark;
+      border-left: 2px solid style-vars.$primary-color-transparent1;
+      border-right: 2px solid style-vars.$primary-color-transparent1;
+      .flex-icon {
+        /* Change gradient color on hover -- just setting the background color to white whouldn't work*/
+        border-radius: 0 0 0 15%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
 }
+
+// a {
+//   color: style-vars.$font-color-primary;
+//   text-decoration: none;
+
+//   &:hover {
+//     background-color: style-vars.$primary-color;
+//   }
+// }
+
+
+

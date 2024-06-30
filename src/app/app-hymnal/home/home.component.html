@@ -16,15 +16,25 @@
 <div class="divider2"></div>
 
 <!-- Hymn List -->
-<section class="custom-container centered">
+<section class="custom-container">
   <div class="hymn-list">
-    <div class="heading1 heading__design">
-      A peek at Hymns
+    <div class="heading1 heading__design centered">
+      A Peek At Hymns
     </div>
-    <div *ngFor="let hymn of hymns">
-      <app-song [hymn]="hymn"></app-song>
-    </div>
+    <div class="space-2"></div>
+    <section class="section__design">
+      <div *ngFor="let hymn of hymns">
+        <app-song [hymn]="hymn"></app-song>
+      </div>
+    </section>
+  </div>
+  <div class="space-2"></div>
+  <div>
+    <a href="../hymns">
+      More Hymns
+    </a>
   </div>
 </section>
+<div class="space-3"></div>
 
 

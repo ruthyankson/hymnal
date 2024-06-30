@@ -33,16 +33,17 @@ html{
   font-weight: 500;
   text-transform: capitalize;
   font-size: 1.8rem;
+  color: style-vars.$font-color-primary-heading;
 }
 
 .heading1 {
   display: block;
   font-weight: 500;
   font-size: 1.6rem;
+  color: style-vars.$font-color-primary-heading;
 }
 
 .heading__design {
-  // clip-path: polygon(50% 10px, 100% 25%, 100% 75%, 50% 90%, 0% 75%, 0% 25%);
   clip-path: polygon(100% 0%, 100% 75%, 50% 90%, 0% 75%, 0% 0%);
   background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1, rgba(255, 255, 255, 0));
   padding: 3rem 0;
@@ -50,7 +51,7 @@ html{
 
 .section__design {
   // background: linear-gradient(white 2%, style-vars.$primary-color-transparent1 10%, white 85%);
-  padding: 0 15px;
+  padding: 10px 15px 0 15px;
 }
 
 .custom-container {
@@ -74,6 +75,14 @@ html{
   font-weight: 500;
   color: style-vars.$secondary-color-goldenrod;
 }
+
+// .rotated__left {
+//   rotate: -1.9deg;
+// }
+
+// .rotated__right {
+//   rotate: 3.5deg;
+// }
 
 .icon {
   font-size: 27px;
@@ -155,6 +164,10 @@ html{
   padding-top: style-vars.$padding-default*5;
 }
 
+.space-3 {
+  padding-top: style-vars.$padding-default*10;
+}
+
 .space-5 {
   padding-top: style-vars.$padding-default*15;
 }
@@ -189,7 +202,7 @@ html{
   right: 15px;
   background: none;
   border: none;
-  font-size: style-vars.$font-legible+2px;
+  font-size: style-vars.$font-legible;
   line-height: 1;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -209,6 +222,16 @@ html{
   align-items: center;
   padding-bottom: 15px;
   font-size: style-vars.$font-legible;
+}
+
+// For hymn list in search, home page and hymns page
+.flex-icon {
+  width: 10%;
+  /* Icon gradient color */
+  background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .checkbox-flex {
@@ -283,19 +306,18 @@ html{
 }
 
 .thin-divider {
-  padding: 2rem;
-  clip-path: polygon(49.82% 25px, 100.18% 0%, 49.82% 57.81%, 4px 6.25%);
+  padding: 1rem;
+  clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
   background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
+  z-index: -1;
 }
 
 .back-blend {
   padding: 0.5rem;
-  // background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
   border-top: 2px solid style-vars.$primary-color-transparent1;
   border-left: 2px solid style-vars.$primary-color-transparent1;
   border-right: 2px solid style-vars.$primary-color-transparent1;
   border-radius: 5px 5px 0 0;
-  // border: 2px solid style-vars.$primary-color-transparent1;
   z-index: -1;
 }
 
@@ -310,9 +332,14 @@ html{
 .flex-number {
   width: 20%;
 }
-
+// Hymn title
 .flex-text {
   width: 70%;
+}
+
+// Song anchor flex item padding
+.flex-item__padding {
+  padding: 0 0.5rem;
 }
 
 
@@ -326,6 +353,9 @@ html{
 @media (max-width: style-vars.$tablet-max-width) {
   .custom-container {
     padding: 15px 50px;
+  }
+  .thin-divider {
+    padding: 0.6rem;
   }
 
 }
@@ -353,6 +383,10 @@ html{
     .checkbox-flex {
       padding: 10px 0;
     }
+  }
+
+  .thin-divider {
+    padding: 0.4rem;
   }
 
 }

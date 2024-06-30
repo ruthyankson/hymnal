@@ -39,14 +39,14 @@ li {
   justify-content: space-between;
 }
 
-.flex-icon {
-  width: 10%;
-  /* Icon gradient color */
-  background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+// .flex-icon {
+//   width: 10%;
+//   /* Icon gradient color */
+//   background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
 
 .search-result {
   li {

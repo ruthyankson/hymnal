@@ -1,13 +1,14 @@
 // Font
 $font-stack: "Inter", "Reddit Sans", Roboto, "Helvetica Neue", sans-serif;
-$font-legible: 20px;
+$font-legible: 1.3rem;
 $font-line-height: 1.5;
 $font-small: 15px;
 $font-word-spacing: 3px;
 
 // Primary
 // $font-color-primary:#08202c;
-$font-color-primary:rgb(0, 32, 53);
+$font-color-primary:rgb(91, 103, 111);
+$font-color-primary-heading:rgb(0, 39, 65);
 // $primary-color: #3db6f2;
 $primary-color: rgb(0, 153, 255);
 // $primary-color-hover: #3db6f2c5;
@@ -18,14 +19,17 @@ $primary-color-half-transparent: rgba(0, 153, 255, 0.329);
 $primary-color-transparent: rgba(0, 153, 255, 0.129);
 $primary-color-transparent1: rgba(0, 153, 255, 0.311);
 $primary-color-divider: #0099ffda;
+$primary-color-dark: rgb(0, 50, 84);
 
 // Secondary
 $secondary-color: #FFE08A;
 
 $secondary-color-transparent: #ffe08a7e;
+$secondary-color-gold-light: #ffe396;
 $secondary-color-gold: #ffbb00;
 $secondary-color-goldenrod: goldenrod;
-$secondary-color-goldenrod-dark: rgba(136, 103, 20, 0.756);
+$secondary-color-goldenrod-dark: rgb(136, 103, 20);
+$secondary-color-goldenrod-darker: rgb(67, 51, 10);
 
 // Other colors
 $font-color-info: #721c2593;

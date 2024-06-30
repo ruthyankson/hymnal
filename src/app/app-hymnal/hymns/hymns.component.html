@@ -6,9 +6,18 @@
   <div class="hymns-hero">
     <i class="bi bi-music-note-list"></i>
   </div>
-  <div class="hymn-list" *ngFor="let hymn of hymns">
+  <div class="space-5"></div>
+  <!-- <div class="hymn-list" *ngFor="let hymn of hymns">
     <a routerLink="../hymn/{{hymn.hymn_number}}">
       <span>{{ hymn.title | capitalize }}</span>
     </a>
+  </div> -->
+  <div class="hymn-list">
+    <section class="section__design">
+      <div *ngFor="let hymn of hymns">
+        <app-song [hymn]="hymn"></app-song>
+      </div>
+    </section>
   </div>
 </div>
+<div class="space5"></div>

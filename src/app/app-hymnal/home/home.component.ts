@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { HymnModel } from '../../shared/models/hymn.model';
 import { HymnService } from '../../shared/services/hymn.service';
 
@@ -24,7 +24,7 @@ export class HomeComponent {
   getHymns(): void {
     this.hymnService.getHymns()
       .subscribe( (hymns) => {
-        this.hymns = hymns.slice(1, 7);
+        this.hymns = hymns.slice(0, 6);
     });
   }
 

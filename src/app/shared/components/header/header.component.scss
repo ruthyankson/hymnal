@@ -24,26 +24,31 @@ nav {
   a {
     color: white;
     text-decoration: none;
+    &:hover {
+      color: style-vars.$secondary-color;
+    }
+
+    .app__name {
+      font-weight: 600;
+    }
+
+    .menu__item {
+      font-weight: 450;
+      padding: 10px;
+    }
   }
 
-  a:hover {
-    color: style-vars.$secondary-color;
-  }
-
-  a.active {
+  .brand {
+    font-size: 1.5rem;
+    font-weight: 800;
     background: -webkit-linear-gradient(white, style-vars.$secondary-color);
     -webkit-background-clip: text;
     background-clip: text;
-    font-weight: 700;
     -webkit-text-fill-color: transparent;
   }
 
-  a.app__name {
-    font-weight: 600;
-  }
-
-  a.menu__item {
-    font-weight: 500;
+  a.active {
+    color: style-vars.$secondary-color-gold-light;
   }
 }
 
@@ -53,5 +58,3 @@ nav {
   }
 
 }
-
-

@@ -9,6 +9,7 @@ import { HymnService } from './services/hymn.service';
 import { MessageService } from './services/message.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     SearchComponent,
     HymnDetailComponent,
     ModalComponent,
+    FooterComponent,
     CapitalizePipe
   ],
   imports: [
@@ -34,6 +36,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     HeaderComponent,
     SearchComponent,
     HymnDetailComponent,
+    FooterComponent,
     CapitalizePipe
   ],
   providers:[
