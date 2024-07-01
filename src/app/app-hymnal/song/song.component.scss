@@ -1,13 +1,12 @@
 @use '../../shared/partial-styles/style-vars';
 
 .song__card {
-  padding: 0px 15px;
   font-size: style-vars.$font-legible;
   // background-color: style-vars.$primary-color-half-transparent;
   a {
     display: inline-block;
     width: 100%;
-    padding: 15px 0;
+    padding: 15px;
     box-sizing: border-box;
     text-decoration: none;
     color: style-vars.$font-color-primary-light;
@@ -15,7 +14,7 @@
 
     &:hover {
       // background-color: style-vars.$primary-color-hover;
-      color: style-vars.$secondary-color-goldenrod-dark;
+      color: style-vars.$primary-color;
       border-left: 2px solid style-vars.$primary-color-transparent1;
       border-right: 2px solid style-vars.$primary-color-transparent1;
       .flex-icon {

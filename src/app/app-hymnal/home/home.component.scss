@@ -46,15 +46,15 @@
 
 
 @media (min-width: style-vars.$laptop-max-width) {
-  .carousel-section {
-    padding-top: 30px;
-  }
+  // .carousel-section {
+  //   padding-top: 30px;
+  // }
 }
 
 @media (max-width: style-vars.$tablet-max-width) {
-  .carousel-section {
-    padding-top: 15px;
-  }
+  // .carousel-section {
+  //   padding-top: 15px;
+  // }
   .divider1 {
     padding: 10rem;
     margin-top: -145px;
@@ -66,9 +66,9 @@
 }
 
 @media (max-width: style-vars.$phone-max-width) {
-  .carousel-section {
-    padding-top: 0;
-  }
+  // .carousel-section {
+  //   padding-top: 0;
+  // }
   .divider1, .divider2 {
     padding: 5rem;
     margin-top: -95px;
