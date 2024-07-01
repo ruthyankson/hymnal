@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CapitalizePipe implements PipeTransform {
 
-  transform(value: string): string {
+  transform(value: string | any): string {
     if (!value) {
       return value;
     }

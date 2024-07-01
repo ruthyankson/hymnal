@@ -31,6 +31,19 @@
   font-size: style-vars.$font-legible;
 }
 
+// More section
+.more {
+  a {
+    font-size: style-vars.$font-legible;
+    font-weight: 500;
+    color: style-vars.$secondary-color-goldenrod;
+    text-decoration: none;
+    &:hover {
+      color: style-vars.$secondary-color-goldenrod;
+    }
+  }
+}
+
 
 @media (min-width: style-vars.$laptop-max-width) {
   .carousel-section {

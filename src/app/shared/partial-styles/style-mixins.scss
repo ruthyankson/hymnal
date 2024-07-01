@@ -1,3 +1,18 @@
+@mixin main-thin-divider($middle-color: rgba(0, 153, 255, 0.311)) {
+  padding: 1rem;
+  clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
+  background: linear-gradient(white, $middle-color, white);
+  z-index: -1;
+}
+
+@mixin main-heading($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
+  display: block;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: $heading-font-size;
+  color: $font-color;
+}
+
 @mixin two-gradient($start-color, $end-color) {
   background: $start-color; /* Old browsers */
   background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%); /* FF3.6-15 */

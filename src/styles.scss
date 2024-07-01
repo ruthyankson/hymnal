@@ -3,15 +3,22 @@
 // style-vars
 @use './app/shared/partial-styles/style-vars';
 
+// Mixins
+@use './app/shared/partial-styles/style-mixins';
+
 // *,
 // *::before,
 // *::after {
 //   box-sizing: border-box;
 // }
 
-html{
+html {
   margin: 0;
-  overflow-x: hidden;
+
+  * {
+    overflow-x: hidden;
+  }
+
   body {
     height: 100%;
     font-family: style-vars.$font-stack;
@@ -29,18 +36,11 @@ html{
 }
 
 .heading {
-  display: block;
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: 1.8rem;
-  color: style-vars.$font-color-primary-heading;
+  @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading)
 }
 
 .heading1 {
-  display: block;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: style-vars.$font-color-primary-heading;
+ @include style-mixins.main-heading($heading-font-size: 1.6rem, $font-color: style-vars.$font-color-primary-heading)
 }
 
 .heading__design {
@@ -68,7 +68,7 @@ html{
 .emphasized {
   font-weight: 500;
   color: style-vars.$secondary-color-goldenrod;
-  border-bottom: 3px groove style-vars.$secondary-color-goldenrod;
+  // border-bottom: 2px solid style-vars.$secondary-color-goldenrod;
 }
 
 .emphasized1 {
@@ -86,6 +86,18 @@ html{
 
 .icon {
   font-size: 27px;
+}
+
+.pt-1 {
+  padding-top: style-vars.$padding-default;
+}
+
+.pt-2 {
+  padding-top: style-vars.$padding-default*2;
+}
+
+.pt-3 {
+  padding-top: style-vars.$padding-default*3;
 }
 
 .pr-1 {
@@ -122,6 +134,7 @@ html{
   background-color: style-vars.$secondary-color-transparent;
 }
 
+// Search button icon on header
 .button-icon {
   background: transparent;
   box-shadow: none;
@@ -129,8 +142,8 @@ html{
   cursor: pointer;
   padding: 7px;
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
   font-weight: bold;
   color: white;
   transition: 0.5s all;
@@ -140,8 +153,8 @@ html{
   cursor: pointer;
 }
 
-.button-icon:active, .button-icon:hover {
-  // background-color: #dfe4ff71;
+.button-icon:active,
+.button-icon:hover {
   background-color: #c8e5f488;
 }
 
@@ -153,7 +166,8 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
 }
 
 .centered {
@@ -250,6 +264,7 @@ html{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
   /* Hide the browser's default checkbox */
   input {
     position: absolute;
@@ -258,6 +273,7 @@ html{
     height: 0;
     width: 0;
   }
+
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
@@ -267,12 +283,13 @@ html{
     width: 25px;
     border-radius: 5px;
     background-color: #eee;
-      /* Create the checkmark/indicator (hidden when not checked) */
+
+    /* Create the checkmark/indicator (hidden when not checked) */
     &:after {
       content: "";
       position: absolute;
       display: none;
-    /* Style the checkmark/indicator */
+      /* Style the checkmark/indicator */
       left: 9px;
       top: 4px;
       width: 8px; // Checkmark width
@@ -287,15 +304,18 @@ html{
 
   /* On mouse-over, add a grey background color */
   input {
-    & ~ .checkmark {
+    &~.checkmark {
       background-color: #ccc;
     }
+
     &:checked {
       background-color: #bbb;
+
       /* When the checkbox is checked, add a blue background */
-      & ~ .checkmark {
+      &~.checkmark {
         background-color: #2196F3;
-          /* Show the checkmark when checked */
+
+        /* Show the checkmark when checked */
         &:after {
           display: block;
         }
@@ -306,10 +326,11 @@ html{
 }
 
 .thin-divider {
-  padding: 1rem;
-  clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
-  background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
-  z-index: -1;
+  // padding: 1rem;
+  // clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
+  // background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
+  // z-index: -1;
+  @include style-mixins.main-thin-divider($middle-color: style-vars.$primary-color-transparent1);
 }
 
 .back-blend {
@@ -332,6 +353,7 @@ html{
 .flex-number {
   width: 20%;
 }
+
 // Hymn title
 .flex-text {
   width: 70%;
@@ -340,6 +362,11 @@ html{
 // Song anchor flex item padding
 .flex-item__padding {
   padding: 0 0.5rem;
+}
+
+// Section before the footer
+.more {
+  padding: 60px 0 40px;
 }
 
 
@@ -354,6 +381,7 @@ html{
   .custom-container {
     padding: 15px 50px;
   }
+
   .thin-divider {
     padding: 0.6rem;
   }
@@ -376,10 +404,12 @@ html{
   .mob__centered {
     text-align: center;
   }
+
   .search__parameters {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .checkbox-flex {
       padding: 10px 0;
     }

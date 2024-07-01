@@ -9,12 +9,14 @@
     <span class="capitalize item__routing app__name">{{ appName }}</span>
   </a>
   <span class="spacer"></span>
-  <a routerLink="hymns" routerLinkActive="active">
-    <span class="capitalize item__routing menu__item">Hymns</span>
-  </a>
-  <button class="search-button button-icon" (click)="openModal()">
-    <i class="bi bi-search search-icon"></i>
-  </button>
+  <div class="flex-items__right">
+    <a routerLink="hymns" routerLinkActive="active">
+      <span class="capitalize item__routing menu__item">Hymns</span>
+    </a>
+    <button class="search-button button-icon" (click)="openModal()">
+      <i class="bi bi-search search-icon"></i>
+    </button>
+  </div>
 </nav>
 
 <app-modal #modal [modalConfig]="modalConfig">

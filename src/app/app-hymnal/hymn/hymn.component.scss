@@ -1,0 +1,37 @@
+@use '../../shared/partial-styles/style-vars';
+
+section {
+  padding-top: 40px;
+  color: style-vars.$font-color-primary;
+  font-size: style-vars.$font-legible;
+  a {
+    text-decoration: none;
+    color: style-vars.$secondary-color-goldenrod-dark;
+    font-style: italic;
+    &:hover {
+      color: style-vars.$secondary-color-goldenrod;
+    }
+  }
+  .hymn__stanza {
+    padding-top: 20px;
+  }
+  .flex-chorus {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-direction: row;
+    #hymn__chorus{
+      width: 30%;
+      border-right: 1px solid style-vars.$primary-color-half-transparent;
+    }
+    .stanza__numbers {
+      width: 70%;
+      padding-right: 15px;
+      font-style: italic;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-direction: row;
+    }
+  }
+}

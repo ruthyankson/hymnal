@@ -17,7 +17,7 @@ export class HymnComponent {
   constructor(
     private route: ActivatedRoute,
     private hymnService: HymnService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class HymnComponent {
   formatUndefinedPossibleText(text: string | undefined): string {
     // let string_text: string | undefined;
     if (text) {
-      this.formatText(text);
+      return this.formatText(text);
     }
     return "";
   }

@@ -10,7 +10,7 @@ import { CarouselComponent } from './standalone-components/carousel/carousel.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InMemoryDataService } from './in-memory-data.service';
 import { AppHymnalModule } from './app-hymnal/app-hymnal.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 
 
@@ -38,4 +38,4 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
