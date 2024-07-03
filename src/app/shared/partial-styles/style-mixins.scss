@@ -63,7 +63,7 @@ $button-background-hover: style-vars.$secondary-color-goldenrod) {
 
 @mixin no-outline-button($font-color: style-vars.$primary-color-dark,
 $background-hover: style-vars.$primary-color-hover,
-$background-hover-transparent: style-vars.$primary-color-hover-transparent,
+$background-hover-transparent: style-vars.$primary-color-hover-light-transparent,
 $button-border-radius: 0, $button-padding: 15px) {
   color: $font-color;
   background: transparent;

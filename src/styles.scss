@@ -164,7 +164,7 @@ html {
 .button-icon {
   @include style-mixins.no-outline-button($font-color: white,
   $background-hover: style-vars.$primary-color-hover,
-  $background-hover-transparent: style-vars.$primary-color-hover-transparent,
+  $background-hover-transparent: style-vars.$primary-color-hover-light-transparent,
   $button-border-radius: 50%, $button-padding: 7px);
   height: 50px;
   width: 50px;
@@ -174,7 +174,7 @@ html {
 .primary-button__no-outline {
   @include style-mixins.no-outline-button(
   $background-hover: style-vars.$primary-color-hover,
-  $background-hover-transparent: style-vars.$primary-color-hover-transparent);
+  $background-hover-transparent: style-vars.$primary-color-hover-light-transparent);
 }
 
 .secondary-button__no-outline {
@@ -295,13 +295,24 @@ html {
   -ms-user-select: none;
   user-select: none;
 
-  /* Hide the browser's default checkbox */
   input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
+
+    &:hover ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    &:checked ~ .checkmark {
+      background-color: #2196F3;
+
+      &::after {
+        display: block;
+      }
+    }
   }
 
   /* Create a custom checkbox */
@@ -329,46 +340,6 @@ html {
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-    }
-  }
-
-  /* On mouse-over, add a grey background color */
-  // input {
-  //   &~.checkmark {
-  //     background-color: #ccc;
-  //   }
-
-  //   &:checked {
-  //     background-color: #bbb;
-
-  //     /* When the checkbox is checked, add a blue background */
-  //     &~.checkmark {
-  //       background-color: #2196F3;
-
-  //       /* Show the checkmark when checked */
-  //       &:after {
-  //         display: block;
-  //       }
-  //     }
-  //   }
-  // }
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-
-    &:hover ~ .checkmark {
-      background-color: #ccc;
-    }
-
-    &:checked ~ .checkmark {
-      background-color: #2196F3;
-
-      &::after {
-        display: block;
-      }
     }
   }
 

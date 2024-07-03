@@ -6,10 +6,15 @@ FROM node:latest as build
 WORKDIR /app
 # Copy other packages in ...
 # COPY package*.json ./
+# Copy application dependency manifests to the container image.
+# A wildcard is used to ensure both package.json AND package-lock.json are copied.
+COPY package*.json ./
+# Install dependencies.
+RUN npm install --legacy-peer-deps
+# Install all the dependencies
+# RUN npm install
 # Add the source code to app
 COPY . .
-# Install all the dependencies
-RUN npm install
 # Build the application
 RUN npm run build
 
