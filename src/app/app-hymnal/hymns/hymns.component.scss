@@ -1,0 +1,33 @@
+
+// .hymn-list {
+//   width: 100%; /* Set a fixed width if needed */
+//   height: 100vh; /* Set a fixed height */
+//   overflow-y: scroll; /* Enable vertical scrolling */
+//   overflow-x: hidden; /* Disable horizontal scrolling */
+// }
+
+.hymn-list {
+  width: 100%;
+  max-height: 60%;
+  overflow-y: auto;
+  transition: max-height 0.5s ease-out;
+
+  &.scroll-effect {
+    max-height: 100vh; /* Adjust to the height you want to scroll to */
+  }
+}
+
+.scroll-effect__buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.last-image {
+  display: block;
+  width: 100%;
+}
+
+

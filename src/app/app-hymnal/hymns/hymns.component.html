@@ -2,16 +2,41 @@
   <img src="../../../assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
 
-<div *ngIf="!isLoading">
-  <div class="hymns-hero">
+<section *ngIf="!isLoading">
+  <div class="space-1"></div>
+  <div class="hymns__heading centered heading__design1">
+    Hymns
   </div>
-  <div class="space-5"></div>
-  <div class="hymn-list">
-    <section class="section__design">
+  <div class="custom-container scroll-over" [ngClass]="{'scroll-effect': isScrolling}">
+    <div class="hymn-list">
       <div *ngFor="let hymn of hymns">
         <app-song [hymn]="hymn"></app-song>
       </div>
-    </section>
+    </div>
+    <div class="scroll-effect__buttons">
+      <div>
+        <button class="primary-button__no-outline" (click)="loadMore()">
+          Load More
+          <i class="bi bi-caret-right"></i>
+        </button>
+      </div>
+      <div>
+        <button class="secondary-button__no-outline" (click)="loadLess()">
+          <i class="bi bi-caret-left"></i>
+          Load Less
+        </button>
+      </div>
+    </div>
   </div>
-</div>
-<div class="space-5"></div>
+  <div class="more last-section__before centered"></div>
+  <div class="image-container">
+    <img src="../../../assets/gifs/waterfall.gif" alt="Refreshing" class="last-image">
+    <div class="overlay">
+      <div class="overlay__text glow heading1">Refreshing</div>
+    </div>
+  </div>
+
+</section>
+
+
+

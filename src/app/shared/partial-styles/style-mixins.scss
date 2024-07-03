@@ -1,3 +1,5 @@
+@use './style-vars';
+
 @mixin main-thin-divider($middle-color: rgba(0, 153, 255, 0.311)) {
   padding: 1rem;
   clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
@@ -5,13 +7,107 @@
   z-index: -1;
 }
 
-@mixin main-heading($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
+@mixin main-heading($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65), $sticky-top: 0) {
   display: block;
   font-weight: 500;
   text-transform: capitalize;
   font-size: $heading-font-size;
   color: $font-color;
+  position: sticky;
+  top: $sticky-top;
 }
+
+// Buttons
+@mixin main-button($font-color: style-vars.$secondary-color-goldenrod-darker,
+$button-background: style-vars.$secondary-color-gold-light,
+$button-background-hover: style-vars.$secondary-color-goldenrod) {
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: $font-color;
+  background-color: $button-background;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+
+  &:hover, &:active {
+    color: white;
+    background-color: $button-background-hover;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  &:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+}
+
+@mixin no-outline-button($font-color: style-vars.$primary-color-dark,
+$background-hover: style-vars.$primary-color-hover,
+$background-hover-transparent: style-vars.$primary-color-hover-transparent,
+$button-border-radius: 0, $button-padding: 15px) {
+  color: $font-color;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  transition: 0.5s all;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-color: $background-hover;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    overflow: hidden;
+    background: $background-hover-transparent;
+    opacity: 0;
+    border-radius: $button-border-radius;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  &:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+}
+
+
 
 @mixin two-gradient($start-color, $end-color) {
   background: $start-color; /* Old browsers */

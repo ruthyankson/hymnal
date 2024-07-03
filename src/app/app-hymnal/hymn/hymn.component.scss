@@ -1,7 +1,6 @@
 @use '../../shared/partial-styles/style-vars';
 
 section {
-  padding-top: 40px;
   color: style-vars.$font-color-primary;
   font-size: style-vars.$font-legible;
   a {
@@ -12,6 +11,22 @@ section {
       color: style-vars.$secondary-color-goldenrod;
     }
   }
+  // .cover-back {
+  //   // background: url("../../../assets/images/gold_flower.png") no-repeat center center;
+  //   // background-size: cover;
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     top: 350px;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background: url("../../../assets/images/gold_flower.png") no-repeat center center;
+  //     background-size: cover; /* Adjust as needed: cover, contain, etc. */
+  //     opacity: 0.1; /* Adjust the opacity to desired level */
+  //     z-index: -1; /* Ensure it stays behind any content */
+  //   }
+  // }
   .hymn__stanza {
     padding-top: 20px;
   }
@@ -21,16 +36,15 @@ section {
     gap: 10px;
     flex-direction: row;
     #hymn__chorus{
-      width: 30%;
+      width: 25%;
       border-right: 1px solid style-vars.$primary-color-half-transparent;
     }
     .stanza__numbers {
-      width: 70%;
+      width: 75%;
       padding-right: 15px;
       font-style: italic;
       display: flex;
       align-items: baseline;
-      gap: 10px;
       flex-direction: row;
     }
   }

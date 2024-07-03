@@ -43,18 +43,33 @@ html {
  @include style-mixins.main-heading($heading-font-size: 1.6rem, $font-color: style-vars.$font-color-primary-heading)
 }
 
-.heading__design {
+%main-heading__design {
   clip-path: polygon(100% 0%, 100% 75%, 50% 90%, 0% 75%, 0% 0%);
-  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1, rgba(255, 255, 255, 0));
   padding: 3rem 0;
 }
 
-.section__design {
-  // background: linear-gradient(white 2%, style-vars.$primary-color-transparent1 10%, white 85%);
-  padding: 10px 15px 0 15px;
+.heading__design {
+  @extend %main-heading__design;
+  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1, rgba(255, 255, 255, 0));
 }
 
+.heading__design1 {
+  @extend %main-heading__design;
+  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1);
+}
+
+// Hymns Heading font
+.hymns__heading {
+  @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading, $sticky-top: 50px)
+}
+
+// .section__design {
+//   // background: linear-gradient(white 2%, style-vars.$primary-color-transparent1 10%, white 85%);
+//   padding: 10px 15px 0 15px;
+// }
+
 .custom-container {
+  background-color: white;
   padding: 15px 200px;
 }
 
@@ -134,32 +149,42 @@ html {
   background-color: style-vars.$secondary-color-transparent;
 }
 
+// Primary button
+.primary-button {
+  @include style-mixins.main-button()
+}
+
+// Secondary button
+.secondary-button {
+  @include style-mixins.main-button($font-color: style-vars.$primary-color-dark, $button-background:style-vars.$font-color-primary-light , $button-background-hover: style-vars.$primary-color-transparent)
+}
+
+
 // Search button icon on header
 .button-icon {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  cursor: pointer;
-  padding: 7px;
-  border-radius: 50%;
+  @include style-mixins.no-outline-button($font-color: white,
+  $background-hover: style-vars.$primary-color-hover,
+  $background-hover-transparent: style-vars.$primary-color-hover-transparent,
+  $button-border-radius: 50%, $button-padding: 7px);
   height: 50px;
   width: 50px;
   font-weight: bold;
-  color: white;
-  transition: 0.5s all;
+}
+
+.primary-button__no-outline {
+  @include style-mixins.no-outline-button(
+  $background-hover: style-vars.$primary-color-hover,
+  $background-hover-transparent: style-vars.$primary-color-hover-transparent);
+}
+
+.secondary-button__no-outline {
+  @include style-mixins.no-outline-button(
+  $background-hover: style-vars.$secondary-color-gold-hover,
+  $background-hover-transparent: style-vars.$secondary-color-gold-hover-transparent);
 }
 
 .item__routing {
   cursor: pointer;
-}
-
-.button-icon:active,
-.button-icon:hover {
-  background-color: #c8e5f488;
-}
-
-.button-icon:active {
-  opacity: 0.5;
 }
 
 .loading-container {
@@ -227,11 +252,12 @@ html {
   color: #929292;
   padding: 0;
   margin: 0;
+  &:hover {
+    color: style-vars.$font-color-primary;
+  }
 }
 
-.clear-button:hover {
-  color: style-vars.$font-color-primary;
-}
+
 
 // For advanced search
 .search__parameters {
@@ -374,6 +400,82 @@ html {
 }
 
 
+// Text at the end of the section that is not a link
+.after-text {
+  font-size: style-vars.$font-legible;
+  // color: style-vars.$primary-color;
+}
+
+.last-section__before {
+  // padding: 1.5rem;
+  @include style-mixins.two-gradient(white, style-vars.$primary-color-dark);
+}
+
+// Glowing text
+.glow {
+  font-size: style-vars.$font-legible;
+  font-weight: bold;
+  color: #fff;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+// Styles for last image on page
+.image-container {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  transition: .5s ease;
+  // background-color: #008CBA;
+  background-color: style-vars.$primary-color-dark;
+}
+
+.overlay__text {
+  // color: white;
+  // font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+// Remove padding right from modal
+body.modal-open {
+  padding-right: 0 !important;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px style-vars.$secondary-color-gold, 0 0 30px style-vars.$secondary-color-gold, 0 0 40px style-vars.$secondary-color-gold, 0 0 50px style-vars.$secondary-color-gold, 0 0 60px style-vars.$secondary-color-gold;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 20px style-vars.$secondary-color-gold-light, 0 0 30px style-vars.$secondary-color-gold-light, 0 0 50px style-vars.$secondary-color-gold-light, 0 0 50px style-vars.$secondary-color-gold-light, 0 0 60px style-vars.$secondary-color-gold-light, 0 0 70px style-vars.$secondary-color-gold-light;
+  }
+}
+
+.scroll-over {
+  // background-color: white;
+  position: relative;
+  z-index: 2;
+}
+
+
+
 @media (max-width: style-vars.$laptop-max-width) {
   .custom-container {
     padding: 15px 90px;
@@ -395,10 +497,6 @@ html {
 @media (max-width: style-vars.$phone-max-width) {
   .custom-container {
     padding: 15px;
-  }
-
-  body.modal-open {
-    padding-right: 0 !important;
   }
 
   .mob__pt-2 {

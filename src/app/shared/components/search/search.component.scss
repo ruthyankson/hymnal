@@ -22,11 +22,10 @@ input {
   display: block;
   font-size: style-vars.$font-legible;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-input:focus {
-  outline: none;
-  background-color: style-vars.$primary-color-transparent;
+  &:focus {
+    outline: none;
+    background-color: style-vars.$primary-color-transparent;
+  }
 }
 
 li {
@@ -38,15 +37,6 @@ li {
   align-items: center;
   justify-content: space-between;
 }
-
-// .flex-icon {
-//   width: 10%;
-//   /* Icon gradient color */
-//   background: -webkit-linear-gradient(style-vars.$secondary-color, style-vars.$font-color-primary);
-//   -webkit-background-clip: text;
-//   background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
 
 .search-result {
   li {

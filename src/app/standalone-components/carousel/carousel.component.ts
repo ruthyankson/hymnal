@@ -59,6 +59,7 @@ export class CarouselComponent {
     cssEase: 'ease',
     dots: true,
     easing: 'linear',
+    arrows: false,
     pauseOnHover: true
   };
 

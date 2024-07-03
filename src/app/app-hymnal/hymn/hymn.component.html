@@ -2,40 +2,51 @@
   <img src="../../../assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
 
-<section *ngIf="!isLoading" class="custom-container">
-  <h3 class="heading1 heading__design centered">{{ hymnHere?.title | capitalize }}</h3>
-  <div class="space-2"></div>
-  <div *ngIf="hymnHere?.chorus">
-    <div class="flex-chorus">
-      <div id="hymn__chorus" class="emphasized">
-        Chorus
-      </div>
-      <!-- Links to Sections -->
-       <div class="stanza__numbers">Stanzas:
-        <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
-          <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
+<section *ngIf="!isLoading">
+  <div class="space-1"></div>
+  <h3 class="hymns__heading heading__design1 centered">{{ hymnHere?.title | capitalize }}</h3>
+  <div class="custom-container scroll-over">
+    <div *ngIf="hymnHere?.chorus">
+      <div class="flex-chorus">
+        <div id="hymn__chorus" class="emphasized">
+          Chorus
         </div>
-       </div>
+        <!-- Links to Sections -->
+        <div class="stanza__numbers">Stanzas:
+          <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
+            <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
+          </div>
+        </div>
 
+      </div>
+      <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)" class="pt-2"></p>
     </div>
-    <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)" class="pt-2"></p>
-  </div>
-  <div class="hymn__stanza"
-    *ngFor="let stanza of hymnHere?.stanzas; let i = index">
-    <!-- Target Sections -->
-     <div id="hymn__stanza{{ i }}"></div>
-    <div class="emphasized" >Stanza {{ i + 1 }}</div>
-    <p [innerHTML]="formatText(stanza.verse)" class="pt-2"></p>
-    <!-- Link back to Chorus -->
-    <p *ngIf="hymnHere?.chorus">
-      <a [routerLink]="[]" [fragment]="'hymn__chorus'">
-        Chorus
-        <i class="bi bi-arrow-bar-up"></i>
-      </a>
-    </p>
-  </div>
+    <div class="cover-back">
+      <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let i = index">
+        <!-- Target Sections -->
+        <div id="hymn__stanza{{ i }}"></div>
+        <div class="emphasized">Stanza {{ i + 1 }}</div>
+        <p [innerHTML]="formatText(stanza.verse)" class="pt-2"></p>
+        <!-- Link back to Chorus -->
+        <p *ngIf="hymnHere?.chorus">
+          <a [routerLink]="[]" [fragment]="'hymn__chorus'">
+            Chorus
+            <i class="bi bi-arrow-bar-up"></i>
+          </a>
+        </p>
+      </div>
+    </div>
 
-  <div class="space-5"></div>
-  <button (click)=goBack()>Back to hymns</button>
+    <div class="cover-back centered">
+      <div class="space-5"></div>
+      <button (click)=goBack() class="primary-button">
+        <i class="bi bi-arrow-left-circle"></i>
+        Back to hymns
+      </button>
+    </div>
+  </div>
+  <div>
+    <!-- <img src="../../../assets/images/gold_flower.png" alt="Uplifting"> -->
+  </div>
 </section>
 <div class="space-5"></div>
