@@ -8,21 +8,9 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: AppHymnalComponent,
     children: [
-      { path: '', component: HomeComponent, data: { title: 'App Hymnal' } },
-      { path: 'hymns', component: HymnsComponent, data: { title: 'Hymns' } },
-      { path: 'hymn/:hymn_number', component: HymnComponent, data: { title: 'Hymns' } }
-      // {
-      //   path: "old-user-page",
-      //   redirectTo: ({ queryParams }) => {
-      //     const userIdParam = queryParams['userId'];
-      //     if (userIdParam !== undefined) {
-      //       return `/user/${userIdParam}`;
-      //     } else {
-      //       errorHandler.handleError(new Error('Attempted navigation to user page without user ID.'));
-      //       return `/not-found`;
-      //     }
-      //   },
-      // },
+      { path: '', component: HomeComponent, data: { title: 'Hymnal', animation: 'HomePage' } },
+      { path: 'hymns', component: HymnsComponent, data: { title: 'Hymns', animation: 'HymnsPage' } },
+      { path: 'hymn/:hymn_number', component: HymnComponent, data: { title: 'Hymn' } }
     ]
    }
 ]

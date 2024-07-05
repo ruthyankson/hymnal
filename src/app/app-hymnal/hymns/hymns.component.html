@@ -2,7 +2,7 @@
   <img src="../../../assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
 
-<section *ngIf="!isLoading">
+<section *ngIf="!isLoading" [@routeAnimations]>
   <app-page-heading [pageTitle]="title"></app-page-heading>
   <div class="custom-container scroll-over" [ngClass]="{'scroll-effect': isScrolling}">
     <div class="space-1"></div>

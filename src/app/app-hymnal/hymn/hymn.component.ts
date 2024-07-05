@@ -2,11 +2,20 @@ import { Component } from '@angular/core';
 import { HymnModel } from '../../shared/models/hymn.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HymnService } from '../../shared/services/hymn.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-hymn',
   templateUrl: './hymn.component.html',
-  styleUrl: './hymn.component.scss'
+  styleUrl: './hymn.component.scss',
+  animations: [
+    trigger('routeAnimations', [
+      transition('* <=> *', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class HymnComponent {
 

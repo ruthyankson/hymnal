@@ -2,7 +2,7 @@
   <img src="../../../assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
 
-<section *ngIf="!isLoading">
+<section *ngIf="!isLoading" [@routeAnimations]>
   <!-- Heading -->
   <app-page-heading [pageTitle]="hymnHere?.title | capitalize"></app-page-heading>
   <!-- Body -->
@@ -60,4 +60,3 @@
     </div>
   </div>
 </section>
-<!-- <div class="space-5"></div> -->

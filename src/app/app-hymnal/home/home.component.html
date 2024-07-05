@@ -1,42 +1,49 @@
-<section class="custom-container">
-  <!-- Carousel Section -->
-  <div class="carousel-section">
-    <app-carousel></app-carousel>
-  </div>
-  <!-- Space -->
-  <div class="space-3"></div>
-</section>
+<div *ngIf="isLoading" class="loading-container">
+  <img src="../../../assets/gifs/loading.gif" width="70px" alt="Loading...">
+</div>
 
-
-<!-- Search -->
-<section>
-  <app-search [page_search]="true"></app-search>
-</section>
-
-<!-- Page dividers -->
-<div class="divider1"></div>
-<div class="divider2"></div>
-
-<!-- Hymn List -->
-<section class="custom-container white-back">
-  <div class="hymn-list">
-    <div class="heading1 heading__design centered">
-      A Peek At Hymns
+<div *ngIf="!isLoading" [@routeAnimations]>
+  <section class="custom-container">
+    <!-- Carousel Section -->
+    <div class="carousel-section">
+      <app-carousel></app-carousel>
     </div>
-    <div class="space-1"></div>
-    <section class="white-back">
-      <div *ngFor="let hymn of hymns">
-        <app-song [hymn]="hymn"></app-song>
+    <!-- Space -->
+    <div class="space-3"></div>
+  </section>
+
+
+  <!-- Search -->
+  <section>
+    <app-search [page_search]="true"></app-search>
+  </section>
+
+  <!-- Page dividers -->
+  <div class="divider1"></div>
+  <div class="divider2"></div>
+
+  <!-- Hymn List -->
+  <section class="custom-container white-back">
+    <div class="hymn-list">
+      <div class="heading1 heading__design centered">
+        A Peek At Hymns
       </div>
-    </section>
-  </div>
-  <div class="more centered">
-    <a href="../hymns">
-      <img src="../../../assets/gifs/music_note_blue.gif" width="50px" alt="Music Note">
-      More Hymns
-    </a>
-  </div>
-</section>
-<div class="space-3"></div>
+      <div class="space-1"></div>
+      <section class="white-back">
+        <div *ngFor="let hymn of hymns">
+          <app-song [hymn]="hymn"></app-song>
+        </div>
+      </section>
+    </div>
+    <div class="more centered">
+      <a href="../hymns">
+        <img src="../../../assets/gifs/music_note_blue.gif" width="50px" alt="Music Note">
+        More Hymns
+      </a>
+    </div>
+  </section>
+  <div class="space-3"></div>
 
 
+
+</div>

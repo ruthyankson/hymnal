@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { HymnModel } from '../../shared/models/hymn.model';
 import { HymnService } from '../../shared/services/hymn.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-hymns',
   templateUrl: './hymns.component.html',
-  styleUrl: './hymns.component.scss'
+  styleUrl: './hymns.component.scss',
+  animations: [
+    trigger('routeAnimations', [
+      transition('* <=> *', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class HymnsComponent {
   title = "Hymns";

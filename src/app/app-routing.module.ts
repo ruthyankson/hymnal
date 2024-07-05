@@ -6,16 +6,16 @@ const routes: Routes = [
   { path: '', redirectTo: 'hymnal', pathMatch: 'full' },
   { path: 'hymnal',
     loadChildren: () => import('./app-hymnal/app-hymnal.module').then(m => m.AppHymnalModule),
-    data: { title: 'App Hymnal' }
-  }
-  // { path: '**', component: PageNotFoundComponent }
+    data: { title: 'Hymnal', animation: 'HymnalPage' }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
     {
       scrollPositionRestoration: 'top',
-      anchorScrolling: 'enabled',
+      anchorScrolling: 'enabled', // For scrolling between chorus and stanza links on hymn page
       scrollOffset: [0, 110]
     }
   )

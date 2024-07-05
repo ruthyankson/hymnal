@@ -4,6 +4,8 @@ import { HymnModel } from '../../models/hymn.model';
 import { HYMNS } from '../../constants/hymns';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { HymnService } from '../../services/hymn.service';
+import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-search',
@@ -29,6 +31,7 @@ import { HymnService } from '../../services/hymn.service';
 export class SearchComponent {
   // @Input({required: false}) advanced:boolean = false;
   @Input({required: false}) page_search:boolean = false;
+  @Input({required: false}) modal?: ModalComponent;
 
   @ViewChild('chorusCheckbox') chorusCheckbox!: ElementRef<HTMLInputElement>;
   @ViewChild('verseCheckbox') verseCheckbox!: ElementRef<HTMLInputElement>;
@@ -36,10 +39,9 @@ export class SearchComponent {
   checkedChorus: boolean = false;
   checkedVerse: boolean = false;
 
+  // close_modal: boolean = false;
 
   hymns: HymnModel[] = HYMNS;
-  // hymnNumber?: string;
-  // id?: string;
   showInfo: boolean = false;
   yesTerm: boolean = false;
 
@@ -48,17 +50,13 @@ export class SearchComponent {
   hymns$!: Observable<HymnModel[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private hymnService: HymnService) {}
+  constructor(private hymnService: HymnService, private router: Router) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
     this.yesTerm = term === '';
   }
-
-  // navigateToHymn(hymn_number: number, id: string) {
-  //   this.router.navigate(['hymnal/hymn', hymn_number], { queryParams: { id: id } });
-  // }
 
   ngOnInit(): void {
     this.hymns$ = this.searchTerms.pipe(
@@ -95,5 +93,15 @@ export class SearchComponent {
 
   closeInfo() {
     this.showInfo = false;
+  }
+
+  navigateToHymn(hymnNumber: number) {
+    // this.router.navigate(['hymnal/hymn', hymn_number], { queryParams: { id: id } });
+
+    // Navigate to the hymn page and force reload
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`hymnal/hymn`, hymnNumber]);
+      this.modal?.close();
+    });
   }
 }

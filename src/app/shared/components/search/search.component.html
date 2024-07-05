@@ -37,7 +37,7 @@
     <ul class="search-result" @listAnimation>
       <li *ngFor="let hymn of hymns$ | async">
 
-        <a routerLink="hymn/{{hymn.hymn_number}}">
+        <a (click)="navigateToHymn(hymn.hymn_number)">
           <div class="flex-container">
             <div class="flex-icon">
               <i class="bi bi-music-note"></i>

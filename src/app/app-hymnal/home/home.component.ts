@@ -1,19 +1,24 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { HymnModel } from '../../shared/models/hymn.model';
 import { HymnService } from '../../shared/services/hymn.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  animations: [
+    trigger('routeAnimations', [
+      transition('* <=> *', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class HomeComponent {
-  @ViewChild('chorusCheckbox') chorusCheckbox!: ElementRef<HTMLInputElement>;
-  @ViewChild('verseCheckbox') verseCheckbox!: ElementRef<HTMLInputElement>;
-  checkedChorus: boolean = false;
-  checkedVerse: boolean = false;
-
   hymns: HymnModel[] = [];
+  isLoading = true;
 
   constructor(protected hymnService: HymnService){}
 
@@ -25,18 +30,7 @@ export class HomeComponent {
     this.hymnService.getHymns()
       .subscribe( (hymns) => {
         this.hymns = hymns.slice(0, 6);
+        this.isLoading = false;
     });
   }
-
-  getChorusCheckedValue(): void {
-    this.checkedChorus = this.chorusCheckbox.nativeElement.checked;
-    console.log(this.checkedChorus);
-  }
-
-  getVerseCheckedValue(): void {
-    this.checkedVerse = this.verseCheckbox.nativeElement.checked;
-    console.log(this.checkedVerse, "verse");
-  }
-
-
 }
