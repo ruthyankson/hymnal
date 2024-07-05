@@ -7,14 +7,33 @@
   z-index: -1;
 }
 
-@mixin main-heading($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65), $sticky-top: 0) {
+// @mixin heading-($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
+//   display: block;
+//   font-weight: 500;
+//   text-transform: capitalize;
+//   font-size: $heading-font-size;
+//   color: $font-color;
+// }
+
+@mixin heading-non-sticky($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
   display: block;
   font-weight: 500;
   text-transform: capitalize;
   font-size: $heading-font-size;
   color: $font-color;
+}
+
+@mixin main-heading($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65), $sticky-top: 0) {
+  @include heading-non-sticky($heading-font-size, $font-color);
   position: sticky;
   top: $sticky-top;
+}
+
+@mixin sticky-section($sticky-top: 60px) {
+  background-color: white;
+  position: sticky;
+  top: $sticky-top;
+  // z-index: 3;
 }
 
 // Buttons

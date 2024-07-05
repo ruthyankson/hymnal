@@ -23,17 +23,10 @@
       margin: 10px;
 
       h3 {
-        // border-bottom: 2px solid style-vars.$secondary-color-goldenrod;
-        // background-image: conic-gradient(from 135deg, style-vars.$secondary-color-goldenrod, style-vars.$secondary-color-goldenrod-darker, style-vars.$secondary-color-goldenrod-dark);
         padding: 5%;
-        // border-radius: 10px;
-        // padding-bottom: 10px;
         margin-bottom: 15px;
         font-size: 1.5rem;
-        box-shadow: 0 6px 5px -5px style-vars.$secondary-color-goldenrod;
-        // box-shadow:
-        //  -10px 0 10px style-vars.$secondary-color-goldenrod,
-        //  10px 0 10px style-vars.$secondary-color-goldenrod;
+        color: style-vars.$secondary-color-goldenrod;
       }
 
       p {

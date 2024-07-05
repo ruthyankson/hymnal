@@ -12,7 +12,6 @@
 .divider1 {
   @extend %divider;
   background-color: style-vars.$primary-color-divider;
-  // background: linear-gradient(style-vars.$primary-color-divider, white, style-vars.$primary-color-divider,);
   clip-path: polygon(0% 41.01%, 34.48% 66.08%, 50.5% 53.6%, 82.9% 53%, 100% 38%, 100% 75%, 67.26% 88.8%, 0% 71.25%);
   margin-top: -225px;
   z-index: 2;

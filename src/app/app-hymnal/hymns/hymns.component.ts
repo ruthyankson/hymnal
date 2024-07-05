@@ -8,6 +8,7 @@ import { HymnService } from '../../shared/services/hymn.service';
   styleUrl: './hymns.component.scss'
 })
 export class HymnsComponent {
+  title = "Hymns";
   hymns: HymnModel[] = [];
   isLoading = true;
   isScrolling = false;

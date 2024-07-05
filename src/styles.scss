@@ -30,43 +30,43 @@ html {
   }
 }
 
-.heading-margins {
-  margin-top: 1rem;
-  margin-bottom: .5rem;
-}
+// .heading-margins {
+//   margin-top: 1rem;
+//   margin-bottom: .5rem;
+// }
 
 .heading {
-  @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading)
+  @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading, $sticky-top: 50px)
 }
 
 .heading1 {
- @include style-mixins.main-heading($heading-font-size: 1.6rem, $font-color: style-vars.$font-color-primary-heading)
+ @include style-mixins.heading-non-sticky($heading-font-size: 1.6rem, $font-color: style-vars.$font-color-primary-heading)
 }
 
 %main-heading__design {
   clip-path: polygon(100% 0%, 100% 75%, 50% 90%, 0% 75%, 0% 0%);
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .heading__design {
   @extend %main-heading__design;
-  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1, rgba(255, 255, 255, 0));
+  background: linear-gradient(rgb(255, 255, 255), style-vars.$primary-color-transparent1, rgb(255, 255, 255));
 }
 
 .heading__design1 {
   @extend %main-heading__design;
-  background: linear-gradient(rgba(255, 255, 255, 0), style-vars.$primary-color-transparent1);
+  background: linear-gradient(rgb(255, 255, 255), style-vars.$primary-color-transparent1);
 }
 
-// Hymns Heading font
+// Hymns pages Heading
 .hymns__heading {
   @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading, $sticky-top: 50px)
 }
 
-// .section__design {
-//   // background: linear-gradient(white 2%, style-vars.$primary-color-transparent1 10%, white 85%);
-//   padding: 10px 15px 0 15px;
-// }
+.white-back {
+  background-color: white;
+  position: relative;
+}
 
 .custom-container {
   background-color: white;
@@ -89,6 +89,22 @@ html {
 .emphasized1 {
   font-weight: 500;
   color: style-vars.$secondary-color-goldenrod;
+}
+
+%main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+// Display items in grid
+.grid__container {
+  @extend %main-grid;
+}
+
+.grid__container--one-line {
+  @extend %main-grid;
+  gap: 4.5rem;
 }
 
 // .rotated__left {
@@ -137,6 +153,10 @@ html {
 
 .pl-2 {
   padding-left: style-vars.$padding-default*2;
+}
+
+.pl-3 {
+  padding-left: style-vars.$padding-default*3;
 }
 
 .pl-4 {
@@ -259,7 +279,14 @@ html {
 
 
 
-// For advanced search
+/*  For search component */
+
+.label-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .search__parameters {
   display: flex;
   flex-direction: row;
@@ -268,7 +295,8 @@ html {
   font-size: style-vars.$font-legible;
 }
 
-// For hymn list in search, home page and hymns page
+/* For hymn list in search, home page and hymns page */
+
 .flex-icon {
   width: 10%;
   /* Icon gradient color */
@@ -284,7 +312,7 @@ html {
   align-items: end;
 }
 
-/* The container */
+/* The Checkbox container */
 .checkbox-container {
   display: block;
   position: relative;
@@ -345,63 +373,8 @@ html {
 
 }
 
-// .checkbox-container {
-//   position: relative;
-//   display: inline-block;
-//   cursor: pointer;
-//   font-size: 22px;
-//   user-select: none;
-
-//   input {
-//     position: absolute;
-//     opacity: 0;
-//     cursor: pointer;
-//     height: 0;
-//     width: 0;
-
-//     &:hover ~ .checkmark {
-//       background-color: #ccc;
-//     }
-
-//     &:checked ~ .checkmark {
-//       background-color: #2196F3;
-
-//       &::after {
-//         display: block;
-//       }
-//     }
-//   }
-
-//   .checkmark {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     height: 25px;
-//     width: 25px;
-//     background-color: #bbb;
-//     border-radius: 50%; /* For rounded checkboxes */
-
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       display: none;
-//       left: 9px;
-//       top: 5px;
-//       width: 5px;
-//       height: 10px;
-//       border: solid white;
-//       border-width: 0 3px 3px 0;
-//       transform: rotate(45deg);
-//     }
-//   }
-// }
-
-
+// Thin dividing lines between hymns on hymn list
 .thin-divider {
-  // padding: 1rem;
-  // clip-path: polygon(50% 40%, 100% 50%, 50% 60%, 0% 50%);
-  // background: linear-gradient(white, style-vars.$primary-color-transparent1, white);
-  // z-index: -1;
   @include style-mixins.main-thin-divider($middle-color: style-vars.$primary-color-transparent1);
 }
 
@@ -445,12 +418,26 @@ html {
 // Text at the end of the section that is not a link
 .after-text {
   font-size: style-vars.$font-legible;
-  // color: style-vars.$primary-color;
 }
 
+/* Styles for section */
+
+.section__sticky {
+  @include style-mixins.sticky-section();
+}
+
+.section__relative {
+  position: relative;
+}
+
+//At the end of the section and before the footer
 .last-section__before {
-  // padding: 1.5rem;
   @include style-mixins.two-gradient(white, style-vars.$primary-color-dark);
+}
+
+.last-image {
+  display: block;
+  width: 100%;
 }
 
 // Glowing text
@@ -461,7 +448,7 @@ html {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
-// Styles for last image on page
+// Styles for last image container at the end of the page
 .image-container {
   display: block;
   position: relative;
@@ -478,13 +465,10 @@ html {
   width: 100%;
   opacity: 0.5;
   transition: .5s ease;
-  // background-color: #008CBA;
   background-color: style-vars.$primary-color-dark;
 }
 
 .overlay__text {
-  // color: white;
-  // font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -494,6 +478,8 @@ html {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/* ngbmodal override */
 
 // Remove padding right from modal
 body.modal-open {
@@ -516,6 +502,19 @@ body.modal-open {
   z-index: 2;
 }
 
+.back-cover {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: '';
+    background: url("./assets/images/one_note.png") no-repeat center center;
+    background-size: contain;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+}
 
 
 @media (max-width: style-vars.$laptop-max-width) {
@@ -561,6 +560,15 @@ body.modal-open {
 
   .thin-divider {
     padding: 0.4rem;
+  }
+
+  .grid__container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .heading__design1 {
+    padding: 3rem 0;
   }
 
 }

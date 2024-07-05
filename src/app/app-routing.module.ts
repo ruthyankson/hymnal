@@ -16,7 +16,7 @@ const routes: Routes = [
     {
       scrollPositionRestoration: 'top',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 100]
+      scrollOffset: [0, 110]
     }
   )
 ],

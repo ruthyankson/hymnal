@@ -1,17 +1,18 @@
 <!-- Search Component -->
 <div id="search-component">
   <!-- <div class="back-blend"></div> -->
-  <label for="search-box" class="heading heading__design">
+  <label for="search-box" class="heading__design" [ngClass]="{'heading': page_search, 'heading1': !page_search}">
     <div class="label-flex">
-      <div><img width="70px" src="./../../../assets/images/music_staff.png" class="pr-2" alt="Music Staff"></div>
+      <div><img width="70px" src="./../../../assets/images/music_staff.png" alt="Music Staff"></div>
       <div class="centered">{{ searchLabel }}</div>
       <div>
-        <img width="70px" src="./../../../assets/images/music_staff_right.png" class="pl-2" alt="Music Staff">
+        <img width="70px" src="./../../../assets/images/music_staff_right.png" alt="Music Staff">
       </div>
     </div>
   </label>
-  <div class="section__design">
+  <div class="white-back" [ngClass]="{'custom-container': page_search}">
     <div class="search__parameters">
+      <div class="space-1"></div>
       <span class="centered">Search hymn by title or:</span>
       <div class="checkbox-flex pl-4">
         <label class="checkbox-container pr-4">

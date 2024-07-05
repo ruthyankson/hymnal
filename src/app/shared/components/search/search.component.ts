@@ -28,6 +28,7 @@ import { HymnService } from '../../services/hymn.service';
 
 export class SearchComponent {
   // @Input({required: false}) advanced:boolean = false;
+  @Input({required: false}) page_search:boolean = false;
 
   @ViewChild('chorusCheckbox') chorusCheckbox!: ElementRef<HTMLInputElement>;
   @ViewChild('verseCheckbox') verseCheckbox!: ElementRef<HTMLInputElement>;

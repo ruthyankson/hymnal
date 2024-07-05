@@ -3,41 +3,48 @@
 </div>
 
 <section *ngIf="!isLoading">
-  <div class="space-1"></div>
-  <h3 class="hymns__heading heading__design1 centered">{{ hymnHere?.title | capitalize }}</h3>
+  <!-- Heading -->
+  <app-page-heading [pageTitle]="hymnHere?.title | capitalize"></app-page-heading>
+  <!-- Body -->
   <div class="custom-container scroll-over">
-    <div *ngIf="hymnHere?.chorus">
-      <div class="flex-chorus">
+    <div *ngIf="hymnHere?.chorus" class="centered-section">
+      <div class="space-1"></div>
+      <div class="grid__container--one-line">
         <div id="hymn__chorus" class="emphasized">
           Chorus
         </div>
-        <!-- Links to Sections -->
-        <div class="stanza__numbers">Stanzas:
+        <!-- Links to Stanzas -->
+        <div class="stanza__numbers">
+          Stanzas:
           <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
             <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
           </div>
         </div>
-
       </div>
+      <!-- Chorus -->
       <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)" class="pt-2"></p>
     </div>
-    <div class="cover-back">
-      <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let i = index">
-        <!-- Target Sections -->
-        <div id="hymn__stanza{{ i }}"></div>
-        <div class="emphasized">Stanza {{ i + 1 }}</div>
-        <p [innerHTML]="formatText(stanza.verse)" class="pt-2"></p>
-        <!-- Link back to Chorus -->
-        <p *ngIf="hymnHere?.chorus">
-          <a [routerLink]="[]" [fragment]="'hymn__chorus'">
-            Chorus
-            <i class="bi bi-arrow-bar-up"></i>
-          </a>
-        </p>
+
+    <!-- Stanzas -->
+    <div class="diagonal">
+      <div class="inner-back">
+        <div class="grid__container">
+          <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let i = index">
+            <div id="hymn__stanza{{ i }}" class="emphasized">Stanza {{ i + 1 }}</div>
+            <p [innerHTML]="formatText(stanza.verse)" class="pt-2"></p>
+            <!-- Link back to Chorus -->
+            <p *ngIf="hymnHere?.chorus">
+              <a [routerLink]="[]" [fragment]="'hymn__chorus'">
+                Chorus
+                <i class="bi bi-arrow-bar-up"></i>
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="cover-back centered">
+    <div class="centered">
       <div class="space-5"></div>
       <button (click)=goBack() class="primary-button">
         <i class="bi bi-arrow-left-circle"></i>
@@ -45,8 +52,12 @@
       </button>
     </div>
   </div>
-  <div>
-    <!-- <img src="../../../assets/images/gold_flower.png" alt="Uplifting"> -->
+  <div class="more last-section__before centered"></div>
+  <div class="image-container">
+    <img src="../../../assets/gifs/flying_eagle.gif" alt="Uplifting" class="last-image">
+    <div class="overlay">
+      <div class="overlay__text glow">Uplifting!</div>
+    </div>
   </div>
 </section>
-<div class="space-5"></div>
+<!-- <div class="space-5"></div> -->

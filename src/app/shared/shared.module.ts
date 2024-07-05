@@ -10,6 +10,7 @@ import { MessageService } from './services/message.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { PageHeadingComponent } from './components/page-heading/page-heading.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HymnDetailComponent,
     ModalComponent,
     FooterComponent,
+    PageHeadingComponent,
     CapitalizePipe
   ],
   imports: [
@@ -37,6 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SearchComponent,
     HymnDetailComponent,
     FooterComponent,
+    PageHeadingComponent,
     CapitalizePipe
   ],
   providers:[

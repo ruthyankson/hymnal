@@ -3,11 +3,9 @@
 </div>
 
 <section *ngIf="!isLoading">
-  <div class="space-1"></div>
-  <div class="hymns__heading centered heading__design1">
-    Hymns
-  </div>
+  <app-page-heading [pageTitle]="title"></app-page-heading>
   <div class="custom-container scroll-over" [ngClass]="{'scroll-effect': isScrolling}">
+    <div class="space-1"></div>
     <div class="hymn-list">
       <div *ngFor="let hymn of hymns">
         <app-song [hymn]="hymn"></app-song>
@@ -32,7 +30,7 @@
   <div class="image-container">
     <img src="../../../assets/gifs/waterfall.gif" alt="Refreshing" class="last-image">
     <div class="overlay">
-      <div class="overlay__text glow heading1">Refreshing</div>
+      <div class="overlay__text glow">Refreshing!</div>
     </div>
   </div>
 
