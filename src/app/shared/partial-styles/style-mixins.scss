@@ -7,14 +7,6 @@
   z-index: -1;
 }
 
-// @mixin heading-($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
-//   display: block;
-//   font-weight: 500;
-//   text-transform: capitalize;
-//   font-size: $heading-font-size;
-//   color: $font-color;
-// }
-
 @mixin heading-non-sticky($heading-font-size: 1.8rem, $font-color: rgb(0, 39, 65)) {
   display: block;
   font-weight: 500;
@@ -33,7 +25,6 @@
   background-color: white;
   position: sticky;
   top: $sticky-top;
-  // z-index: 3;
 }
 
 // Buttons
