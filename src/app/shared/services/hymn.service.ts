@@ -16,12 +16,15 @@ export class HymnService {
   };
 
   private hymnsUrl = 'api/hymns'; // URL to web api
+  hymns: HymnModel[] = HYMNS;
 
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
 
+
   /** Log a HymnsService message with the MessageService */
   private log(message: string) {
+    console.log(message);
     this.messageService.add(`HymnsService: ${message}`);
   }
 
@@ -33,10 +36,11 @@ export class HymnService {
  * @param result - optional value to return as the observable result
  */
   private handleError<T>(operation = 'operation', result?: T) {
+
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      // console.error(error);
 
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
@@ -48,14 +52,11 @@ export class HymnService {
 
   /** GET: Get hymns from the server */
   getHymns(): Observable<HymnModel[]> {
-    // const heroes = of(HYMNS);
-    // return heroes;
     return this.http.get<HymnModel[]>(this.hymnsUrl)
-    // return this.http.get<HymnModel[]>(this.hymnsUrl)
-    //   .pipe(
-    //     tap(_ => this.log('Fetched hymns')),
-    //     catchError(this.handleError<HymnModel[]>('getHymns', []))
-    //   );
+      .pipe(
+        tap(_ => this.log('Fetched hymns')),
+        catchError(this.handleError<HymnModel[]>('getHymns', []))
+    );
   }
 
   // getHymn(hymn_number: number): Observable<HymnModel> {
@@ -66,6 +67,7 @@ export class HymnService {
   //   );
   // }
 
+  // Get hymn from inmemory data
   getHymn(id: number): Observable<HymnModel> {
     const url = `${this.hymnsUrl}/${id}`;
     return this.http.get<HymnModel>(url).pipe(
@@ -73,6 +75,18 @@ export class HymnService {
       catchError(this.handleError<HymnModel>(`getHymn id = ${id}`))
     );
   }
+
+  /** GET: Get a specific hymn by id from the hardcoded array */
+  // getHymn(id: number): Observable<HymnModel | undefined> {
+  //   const hymn = this.hymns.find(h => h.id === id);
+  //   return of(hymn).pipe(
+  //     tap(foundHymn => foundHymn ?
+  //       this.log(`Fetched hymn id=${id}`) :
+  //       this.log(`Hymn id=${id} not found`)
+  //     ),
+  //     catchError(this.handleError<HymnModel>(`getHymn id=${id}`))
+  //   );
+  // }
 
 
   /** PUT: update the hymn on the server */
@@ -101,8 +115,8 @@ export class HymnService {
   //   );
   // }
 
-  /* GET hymns whose name contains search term */
-  searchHymns(term: string, chorus?:boolean, verse?:boolean): Observable<HymnModel[]> {
+  // /* GET hymns whose name contains search term */
+ searchHymns(term: string, chorus?:boolean, verse?:boolean): Observable<HymnModel[]> {
     if (!term.trim()) {
       // if not search term, return empty hymn array.
       return of([]);
@@ -123,6 +137,26 @@ export class HymnService {
     }
   }
 
+  /** SEARCH: Search hymns in the hardcoded array */
+  // searchHymns(term: string, chorus?: boolean, verse?: boolean): Observable<HymnModel[]> {
+  //   if (!term.trim()) {
+  //     // if not search term, return empty hymn array.
+  //     return of([]);
+  //   }
+
+  //   let results: HymnModel[] = [];
+
+  //   if (chorus && !verse) {
+  //     results = this.hymns.filter(hymn => hymn.chorus?.toLowerCase().includes(term.toLowerCase()));
+  //   } else if (verse && !chorus) {
+  //     results = this.hymns.filter(hymn => hymn.verse?.toLowerCase().includes(term.toLowerCase()));
+  //   } else if (chorus && verse) {
+  //     results = this.hymns.filter(hymn => hymn.chorus?.toLowerCase().includes(term.toLowerCase()) || hymn.verse?.toLowerCase().includes(term.toLowerCase()));
+  //   } else {
+  //     results = this.hymns.filter(hymn => hymn.title.toLowerCase().includes(term.toLowerCase()));
+  //   }
+
+
   // Get term with chorus word
   // searchChorus (term: string) {
   //   return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?chorus=${term}`).pipe(
@@ -132,6 +166,7 @@ export class HymnService {
   //     catchError(this.handleError<HymnModel[]>('searchHymns', []))
   //   );
   // }
+
   searchChorus(term: string): Observable<HymnModel[]> {
     return this.http.get<HymnModel[]>(this.hymnsUrl).pipe(
       map(hymns => hymns.filter(hymn =>

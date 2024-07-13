@@ -8,12 +8,15 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: AppHymnalComponent,
     children: [
-      { path: '', component: HomeComponent, data: { title: 'Hymnal', animation: 'HomePage' } },
-      { path: 'hymns', component: HymnsComponent, data: { title: 'Hymns', animation: 'HymnsPage' } },
+      { path: '', component: HomeComponent, data: { title: 'Hymnal' } },
+      { path: 'hymns', component: HymnsComponent, data: { title: 'Hymns' } },
       { path: 'hymn/:hymn_number', component: HymnComponent, data: { title: 'Hymn' } }
     ]
    }
 ]
+
+// , animation: 'HymnsPage'
+// , animation: 'HomePage'
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

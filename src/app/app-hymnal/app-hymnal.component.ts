@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
@@ -16,8 +16,20 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class AppHymnalComponent {
+  // routeAnimationState: string = '';
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
+  // constructor(private cdr: ChangeDetectorRef) {}
+
+  // ngOnInit(): void {
+  //   this.routeAnimationState = 'HomePage';
+  //   this.cdr.detectChanges(); // Trigger change detection
+  // }
+
+  // prepareRoute(outlet: RouterOutlet) {
+  //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  // }
+
+  // prepareRoute(outlet: RouterOutlet) {
+  //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  // }
 }

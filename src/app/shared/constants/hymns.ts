@@ -18,3 +18,4 @@ export const HYMNS: HymnModel[] = [
   ...HYMNS_7,
   ...HYMNS_8
 ];
+
