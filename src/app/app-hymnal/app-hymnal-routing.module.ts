@@ -15,9 +15,6 @@ const routes: Routes = [
    }
 ]
 
-// , animation: 'HymnsPage'
-// , animation: 'HomePage'
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

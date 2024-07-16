@@ -21,10 +21,8 @@ export class HymnService {
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
 
-
   /** Log a HymnsService message with the MessageService */
   private log(message: string) {
-    console.log(message);
     this.messageService.add(`HymnsService: ${message}`);
   }
 
@@ -115,20 +113,29 @@ export class HymnService {
   //   );
   // }
 
-  // /* GET hymns whose name contains search term */
+  /** Helper function to normalize apostrophes */
+  private normalizeApostrophes(input: string): string {
+    return input.replace(/’/g, "'").replace(/‘/g, "'");
+  }
+
+  /* GET hymns whose name contains search term */
  searchHymns(term: string, chorus?:boolean, verse?:boolean): Observable<HymnModel[]> {
     if (!term.trim()) {
       // if not search term, return empty hymn array.
       return of([]);
     }
+
+    const normalizedTerm = this.normalizeApostrophes(term.toLowerCase());
+
     if (chorus && !verse) {
-      return this.searchChorus(term);
+      return this.searchChorus(normalizedTerm);
     } else if (verse && !chorus) {
-      return this.searchStanzas(term);
+      return this.searchStanzas(normalizedTerm);
     } else if (chorus && verse) {
-      return this.searchCombinedChorusAndStanzas(term);
+      return this.searchCombinedChorusAndStanzas(normalizedTerm);
     } else {
-      return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?title=${term}`).pipe(
+      return this.getHymns().pipe(
+        map(hymns => hymns.filter(hymn => this.normalizeApostrophes(hymn.title.toLowerCase()).includes(normalizedTerm))),
         tap(x => x.length ?
           this.log(`Found hymns matching "${term}"`) :
           this.log(`No such hymn "${term}"`)),
@@ -137,40 +144,10 @@ export class HymnService {
     }
   }
 
-  /** SEARCH: Search hymns in the hardcoded array */
-  // searchHymns(term: string, chorus?: boolean, verse?: boolean): Observable<HymnModel[]> {
-  //   if (!term.trim()) {
-  //     // if not search term, return empty hymn array.
-  //     return of([]);
-  //   }
-
-  //   let results: HymnModel[] = [];
-
-  //   if (chorus && !verse) {
-  //     results = this.hymns.filter(hymn => hymn.chorus?.toLowerCase().includes(term.toLowerCase()));
-  //   } else if (verse && !chorus) {
-  //     results = this.hymns.filter(hymn => hymn.verse?.toLowerCase().includes(term.toLowerCase()));
-  //   } else if (chorus && verse) {
-  //     results = this.hymns.filter(hymn => hymn.chorus?.toLowerCase().includes(term.toLowerCase()) || hymn.verse?.toLowerCase().includes(term.toLowerCase()));
-  //   } else {
-  //     results = this.hymns.filter(hymn => hymn.title.toLowerCase().includes(term.toLowerCase()));
-  //   }
-
-
-  // Get term with chorus word
-  // searchChorus (term: string) {
-  //   return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?chorus=${term}`).pipe(
-  //     tap(x => x.length ?
-  //       this.log(`Found hymns matching "${term}"`) :
-  //       this.log(`No such hymn "${term}"`)),
-  //     catchError(this.handleError<HymnModel[]>('searchHymns', []))
-  //   );
-  // }
-
   searchChorus(term: string): Observable<HymnModel[]> {
     return this.http.get<HymnModel[]>(this.hymnsUrl).pipe(
       map(hymns => hymns.filter(hymn =>
-        hymn.chorus && hymn.chorus.refrain.toLowerCase().includes(term.toLowerCase())
+        hymn.chorus && this.normalizeApostrophes(hymn.chorus.refrain.toLowerCase()).includes(term)
       )),
       tap(x => x.length ?
         this.log(`Found hymns containing the term "${term}" in the chorus`) :
@@ -179,19 +156,10 @@ export class HymnService {
     );
   }
 
-  // Get term with verse word
-  // searchStanzas (term: string) {
-  //   return this.http.get<HymnModel[]>(`${this.hymnsUrl}/?stanzas=${term}`).pipe(
-  //     tap(x => x.length ?
-  //       this.log(`Found hymns matching "${term}"`) :
-  //       this.log(`No such hymn "${term}"`)),
-  //     catchError(this.handleError<HymnModel[]>('searchHymns', []))
-  //   );
-  // }
   searchStanzas(term: string): Observable<HymnModel[]> {
     return this.http.get<HymnModel[]>(this.hymnsUrl).pipe(
       map(hymns => hymns.filter(hymn =>
-        hymn.stanzas.some(stanza => stanza.verse.toLowerCase().includes(term.toLowerCase()))
+        hymn.stanzas.some(stanza => this.normalizeApostrophes(stanza.verse.toLowerCase()).includes(term))
       )),
       tap(x => x.length ?
         this.log(`Found hymns containing the term "${term}"`) :

@@ -12,7 +12,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     trigger('routeAnimations', [
       transition('* <=> *', [
         style({ opacity: 0 }),
-        animate('500ms', style({ opacity: 1 }))
+        animate('300ms', style({ opacity: 1 }))
       ])
     ])
   ]

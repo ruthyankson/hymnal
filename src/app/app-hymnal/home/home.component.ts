@@ -9,10 +9,10 @@ import { MessageService } from '../../shared/services/message.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
-    trigger('homeAnimations', [
+    trigger('routeAnimations', [
       transition('* <=> *', [
         style({ opacity: 0 }),
-        animate('250ms', style({ opacity: 1 }))
+        animate('300ms', style({ opacity: 1 }))
       ])
     ])
   ]
@@ -32,6 +32,7 @@ export class HomeComponent {
       .subscribe( (hymns) => {
         this.hymns = hymns.slice(0, 6);
         this.isLoading = false;
+        console.log(hymns[159].title.toLowerCase());
     });
 
   }

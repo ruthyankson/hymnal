@@ -10,6 +10,7 @@
     box-sizing: border-box;
     text-decoration: none;
     color: style-vars.$font-color-primary-light;
+    cursor: pointer;
     transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
     &:hover {
@@ -28,14 +29,6 @@
   }
 }
 
-// a {
-//   color: style-vars.$font-color-primary;
-//   text-decoration: none;
-
-//   &:hover {
-//     background-color: style-vars.$primary-color;
-//   }
-// }
 
 
 

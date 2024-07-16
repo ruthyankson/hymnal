@@ -1,6 +1,6 @@
 # ONLY BELIEVE HYMNAL WEB APP
 
-Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed to provide easy access to a wide variety of hymns. This app is built with Angular and provides features such as searching for hymns, viewing hymn details, and more.
+Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed to provide easy access to a moderate variety of hymns. This app is built with Angular and provides features such as searching for hymns, viewing hymn details, and more.
 
 ## Features
 

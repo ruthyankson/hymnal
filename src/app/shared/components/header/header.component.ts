@@ -16,8 +16,8 @@ export class HeaderComponent {
   appName: string = APP_NAME;
 
   public modalConfig: ModalConfig = {
-    modalTitle: "Songs",
-    closeButtonLabel: "Close",
+    modalTitle: "",
+    closeButtonLabel: "x",
     disableCloseButton: () => {
       // Add logic to determine if the modal should close
       return true;
@@ -44,13 +44,13 @@ export class HeaderComponent {
     },
     shouldDismiss: () => {
       // Add logic to determine if the modal should dismiss
-      return true;
+      return false;
     },
     onDismiss: () => {
       // Add logic for what should happen when the modal dismisses
-      return true;
+      return false;
     },
-    hideHeader: true,
+    hideHeader: false,
     hideFooter: true
   };
 

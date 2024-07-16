@@ -43,6 +43,7 @@ li {
       box-sizing: border-box;
       text-decoration: none;
       color: style-vars.$font-color-primary;
+      cursor: pointer;
       transition: background-color 0.3s ease-out, color 0.3s ease-out;
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
     }

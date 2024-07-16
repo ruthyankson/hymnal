@@ -6,11 +6,6 @@
 // Mixins
 @use './app/shared/partial-styles/style-mixins';
 
-// *,
-// *::before,
-// *::after {
-//   box-sizing: border-box;
-// }
 
 html {
   margin: 0;
@@ -83,7 +78,6 @@ html {
 .emphasized {
   font-weight: 500;
   color: style-vars.$secondary-color-goldenrod;
-  // border-bottom: 2px solid style-vars.$secondary-color-goldenrod;
 }
 
 .emphasized1 {
@@ -98,13 +92,8 @@ html {
 }
 
 // Display items in grid
-.grid__container {
+.grid__container, .grid__container--one-line {
   @extend %main-grid;
-}
-
-.grid__container--one-line {
-  @extend %main-grid;
-  gap: 4.5rem;
 }
 
 // .rotated__left {
@@ -176,7 +165,9 @@ html {
 
 // Secondary button
 .secondary-button {
-  @include style-mixins.main-button($font-color: style-vars.$primary-color-dark, $button-background:style-vars.$font-color-primary-light , $button-background-hover: style-vars.$primary-color-transparent)
+  @include style-mixins.main-button($font-color: style-vars.$primary-color-dark,
+  $button-background:style-vars.$font-color-primary-light,
+  $button-background-hover: style-vars.$primary-color-transparent)
 }
 
 
@@ -194,12 +185,14 @@ html {
 .primary-button__no-outline {
   @include style-mixins.no-outline-button(
   $background-hover: style-vars.$primary-color-hover,
+  $button-border-radius: 5px,
   $background-hover-transparent: style-vars.$primary-color-hover-light-transparent);
 }
 
 .secondary-button__no-outline {
   @include style-mixins.no-outline-button(
   $background-hover: style-vars.$secondary-color-gold-hover,
+  $button-border-radius: 5px,
   $background-hover-transparent: style-vars.$secondary-color-gold-hover-transparent);
 }
 
@@ -247,15 +240,17 @@ html {
 
   .close-button-info {
     position: absolute;
-    top: 5px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: style-vars.$font-legible;
     font-weight: 500;
     color: style-vars.$font-color-info;
     cursor: pointer;
     line-height: 1;
+    &:hover {
+      color: style-vars.$font-color-info-dark;
+    }
   }
 }
 
@@ -291,7 +286,8 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 25px;
   font-size: style-vars.$font-legible;
 }
 

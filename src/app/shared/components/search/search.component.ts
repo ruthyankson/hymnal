@@ -35,6 +35,7 @@ export class SearchComponent {
 
   @ViewChild('chorusCheckbox') chorusCheckbox!: ElementRef<HTMLInputElement>;
   @ViewChild('verseCheckbox') verseCheckbox!: ElementRef<HTMLInputElement>;
+  @ViewChild('searchBox') searchBox!: ElementRef<HTMLInputElement>;
 
   checkedChorus: boolean = false;
   checkedVerse: boolean = false;
@@ -55,21 +56,27 @@ export class SearchComponent {
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
+    // Set yesTerm to true if there is a term to be searched for or false otherwise
     this.yesTerm = term === '';
   }
 
   ngOnInit(): void {
+    this.searchTerm();
+  }
+
+  searchTerm (): void {
     this.hymns$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
+      // ignore new term if same as previous term - commented to ensure checkboxes work when checked with the same term
+      // distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.hymnService.searchHymns(term, this.checkedChorus, this.checkedVerse))
     );
 
+    // Show the no such hymns message if there are no results
     this.hymns$.subscribe((h) => {
       this.hymns = h;
       this.showInfo = this.hymns.length === 0 && !this.yesTerm;
@@ -83,12 +90,14 @@ export class SearchComponent {
     this.closeInfo();
   }
 
-  getChorusCheckedValue(): void {
+  getChorusCheckedValue(currentTerm: string): void {
     this.checkedChorus = this.chorusCheckbox.nativeElement.checked;
+    this.search(currentTerm);
   }
 
-  getVerseCheckedValue(): void {
+  getVerseCheckedValue(currentTerm: string): void {
     this.checkedVerse = this.verseCheckbox.nativeElement.checked;
+    this.search(currentTerm);
   }
 
   closeInfo() {

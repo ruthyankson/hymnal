@@ -1,1 +1,20 @@
+@use '../../partial-styles/style-vars';
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+
+  .close {
+    background: none;
+    border: none;
+    color: style-vars.$primary-color-transparent1;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      color: style-vars.$font-color-primary;
+    }
+  }
+}
