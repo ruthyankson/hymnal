@@ -42,6 +42,6 @@ export class HomeComponent {
   }
 
   moreHymns(): void {
-    this.router.navigate(['hymnal/hymns']);
+    this.router.navigate(['hymns']);
   }
 }

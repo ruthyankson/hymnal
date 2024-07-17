@@ -109,7 +109,7 @@ export class SearchComponent {
 
     // Navigate to the hymn page and force reload
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`hymnal/hymn`, hymnNumber]);
+      this.router.navigate([`hymn`, hymnNumber]);
       this.modal?.close();
     });
   }

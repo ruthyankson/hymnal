@@ -14,7 +14,7 @@ export class SongComponent {
 
   // Link to hymn
   navigateToHymn(hymnNumber: number) {
-    this.router.navigate(['hymnal/hymn', hymnNumber]);
+    this.router.navigate(['hymn', hymnNumber]);
   }
 
 }
