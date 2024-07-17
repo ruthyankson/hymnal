@@ -503,7 +503,7 @@ body.modal-open {
   isolation: isolate;
   &::after {
     content: '';
-    background: url("./assets/images/one_note.png") no-repeat center center;
+    background: url("assets/images/one_note.png") no-repeat center center;
     background-size: contain;
     width: 100%;
     position: absolute;
