@@ -3,6 +3,7 @@ import { HymnModel } from '../../shared/models/hymn.model';
 import { HymnService } from '../../shared/services/hymn.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { MessageService } from '../../shared/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,11 @@ export class HomeComponent {
   hymns: HymnModel[] = [];
   isLoading = true;
 
-  constructor(protected hymnService: HymnService, private messageService: MessageService){}
+  constructor(
+    protected hymnService: HymnService,
+    private messageService: MessageService,
+    private router: Router
+  ){}
 
   ngOnInit(): void  {
     this.getHymns();
@@ -34,6 +39,9 @@ export class HomeComponent {
         this.isLoading = false;
         console.log(hymns[159].title.toLowerCase());
     });
+  }
 
+  moreHymns(): void {
+    this.router.navigate(['hymnal/hymns']);
   }
 }
