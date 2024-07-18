@@ -7,26 +7,23 @@
   <app-page-heading [pageTitle]="hymnHere?.title | capitalize"></app-page-heading>
   <!-- Body -->
   <div class="custom-container scroll-over">
-    <div *ngIf="hymnHere?.chorus" class="centered-section">
+    <div *ngIf="hymnHere?.chorus" class="chorus__padding">
       <div class="space-1"></div>
-      <div class="grid__container--one-line">
-        <div id="hymn__chorus" class="emphasized">
-          Chorus
-        </div>
-        <!-- Links to Stanzas -->
-        <div class="stanza__numbers">
-          Stanzas:
-          <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
-            <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
-          </div>
-        </div>
+      <div id="hymn__chorus" class="emphasized">
+        Chorus
       </div>
       <!-- Chorus -->
       <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)" class="pt-2"></p>
+      <!-- Links to Stanzas -->
+      <div class="stanza__numbers">
+        Stanzas:
+        <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
+          <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
+        </div>
+      </div>
     </div>
-
     <!-- Stanzas -->
-    <div class="picture-back">
+    <div class="picture-back mob__pt-2">
       <div class="inner-back">
         <div class="grid__container">
           <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let i = index">
@@ -52,11 +49,11 @@
       </button>
     </div>
   </div>
-  <div class="more last-section__before centered"></div>
+  <div class="more last-section__before scroll-over centered"></div>
   <div class="image-container">
     <img src="assets/gifs/flying_eagle.gif" alt="Uplifting" class="last-image">
     <div class="overlay">
-      <div class="overlay__text glow">Uplifting!</div>
+      <div class="overlay__text glow">Isn't this hymn Uplifting?!</div>
     </div>
   </div>
 </section>

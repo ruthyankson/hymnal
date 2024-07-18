@@ -459,7 +459,7 @@ html {
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: .5s ease;
   background-color: style-vars.$primary-color-dark;
 }
@@ -473,6 +473,10 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.chorus__padding {
+  padding-bottom: 36px;
 }
 
 /* ngbmodal override */
@@ -493,7 +497,6 @@ body.modal-open {
 }
 
 .scroll-over {
-  // background-color: white;
   position: relative;
   z-index: 2;
 }
@@ -565,6 +568,10 @@ body.modal-open {
 
   .heading__design1 {
     padding: 3rem 0;
+  }
+
+  .chorus__padding {
+    padding-bottom: 16px;
   }
 
 }
