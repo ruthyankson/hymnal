@@ -127,6 +127,14 @@ $button-border-radius: 0, $button-padding: 15px) {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}', GradientType=0); /* IE6-9 */
 }
 
+@mixin three-gradient($start-color, $middle-color, $end-color) {
+  background: $start-color; /* Old browsers */
+  background: -moz-linear-gradient(top, $start-color 0%, $middle-color, $end-color 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $start-color 0%, $middle-color, $end-color 100%); /* Chrome10-25, Safari5.1-6 */
+  background: linear-gradient(to bottom, $start-color 0%, $middle-color, $end-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}', GradientType=0); /* IE6-9 */
+}
+
 .background-gradient {
   @include two-gradient(#1e5799, #7db9e8);
 }

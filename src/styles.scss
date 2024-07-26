@@ -80,11 +80,6 @@ html {
   color: style-vars.$secondary-color-goldenrod;
 }
 
-.emphasized1 {
-  font-weight: 500;
-  color: style-vars.$secondary-color-goldenrod;
-}
-
 %main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
