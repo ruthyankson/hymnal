@@ -49,6 +49,8 @@
 .custom-container__home {
   font-size: style-vars.$font-legible;
   @include style-mixins.three-gradient(white, style-vars.$primary-color-transparent, white);
+  padding-bottom: 25px;
+  padding-top: 30px;
 
   h1,
   h2,
@@ -59,6 +61,20 @@
     margin-top: 0;
   }
 
+  .dropcap {
+    font-family: Arial, sans-serif;
+    padding-bottom: 15px;
+    &::first-letter {
+      font-size: 3.5rem;
+      color: style-vars.$secondary-color-goldenrod;
+      font-weight: bold;
+      float: left;
+      margin-right: 5px;
+      line-height: 1;
+    }
+  }
+
+
   p {
     margin: 0 0 10px;
   }
@@ -67,31 +83,38 @@
     color: #333; // Darker color for emphasis
   }
 
-  .custom-list {
-    list-style: none; // Remove default list styling
-    padding-left: 0;
+  .search__tips {
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
 
-    li {
-      position: relative; // Needed for positioning pseudo-element
-      padding-left: 20px; // Space for the custom bullet
+    .custom-list {
+      list-style: none; // Remove default list styling
+      padding-left: 0;
 
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg); // Rotate to create diamond shape
-        width: 10px; // Size of the diamond
-        height: 10px; // Size of the diamond
-        background-color: #333; // Color of the diamond
+      li {
+        position: relative; // Needed for positioning pseudo-element
+        padding-left: 20px; // Space for the custom bullet
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg); // Rotate to create diamond shape
+          width: 10px; // Size of the diamond
+          height: 10px; // Size of the diamond
+          background-color: #333; // Color of the diamond
+        }
       }
     }
   }
 
   .note {
-    color: style-vars.$font-color-info-dark; // Red color for the note
+    color: style-vars.$secondary-color-goldenrod; // Red color for the note
     font-weight: bold;
     font-size: medium;
+    padding-top: 30px;
   }
 }
 
