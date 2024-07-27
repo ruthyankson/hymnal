@@ -119,7 +119,7 @@ export class HymnService {
   }
 
   /* GET hymns whose name contains search term */
- searchHymns(term: string, chorus?:boolean, verse?:boolean): Observable<HymnModel[]> {
+ searchHymns(term: string, chorus?:boolean, verse?:boolean, all?:boolean): Observable<HymnModel[]> {
     if (!term.trim()) {
       // if not search term, return empty hymn array.
       return of([]);
@@ -133,7 +133,10 @@ export class HymnService {
       return this.searchStanzas(normalizedTerm);
     } else if (chorus && verse) {
       return this.searchCombinedChorusAndStanzas(normalizedTerm);
-    } else {
+    } else if (all || (chorus && verse && all) || (chorus && all) || (verse && all)) {
+      return this.searchAll(normalizedTerm);
+    }
+    else {
       return this.getHymns().pipe(
         map(hymns => hymns.filter(hymn => this.normalizeApostrophes(hymn.title.toLowerCase()).includes(normalizedTerm))),
         tap(x => x.length ?
@@ -180,6 +183,35 @@ export class HymnService {
       tap(x => x.length ?
         this.log(`Found hymns containing the term "${term}" in the chorus or stanzas`) :
         this.log(`No hymn contains the term "${term}" in the chorus or stanzas`)),
+      catchError(this.handleError<HymnModel[]>('searchHymns', []))
+    );
+  }
+
+  searchAll(term: string): Observable<HymnModel[]> {
+    if (!term.trim()) {
+      // If no search term, return empty hymn array.
+      return of([]);
+    }
+
+    const normalizedTerm = this.normalizeApostrophes(term.toLowerCase());
+
+    return forkJoin([
+      this.getHymns().pipe(
+        map(hymns => hymns.filter(hymn => this.normalizeApostrophes(hymn.title.toLowerCase()).includes(normalizedTerm)))
+      ),
+      this.searchChorus(normalizedTerm),
+      this.searchStanzas(normalizedTerm)
+    ]).pipe(
+      map(([titleResults, chorusResults, stanzaResults]) => {
+        const combinedResults = [...titleResults, ...chorusResults, ...stanzaResults];
+        const uniqueResults = combinedResults.filter((hymn, index, self) =>
+          index === self.findIndex(h => h.id === hymn.id)
+        );
+        return uniqueResults;
+      }),
+      tap(x => x.length ?
+        this.log(`Found hymns containing the term "${term}" in the title, chorus, or stanzas`) :
+        this.log(`No hymn contains the term "${term}" in the title, chorus, or stanzas`)),
       catchError(this.handleError<HymnModel[]>('searchHymns', []))
     );
   }

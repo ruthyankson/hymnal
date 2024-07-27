@@ -35,10 +35,12 @@ export class SearchComponent {
 
   @ViewChild('chorusCheckbox') chorusCheckbox!: ElementRef<HTMLInputElement>;
   @ViewChild('verseCheckbox') verseCheckbox!: ElementRef<HTMLInputElement>;
+  @ViewChild('allCheckbox') allCheckbox!: ElementRef<HTMLInputElement>;
   @ViewChild('searchBox') searchBox!: ElementRef<HTMLInputElement>;
 
   checkedChorus: boolean = false;
   checkedVerse: boolean = false;
+  checkedAll: boolean = false;
 
   // close_modal: boolean = false;
 
@@ -73,7 +75,7 @@ export class SearchComponent {
       // distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.hymnService.searchHymns(term, this.checkedChorus, this.checkedVerse))
+      switchMap((term: string) => this.hymnService.searchHymns(term, this.checkedChorus, this.checkedVerse, this.checkedAll))
     );
 
     // Show the no such hymns message if there are no results
@@ -97,6 +99,11 @@ export class SearchComponent {
 
   getVerseCheckedValue(currentTerm: string): void {
     this.checkedVerse = this.verseCheckbox.nativeElement.checked;
+    this.search(currentTerm);
+  }
+
+  getAllCheckedValue(currentTerm: string) {
+    this.checkedAll = this.allCheckbox.nativeElement.checked;
     this.search(currentTerm);
   }
 
