@@ -14,8 +14,7 @@ Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed 
 
 Click to navigate to Only Believe Hymnal.
 
-[![Only Believe Hymnal](media/hymnal.png)](https://ruthyankson.github.io/hymnal/)
-
+[<img src="media/hymnal.png" alt="Only Believe Hymnal">](https://ruthyankson.github.io/hymnal/){:target="_blank"}
 
 ## Getting Started
 
@@ -25,8 +24,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure you have the following software installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version 17.x or later)
-- [Angular CLI](https://angular.io/cli) (version 12.x or later)
+- [Node.js](https://nodejs.org/){:target="_blank"} (version 17.x or later)
+- [Angular CLI](https://angular.io/cli){:target="_blank"} (version 12.x or later)
 *You may find further particulars in the package.json file*
 
 ## Installation
@@ -114,12 +113,12 @@ Here is a brief overview of the project's folder structure
   ```
 
 ## Built with
-- [Angular](https://v17.angular.io/docs): The web framework used.
-- [NgBootstrap](https://ng-bootstrap.github.io/#/home): CSS framework for responsive design.
-- [Bootstrap Icons](https://icons.getbootstrap.com): Open source icon library.
-- [NgSlickCarousel](https://www.npmjs.com/package/ngx-slick-carousel): Carousel used for home page.
-- [SCSS](https://sass-lang.com): Sassy Cascading Style Sheets for responsive design.
-- [AngularInMemoryWebAPI](https://github.com/angular/in-memory-web-api): An in-memory web api for app database.
+- [Angular](https://v17.angular.io/docs){:target="_blank"}: The web framework used.
+- [NgBootstrap](https://ng-bootstrap.github.io/#/home){:target="_blank"}: CSS framework for responsive design.
+- [Bootstrap Icons](https://icons.getbootstrap.com){:target="_blank"}: Open source icon library.
+- [NgSlickCarousel](https://www.npmjs.com/package/ngx-slick-carousel){:target="_blank"}: Carousel used for home page.
+- [SCSS](https://sass-lang.com){:target="_blank"}: Sassy Cascading Style Sheets for responsive design.
+- [AngularInMemoryWebAPI](https://github.com/angular/in-memory-web-api){:target="_blank"}: An in-memory web api for app database.
 
 ## License
 
