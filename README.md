@@ -4,7 +4,7 @@ Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed 
 
 ## Features
 
-- **Search Hymns:** Easily search for hymns by title or number.
+- **Search Hymns:** Easily search for hymns by title, chorus, verse, or all.
 - **View Hymn Details:** Access the full lyrics of each hymn.
 - **Navigation:** Smooth navigation between different sections and hymns.
 - **Responsive Design:** Optimized for both desktop and mobile devices.
@@ -14,7 +14,7 @@ Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed 
 
 Click to navigate to Only Believe Hymnal.
 
-[![Only Believe Hymnal](media/artn1.png)](appurl)
+[![Only Believe Hymnal](media/hymnal.png)](https://ruthyankson.github.io/hymnal/)
 
 
 ## Getting Started
@@ -25,101 +25,112 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure you have the following software installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version 16.x or later)
+- [Node.js](https://nodejs.org/) (version 17.x or later)
 - [Angular CLI](https://angular.io/cli) (version 12.x or later)
-
-### Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/your-username/only-believe-hymnal.git
-   ```
+*You may find further particulars in the package.json file*
 
 ## Installation
 
-To set up the ArticleNet app, follow these steps:
-
-1. **Clone the Repository**
+1. **Clone the Repository:**
 
     ```sh
-    git clone https://github.com/ruthyankson/articlenet.git
-    cd articlenet
+    git clone https://github.com/ruthyankson/hymnal.git
+    ```
+2. **Navigate to the project directory:**
+    
+    ```sh
+    cd hymnal
     ```
 
-2. **Install Dependencies**
-
-    Install the required dependencies using Composer.
+3. **Install Dependencies:**
 
     ```sh
-    composer install
+    npm install
     ```
 
-3. **Set Up Environment Variables**
+4. **Run the application:**
 
-    Rename the `.env.example` file to `.env` and configure your database settings:
-
-    ```ini
-    # .env
-
-    CI_ENVIRONMENT = development
-
-    database.default.hostname = localhost
-    database.default.database = articlenet_db
-    database.default.username = your_db_username
-    database.default.password = your_db_password
-    database.default.DBDriver = MySQLi
-    database.default.DBPrefix =
-    database.default.port = 3306
+    ```sh
+    ng serve
     ```
+The app will be available at `http://localhost:4200`.
 
-4. **Set Up Database**
-
-    Create your database using your favorite SQL variation and run similar commands as in the *databasefile.txt* to create tables and insert values accordingly.
 
 ## Usage
 
-* Start the development server: 
+1. **Searching for Hymns:** 
 
-    ```sh
-    php spark serve
-    ```
+    -Use the search bar to find hymns by title, chorus, verse, or all.
+    -Click on a hymn from the search results to view its details.
+    -You may view the entire hymn list on the Hymns page and click on a hymn to view its details.
+
+2. **Viewing Hymn Details**
+
+    -The hymn details page displays the full lyrics of the selected hymn.
+    -Navigate between stanzas and choruses using the provided chorus and stanza number links.
+
+## Folder Structure
+Here is a brief overview of the project's folder structure
+
+  ```sh
+  hymnal/
+  ├── src/
+  │   ├── app/
+  │   │   ├── app-hymnal/
+  │   │   │   ├── home/
+  │   │   │   ├── hymn/
+  │   │   │   ├── hymns/
+  │   │   │   ├── song/
+  │   │   │   └── app-hymnal.module.ts
+  |   |   ├── page-not-found/
+  |   |   ├── shared
+  │   │   │   ├── components/
+  │   │   │   |   ├── footer/
+  │   │   │   |   ├── header/
+  │   │   │   |   ├── hymn-detail/
+  │   │   │   |   ├── modal/
+  │   │   │   |   ├── page-heading/
+  │   │   │   |   └── search/
+  │   │   │   ├── constants/
+  │   │   │   ├── models/
+  │   │   │   ├── partial-styles/
+  │   │   │   ├── pipes/
+  |   |   |   ├── services/
+  │   │   │   └── shared.module.ts
+  |   |   ├── standalone-components/
+  │   │   ├── models/
+  │   │   └── app.module.ts
+  │   ├── assets/
+  |   |   ├── gifs/
+  |   |   └── images/
+  │   ├── styles.scss
+  │   ├── main.ts
+  │   └── index.html
+  ├── .gitignore
+  ├── README.md
+  ├── angular.json
+  ├── package.json
+  └── tsconfig.json
+  ```
+
+## Built with
+-[Angular](https://v17.angular.io/docs): The web framework used.
+-[NgBootstrap](https://ng-bootstrap.github.io/#/home): CSS framework for responsive design.
+-[Bootstrap Icons](https://icons.getbootstrap.com): Open source icon library.
+-[NgSlickCarousel](https://www.npmjs.com/package/ngx-slick-carousel): Carousel used for home page.
+-[SCSS](https://sass-lang.com): Sassy Cascading Style Sheets for responsive design.
+-[AngularInMemoryWebAPI](https://github.com/angular/in-memory-web-api): An in-memory web api for app database.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+-Inspired by the Only Believe Hymnal book.
+-Thanks to the Angular and Bootstrap teams for their awesome tools.
 
 <hr>
 
 This README file provides a brief overview of the ArticleNet app, including its features, technology stack, prerequisites, installation steps, usage, and license information.
 
 
-### App Folders and Their Descriptions
-
-| Folder      | Description |
-| :-----------: | :-----------: |
-|       |      |
-|    |         |
-|    |        |
-|    |       |
-|    |        |
-|    |       |
-|    |         |
-|    |         |
-|    |         |
-|    |         |
-|    |         |
-
-
-
-### App Files and Their Descriptions
-
-| File      | Description |
-| :---------: | :-----------: |
-| README.md      | Contains descriptions of all project folders and files       |
-|    |         |
-
-
-
-### Resources
-*   A video of how to navigate your way through the app [this video](https://www.youtube.com/somedemourl "Only Believe Hymnal App Demo").
