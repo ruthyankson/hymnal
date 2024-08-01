@@ -21,21 +21,43 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 @Injectable()
 export class ModalComponent {
+  // Modal Configuration input
   @Input() public modalConfig!: ModalConfig;
+  /**
+   * ViewChild reference to the modal content template.
+   * This is used to reference the content of the modal dialog.
+   */
   @ViewChild('modal') private modalContent!: TemplateRef<ModalComponent>;
+
+  /**
+   * Reference to the active modal instance.
+   * This is used to manage the state of the modal dialog, such as opening and closing it.
+   */
   private modalRef!: NgbModalRef;
+
 
   constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void { }
-
+  /**
+   * Opens the modal dialog.
+   *
+   * @return {Promise<boolean>} A promise that resolves when the modal is closed or dismissed.
+   */
   open(): Promise<boolean> {
     return new Promise<boolean>(resolve => {
       this.modalRef = this.modalService.open(this.modalContent);
       this.modalRef.result.then(resolve, resolve);
-    })
+    });
   }
 
+  /**
+   * Closes the modal dialog.
+   *
+   * This method checks if the modal can be closed by evaluating the shouldClose condition.
+   * If allowed, it triggers the onClose event and closes the modal.
+   *
+   * @return {Promise<void>} A promise that resolves when the modal is closed.
+   */
   async close(): Promise<void> {
     if (this.modalConfig.shouldClose === undefined || (await this.modalConfig.shouldClose())) {
       const result = this.modalConfig.onClose === undefined || (await this.modalConfig.onClose());
@@ -43,6 +65,14 @@ export class ModalComponent {
     }
   }
 
+  /**
+   * Dismisses the modal dialog.
+   *
+   * This method checks if the modal can be dismissed by evaluating the shouldDismiss condition.
+   * If allowed, it triggers the onDismiss event and dismisses the modal.
+   *
+   * @return {Promise<void>} A promise that resolves when the modal is dismissed.
+   */
   async dismiss(): Promise<void> {
     if (this.modalConfig.shouldDismiss === undefined || (await this.modalConfig.shouldDismiss())) {
       const result = this.modalConfig.onDismiss === undefined || (await this.modalConfig.onDismiss());

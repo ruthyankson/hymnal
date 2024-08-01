@@ -1,5 +1,5 @@
 
-
+// Modal Configuaration interface
 export interface ModalConfig {
   modalTitle: string;
   dismissButtonLabel?: string;

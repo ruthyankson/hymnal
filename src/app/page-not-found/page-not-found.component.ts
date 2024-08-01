@@ -10,6 +10,11 @@ export class PageNotFoundComponent {
 
   constructor(private router: Router) {}
 
+  /**
+   * Navigates to the home page by using the Angular Router.
+   *
+   * @return {void} This function does not return anything.
+   */
   goHome() {
     this.router.navigate(['/']);
   }

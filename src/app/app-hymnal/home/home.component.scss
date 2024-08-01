@@ -2,7 +2,7 @@
 @use '../../shared/partial-styles/style-vars';
 @use '../../shared/partial-styles/style-mixins';
 
-
+// Shareable divider selector
 %divider {
   display: flex;
   padding: 16rem;
@@ -10,6 +10,7 @@
   isolation: isolate;
 }
 
+// Divider 1
 .divider1 {
   @extend %divider;
   background-color: style-vars.$primary-color-divider;
@@ -18,6 +19,7 @@
   z-index: 2;
 }
 
+// Divider 2
 .divider2 {
   @extend %divider;
   background-color: style-vars.$primary-color-half-transparent;
@@ -26,6 +28,7 @@
   z-index: 1;
 }
 
+// Hymns List div
 .hymns-list {
   padding-bottom: 10px;
   font-size: style-vars.$font-legible;
@@ -46,21 +49,14 @@
   }
 }
 
+// Custom Container for home page only
 .custom-container__home {
   font-size: style-vars.$font-legible;
   @include style-mixins.three-gradient(white, style-vars.$primary-color-transparent, white);
   padding-bottom: 25px;
   padding-top: 30px;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 0;
-  }
-
+  // Dropcap for 'Welcome!'
   .dropcap {
     font-family: Arial, sans-serif;
     padding-bottom: 15px;
@@ -83,6 +79,7 @@
     color: #333; // Darker color for emphasis
   }
 
+  // Search Tips div
   .search__tips {
     padding: 15px;
     background-color: white;
@@ -110,6 +107,7 @@
     }
   }
 
+  // Note
   .note {
     color: style-vars.$secondary-color-goldenrod; // Red color for the note
     font-weight: bold;
@@ -119,23 +117,15 @@
 }
 
 
-
-@media (min-width: style-vars.$laptop-max-width) {
-  // .carousel-section {
-  //   padding-top: 30px;
-  // }
-}
-
 @media (max-width: style-vars.$tablet-max-width) {
 
-  // .carousel-section {
-  //   padding-top: 15px;
-  // }
+  // Divider 1
   .divider1 {
     padding: 10rem;
     margin-top: -145px;
   }
 
+  // Divider 2
   .divider2 {
     padding: 10rem;
     margin-top: -310px;
@@ -144,15 +134,13 @@
 
 @media (max-width: style-vars.$phone-max-width) {
 
-  // .carousel-section {
-  //   padding-top: 0;
-  // }
-  .divider1,
-  .divider2 {
+  // Divider 1
+  .divider1 {
     padding: 5rem;
     margin-top: -95px;
   }
 
+  // Divider 2
   .divider2 {
     padding: 5rem;
     margin-top: -155px;

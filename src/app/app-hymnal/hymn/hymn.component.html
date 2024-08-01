@@ -1,3 +1,4 @@
+<!-- Loader: shows if page content is loading -->
 <div *ngIf="isLoading" class="loading-container">
   <img src="assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
@@ -41,6 +42,7 @@
       </div>
     </div>
 
+    <!-- Back button for navigating to Hymns page -->
     <div class="centered">
       <div class="space-5"></div>
       <button (click)=goBack() class="primary-button">
@@ -49,6 +51,8 @@
       </button>
     </div>
   </div>
+
+  <!-- More section -->
   <div class="more last-section__before scroll-over centered"></div>
   <div class="image-container">
     <img src="assets/gifs/flying_eagle.gif" alt="Uplifting" class="last-image">

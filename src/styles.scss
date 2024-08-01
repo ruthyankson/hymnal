@@ -6,14 +6,12 @@
 // Mixins
 @use './app/shared/partial-styles/style-mixins';
 
-
+// HTML
 html {
   margin: 0;
+  overflow-x: hidden;
 
-  // * {
-    overflow-x: hidden;
-  // }
-
+  // Body
   body {
     height: 100%;
     font-family: style-vars.$font-stack;
@@ -25,29 +23,29 @@ html {
   }
 }
 
-// .heading-margins {
-//   margin-top: 1rem;
-//   margin-bottom: .5rem;
-// }
-
+// Heading
 .heading {
   @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading, $sticky-top: 50px)
 }
 
+// Heading 1
 .heading1 {
  @include style-mixins.heading-non-sticky($heading-font-size: 1.6rem, $font-color: style-vars.$font-color-primary-heading)
 }
 
+// Main Heading design
 %main-heading__design {
   clip-path: polygon(100% 0%, 100% 75%, 50% 90%, 0% 75%, 0% 0%);
   padding: 4rem 0;
 }
 
+// Heading design
 .heading__design {
   @extend %main-heading__design;
   background: linear-gradient(rgb(255, 255, 255), style-vars.$primary-color-transparent1, rgb(255, 255, 255));
 }
 
+// Heading design 1
 .heading__design1 {
   @extend %main-heading__design;
   background: linear-gradient(rgb(255, 255, 255), style-vars.$primary-color-transparent1);
@@ -58,11 +56,13 @@ html {
   @include style-mixins.main-heading($heading-font-size: 1.8rem, $font-color: style-vars.$font-color-primary-heading, $sticky-top: 50px)
 }
 
+// White background
 .white-back {
   background-color: white;
   position: relative;
 }
 
+// Custom Container
 .custom-container {
   background-color: white;
   padding: 15px 200px;
@@ -75,18 +75,20 @@ html {
   color: style-vars.$secondary-color-goldenrod !important;
 }
 
+// Emphasized text
 .emphasized {
   font-weight: 500;
   color: style-vars.$secondary-color-goldenrod;
 }
 
+// Main grid
 %main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-// Display items in grid
+// Display items in grid selector
 .grid__container, .grid__container--one-line {
   @extend %main-grid;
 }
@@ -99,54 +101,67 @@ html {
 //   rotate: 3.5deg;
 // }
 
+// Icons
 .icon {
   font-size: 27px;
 }
 
+// Padding top 1
 .pt-1 {
   padding-top: style-vars.$padding-default;
 }
 
+// Padding top 2
 .pt-2 {
   padding-top: style-vars.$padding-default*2;
 }
 
+// Padding top 3
 .pt-3 {
   padding-top: style-vars.$padding-default*3;
 }
 
+// Padding right 1
 .pr-1 {
   padding-right: style-vars.$padding-default;
 }
 
+// Padding right 2
 .pr-2 {
   padding-right: style-vars.$padding-default*2;
 }
 
+// Padding right 3
 .pr-3 {
   padding-right: style-vars.$padding-default*3;
 }
 
+// Padding right 4
 .pr-4 {
   padding-right: style-vars.$padding-default*4;
 }
 
+// Padding right 5
 .pr-5 {
   padding-right: style-vars.$padding-default*5;
 }
 
+// Padding left 2
 .pl-2 {
   padding-left: style-vars.$padding-default*2;
 }
 
+// Padding left 3
 .pl-3 {
   padding-left: style-vars.$padding-default*3;
 }
 
+// Padding left 4
 .pl-4 {
   padding-left: style-vars.$padding-default*4;
 }
 
+// Info box
 .info {
   padding: 10px;
   font-size: style-vars.$font-small;
@@ -177,6 +192,7 @@ html {
   font-weight: bold;
 }
 
+// No outline primary button
 .primary-button__no-outline {
   @include style-mixins.no-outline-button(
   $background-hover: style-vars.$primary-color-hover,
@@ -184,6 +200,7 @@ html {
   $background-hover-transparent: style-vars.$primary-color-hover-light-transparent);
 }
 
+// No outline secondary button
 .secondary-button__no-outline {
   @include style-mixins.no-outline-button(
   $background-hover: style-vars.$secondary-color-gold-hover,
@@ -191,39 +208,45 @@ html {
   $background-hover-transparent: style-vars.$secondary-color-gold-hover-transparent);
 }
 
+// Routing Item
 .item__routing {
   cursor: pointer;
 }
 
+// Loading container
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* Full viewport height */
 }
 
+// Centered
 .centered {
   text-align: center;
 }
 
+// Space top 1
 .space-1 {
   padding-top: style-vars.$padding-default*3;
 }
 
+// Space top 2
 .space-2 {
   padding-top: style-vars.$padding-default*5;
 }
 
+// Space top 3
 .space-3 {
   padding-top: style-vars.$padding-default*10;
 }
 
+// Space top 5
 .space-5 {
   padding-top: style-vars.$padding-default*15;
 }
 
-// Informatio box style
+// Information box style
 .info {
   padding: 10px;
   font-size: style-vars.$font-small;
@@ -369,14 +392,6 @@ html {
   @include style-mixins.main-thin-divider($middle-color: style-vars.$primary-color-transparent1);
 }
 
-.back-blend {
-  padding: 0.5rem;
-  border-top: 2px solid style-vars.$primary-color-transparent1;
-  border-left: 2px solid style-vars.$primary-color-transparent1;
-  border-right: 2px solid style-vars.$primary-color-transparent1;
-  border-radius: 5px 5px 0 0;
-  z-index: -1;
-}
 
 /* Hymn List */
 
@@ -446,6 +461,7 @@ html {
   width: 100%;
 }
 
+// Overlay at the end of the section
 .overlay {
   position: absolute;
   top: 0;
@@ -459,6 +475,7 @@ html {
   background-color: style-vars.$primary-color-dark;
 }
 
+// Text at the end of the section
 .overlay__text {
   position: absolute;
   top: 50%;
@@ -470,6 +487,7 @@ html {
   text-align: center;
 }
 
+// Chorus Padding
 .chorus__padding {
   padding-bottom: 36px;
 }
@@ -491,11 +509,13 @@ body.modal-open {
   }
 }
 
+// Scroll over section
 .scroll-over {
   position: relative;
   z-index: 2;
 }
 
+// Background cover
 .back-cover {
   position: relative;
   isolation: isolate;
@@ -511,6 +531,9 @@ body.modal-open {
 }
 
 
+/* Media queries */
+
+// Laptop screen max width 
 @media (max-width: style-vars.$laptop-max-width) {
   .custom-container {
     padding: 15px 90px;
@@ -518,6 +541,7 @@ body.modal-open {
 
 }
 
+// Tablet screen max width
 @media (max-width: style-vars.$tablet-max-width) {
   .custom-container {
     padding: 15px 50px;
@@ -529,19 +553,24 @@ body.modal-open {
 
 }
 
+// Phone screen max width
 @media (max-width: style-vars.$phone-max-width) {
+  // Custom container
   .custom-container {
     padding: 15px;
   }
 
+  // Padding top for only mobile
   .mob__pt-2 {
     padding-top: style-vars.$padding-default*2;
   }
 
+  // Centered alignment for only mobile
   .mob__centered {
     text-align: center;
   }
 
+  // Search parameters
   .search__parameters {
     display: flex;
     flex-direction: column;
@@ -552,19 +581,23 @@ body.modal-open {
     }
   }
 
+  // Thin divider
   .thin-divider {
     padding: 0.4rem;
   }
 
+  // Grid container for stanzas
   .grid__container {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
+  // Heading design
   .heading__design1 {
     padding: 3rem 0;
   }
 
+  // Chorus padding
   .chorus__padding {
     padding-bottom: 16px;
   }

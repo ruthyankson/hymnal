@@ -1,16 +1,21 @@
+<!-- Song card for Hymns -->
 <div class="song__card">
   <a (click)="navigateToHymn(hymn.hymn_number)">
     <div class="flex-container">
       <div class="flex-icon">
         <i class="bi bi-music-note"></i>
       </div>
+      <!-- Hymn number -->
       <div class="flex-number">
         {{ hymn.hymn_number }}
       </div>
+      <!-- Hymn title -->
       <div class="flex-text">
         {{ hymn.title | capitalize }}
       </div>
     </div>
   </a>
+
+  <!-- Thin Divider -->
   <div class="thin-divider"></div>
 </div>

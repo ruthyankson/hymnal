@@ -1,4 +1,4 @@
-<!-- Loader -->
+<!-- Loader: shows if page content is loading -->
 <div *ngIf="isLoading" class="loading-container">
   <img src="assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
@@ -14,8 +14,10 @@
     <div class="space-3"></div>
   </section>
 
+  <!-- Thin Divider -->
   <div class="thin-divider"></div>
 
+  <!-- Page Context Section -->
   <section class="custom-container__home custom-container">
     <p class="dropcap">Welcome! This app provides <span class="emphasized">hymn lyrics</span> from the <span class="emphasized">Only Believe Ghanaian
         Hymnal</span>. In the search section below, you can search for a hymn by title, stanza, chorus or all.</p>
@@ -54,6 +56,8 @@
         </div>
       </section>
     </div>
+
+    <!-- Load More link to Hymns page -->
     <div class="more centered">
       <a (click)="moreHymns()">
         <img src="assets/gifs/music_note_blue.gif" width="50px" alt="Music Note">

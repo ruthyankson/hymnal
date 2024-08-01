@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_3: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(97, "THIS OLD WORLD CAN NEVER HOLD ME",
     [
       new StanzaModel("This old world can never hold me,\nAny moment I'll be gone,\nFor I've made my consecration,\nAnd I have the wedding garment on")

@@ -1,8 +1,10 @@
+// Colour variables
 $page-not-found-bg-color: #f2f2f2;
 $page-not-found-text-color: #333;
 $page-not-found-highlight-color: #ff6347;
 $page-not-found-font-family: 'Arial', sans-serif;
 
+// Page Not Found Container
 .page-not-found-container {
   display: flex;
   justify-content: center;
@@ -13,6 +15,7 @@ $page-not-found-font-family: 'Arial', sans-serif;
   padding: 15px;
 }
 
+// Message Container
 .message-container {
   text-align: center;
   color: $page-not-found-text-color;
@@ -33,6 +36,7 @@ $page-not-found-font-family: 'Arial', sans-serif;
     margin: 1rem 0;
   }
 
+  // Button for routing back to home page
   button {
     padding: 0.5rem 1rem;
     font-size: 1rem;

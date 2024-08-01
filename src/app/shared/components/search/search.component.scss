@@ -1,10 +1,12 @@
 // /* HymnSearch private styles */
 @use './../../partial-styles/style-vars';
 
+// Search component
 #search-component {
   padding-bottom: 15px;
 }
 
+// Search box wrapper
 .search-box-wrapper {
   position: relative;
   display: flex;
@@ -12,6 +14,7 @@
   justify-content: center;
 }
 
+// Search input
 input {
   color: style-vars.$font-color-primary;
   padding: .5rem 1rem;
@@ -28,12 +31,15 @@ input {
   }
 }
 
+// Search results list item
 li {
   list-style-type: none;
 }
 
+// Search results
 .search-result {
   li {
+    // Search result link
     a {
       font-size: style-vars.$font-legible;
       border-radius: 0 0 5px 5px;
@@ -61,6 +67,7 @@ li {
   }
 }
 
+// Search results unordered list
 ul.search-result {
   margin-top: 0;
   padding-left: 0;

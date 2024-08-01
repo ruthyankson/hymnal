@@ -1,15 +1,22 @@
 <!-- Search Component -->
 <div id="search-component">
+  <!-- Header label -->
   <label for="search-box" class="heading__design" [ngClass]="{'heading': page_search, 'heading1': !page_search}">
     <div class="label-flex">
+      <!-- Left music note image -->
       <div><img width="70px" src="assets/images/music_staff.png" alt="Music Staff"></div>
+      <!-- Title -->
       <div class="centered">{{ searchLabel }}</div>
+      <!-- Right music note image -->
       <div>
         <img width="70px" src="assets/images/music_staff_right.png" alt="Music Staff">
       </div>
     </div>
   </label>
+
+  <!-- Search Body -->
   <div class="white-back" [ngClass]="{'custom-container': page_search}">
+    <!-- Search parameters -->
     <div class="search__parameters">
       <div class="space-1"></div>
       <span class="centered">Search hymn by title or:</span>
@@ -31,6 +38,8 @@
         </label>
       </div>
     </div>
+
+    <!-- Search Input -->
     <div class="search-box-wrapper">
       <input #searchBox id="search-box" (input)="search(searchBox.value)" />
       <button type="button" class="clear-button" *ngIf="searchBox.value" (click)="clearSearch(searchBox)">
@@ -38,6 +47,7 @@
       </button>
     </div>
 
+    <!-- Search Results -->
     <ul class="search-result" @listAnimation>
       <li *ngFor="let hymn of hymns$ | async">
 
@@ -60,6 +70,7 @@
       </li>
     </ul>
 
+    <!-- Info Message -->
     <div class="info" *ngIf="showInfo">
       No hymns found.
       <button (click)="closeInfo()" class="close-button-info">&times;</button>

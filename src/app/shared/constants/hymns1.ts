@@ -3,7 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_1: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
   new HymnModel
   (1, "ONLY BELIEVE",
     [

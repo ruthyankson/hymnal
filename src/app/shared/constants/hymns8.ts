@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_8: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(361, "HE SIGNED THE DEED", [
     new StanzaModel("He signed the deed with His Atoning Blood,\nHe ever lives to make the promise good;\nTho’ all the hosts of hell\nMarch in to make a second claim,\nThey all march out\nAt the mention of His name.")
   ], ""),

@@ -17,17 +17,39 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ]
 })
 export class HymnsComponent {
+
+  // Page title
   title = "Hymns";
+  // Hymns list
   hymns: HymnModel[] = [];
+  // Loading state
   isLoading = true;
+  // Scrolling effect
   isScrolling = false;
 
-  constructor(protected hymnService: HymnService){}
+  /**
+   * Constructor to initialize the component with the necessary hymn service.
+   *
+   * @param {HymnService} hymnService - Service to handle hymn data operations.
+   */
+  constructor(protected hymnService: HymnService) {}
 
+
+  /**
+   * Initializes the component and calls the `getHymns` method.
+   *
+   * @return {void} This function does not return anything.
+   */
   ngOnInit(): void  {
     this.getHymns();
   }
 
+  /**
+   * Retrieves the first 25 hymns from the hymn service and updates the component's hymns array.
+   * Sets the isLoading flag to false once the hymns have been retrieved.
+   *
+   * @return {void} This function does not return anything.
+   */
   getHymns(): void {
     this.hymnService.getHymns()
       .subscribe( (hymns) => {
@@ -36,6 +58,11 @@ export class HymnsComponent {
     });
   }
 
+  /**
+   * Loads more hymns asynchronously and updates the component's hymns array.
+   *
+   * @return {void} This function does not return anything.
+   */
   loadMore(): void {
     let hymnsHere: HymnModel[] = [];
     this.isLoading = true;
@@ -55,6 +82,11 @@ export class HymnsComponent {
     });
   }
 
+  /**
+   * Loads fewer hymns asynchronously and updates the component's hymns array.
+   *
+   * @return {void} This function does not return anything.
+   */
   loadLess(): void {
     let hymnsHere: HymnModel[] = [];
     this.isLoading = true;

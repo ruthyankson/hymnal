@@ -1,9 +1,12 @@
+<!-- Loader: shows if page content is loading -->
 <div *ngIf="isLoading" class="loading-container">
   <img src="assets/gifs/loading.gif" width="70px" alt="Loading...">
 </div>
 
 <section *ngIf="!isLoading" [@routeAnimations]>
+  <!-- Heading -->
   <app-page-heading [pageTitle]="title"></app-page-heading>
+  <!-- Body -->
   <div class="custom-container scroll-over" [ngClass]="{'scroll-effect': isScrolling}">
     <div class="space-1"></div>
     <div class="hymn-list">
@@ -12,20 +15,21 @@
       </div>
     </div>
     <div class="scroll-effect__buttons">
-      <div>
-        <button class="primary-button__no-outline" (click)="loadMore()">
-          Load More
-          <i class="bi bi-caret-right"></i>
-        </button>
-      </div>
-      <div>
-        <button class="secondary-button__no-outline" (click)="loadLess()">
-          <i class="bi bi-caret-left"></i>
-          Load Less
-        </button>
-      </div>
+      <!-- Load More button -->
+      <button class="primary-button__no-outline" (click)="loadMore()">
+        Load More
+        <i class="bi bi-caret-right"></i>
+      </button>
+
+      <!-- Load Less button -->
+      <button class="secondary-button__no-outline" (click)="loadLess()">
+        <i class="bi bi-caret-left"></i>
+        Load Less
+      </button>
     </div>
   </div>
+
+  <!-- More section -->
   <div class="more last-section__before scroll-over centered"></div>
   <div class="image-container">
     <img src="assets/gifs/waterfall.gif" alt="Refreshing" class="last-image">

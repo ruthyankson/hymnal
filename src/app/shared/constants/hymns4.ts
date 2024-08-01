@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_4: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(145, "ALL HAIL JESUS’ NAME",
     [
       new StanzaModel("All hail the pow'r of Jesus' name!\nLet angels prostrate fall;\nBring forth the royal diadem,\nAnd crown Him Lord of all;\nBring forth the royal diadem,\nAnd crown Him Lord of all."),

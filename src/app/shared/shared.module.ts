@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { HymnDetailComponent } from './components/hymn-detail/hymn-detail.component';
 import { HymnService } from './services/hymn.service';
 import { MessageService } from './services/message.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
@@ -16,7 +15,6 @@ import { PageHeadingComponent } from './components/page-heading/page-heading.com
   declarations: [
     HeaderComponent,
     SearchComponent,
-    HymnDetailComponent,
     ModalComponent,
     FooterComponent,
     PageHeadingComponent,
@@ -37,7 +35,6 @@ import { PageHeadingComponent } from './components/page-heading/page-heading.com
     RouterLinkActive,
     HeaderComponent,
     SearchComponent,
-    HymnDetailComponent,
     FooterComponent,
     PageHeadingComponent,
     CapitalizePipe

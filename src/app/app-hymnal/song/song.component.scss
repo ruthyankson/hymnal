@@ -1,8 +1,9 @@
 @use '../../shared/partial-styles/style-vars';
 
+// Song card
 .song__card {
   font-size: style-vars.$font-legible;
-  // background-color: style-vars.$primary-color-half-transparent;
+  // Link to Hymn details
   a {
     display: inline-block;
     width: 100%;

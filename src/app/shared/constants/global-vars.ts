@@ -1,4 +1,4 @@
-
+// App Constants
 
 export const APP_NAME: string = "Only Believe";
 export const LAPTOP_MAX_WIDTH: number = 1024;

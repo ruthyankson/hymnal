@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_6: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(236, "GOD OUR HELP", [
     new StanzaModel("O God, our help in ages past,\nOur hope for years to come,\nOur shelter from the stormy blast,\nAnd our eternal home!"),
     new StanzaModel("Under the shadow of Thy throne\nThy saints have dwelt secure;\nSufficient is Thine arm alone;\nAnd our defence is sure."),

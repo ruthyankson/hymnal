@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_5: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(191, "PAST THE CURTAIN OF TIME",
     [
       new StanzaModel("There’s a curtain that's drawn between earth and Heaven,\nAnd just beyond lies a beautiful clime\nWhere the evils of this life no longer can touch me;\nLord, let me look past the curtain of time."),

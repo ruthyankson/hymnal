@@ -1,8 +1,11 @@
 @use '../../shared/partial-styles/style-vars';
 
+// Hymn section
 section {
   color: style-vars.$font-color-primary;
   font-size: style-vars.$font-legible;
+
+  // Stanza and Chorus link
   a {
     text-decoration: none;
     color: style-vars.$secondary-color-goldenrod-dark;
@@ -12,26 +15,23 @@ section {
     }
   }
 
+  // Hymn stanza padding
   .hymn__stanza {
     padding-top: 20px;
   }
 
+  // Picture background for More section
   .picture-back {
     background: url("../../../assets/images/one_note_tilted.png") no-repeat bottom right;
     background-size: contain;
   }
 
+  // Inner background for More section
   .inner-back {
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-  .centered-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-
+  // Stanza numbers
   .stanza__numbers {
     font-style: italic;
     display: flex;

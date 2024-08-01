@@ -1,35 +1,10 @@
-
-<!-- <ng-template #modal>
-  <div [@fadeInOut]>
-    <div class="modal-header" *ngIf="!modalConfig.hideHeader">
-      <h5 class="modal-title">{{ modalConfig.modalTitle }}</h5>
-    </div>
-    <div class="modal-body">
-      <ng-content></ng-content>
-    </div>
-    <div class="modal-footer" *ngIf="!modalConfig.hideFooter">
-      <button type="button"
-              class="btn btn-outline-secondary"
-              (click)="dismiss()"
-              *ngIf="modalConfig.hideDismissButton === undefined || !modalConfig.hideDismissButton()"
-              [disabled]="modalConfig.disableDismissButton !== undefined && modalConfig.disableDismissButton()">
-        {{ modalConfig.dismissButtonLabel }}
-      </button>
-      <button type="button"
-              class="btn btn-outline-primary"
-              (click)="close()"
-              *ngIf="modalConfig.hideCloseButton === undefined || !modalConfig.hideCloseButton()"
-              [disabled]="modalConfig.disableCloseButton !== undefined && modalConfig.disableCloseButton()">
-        {{ modalConfig.closeButtonLabel }}
-      </button>
-    </div>
-  </div>
-</ng-template> -->
-
+<!-- Modal Component -->
 <ng-template #modal>
   <div [@fadeInOut]>
+    <!-- Modal Header -->
     <div class="modal-header" *ngIf="!modalConfig.hideHeader">
       <!-- <h5 class="modal-title">{{ modalConfig.modalTitle }}</h5> -->
+      <!-- Custom Close buttons -->
       <button type="button" class="close" (click)="close()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -37,10 +12,15 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+
+    <!-- Modal Body -->
     <div class="modal-body">
       <ng-content></ng-content>
     </div>
+
+    <!-- Modal Footer -->
     <div class="modal-footer" *ngIf="!modalConfig.hideFooter">
+      <!-- Dismiss Button -->
       <button type="button"
               class="btn btn-outline-secondary"
               (click)="dismiss()"
@@ -48,6 +28,8 @@
               [disabled]="modalConfig.disableDismissButton !== undefined && modalConfig.disableDismissButton()">
         {{ modalConfig.dismissButtonLabel }}
       </button>
+
+      <!-- Close Button -->
       <button type="button"
               class="btn btn-outline-primary"
               (click)="close()"

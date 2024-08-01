@@ -5,6 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CapitalizePipe implements PipeTransform {
 
+  /**
+   * Transforms a given string or any value by capitalizing the first letter of each word,
+   * and converting the letter after an apostrophe to lowercase.
+   *
+   * @param {string | any} value - The value to be transformed.
+   * @return {string} The transformed string with capitalized first letters and lowercase letters after apostrophes.
+   */
   transform(value: string | any): string {
     if (!value) {
       return value;

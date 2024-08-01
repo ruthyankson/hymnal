@@ -8,6 +8,7 @@ import { HYMNS_6 } from "./hymns6";
 import { HYMNS_7 } from "./hymns7";
 import { HYMNS_8 } from "./hymns8";
 
+// Hymns__ sort of database
 export const HYMNS: HymnModel[] = [
   ...HYMNS_1,
   ...HYMNS_2,

@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_2: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(46, "SUNLIGHT",
     [
       new StanzaModel("I wandered in the shades of night,\nTill Jesus came to me,\nAnd with the sunlight of His love\nBid all my darkness flee."),

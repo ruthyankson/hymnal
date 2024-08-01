@@ -128,6 +128,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgements
 -Inspired by the Only Believe Hymnal book.
 -Thanks to the Angular and Bootstrap teams for their awesome tools.
+-Special thanks to Codemium for their invaluable support and resources towards the completion stage of this project.
 
 <hr>
 

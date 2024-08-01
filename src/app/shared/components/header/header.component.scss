@@ -3,10 +3,14 @@
 // partial-styles.scss
 @use '../../partial-styles/style-vars';
 
+// Header
+
+// Space flex
 .spacer {
   flex: 1 1 auto;
 }
 
+// Navigation
 nav {
   position: sticky;
   top: 0;
@@ -26,6 +30,7 @@ nav {
     gap: 20px;
   }
 
+  // Navigation links
   a {
     color: white;
     text-decoration: none;
@@ -42,6 +47,7 @@ nav {
     }
   }
 
+  // Brand
   .brand {
     font-size: 1.5rem;
     font-weight: 800;
@@ -51,12 +57,15 @@ nav {
     -webkit-text-fill-color: transparent;
   }
 
+  // Active link
   a.active {
     color: style-vars.$secondary-color-gold-light;
   }
 }
 
 @media (max-width: style-vars.$tablet-max-width) {
+
+  // Navigation padding
   nav {
     padding: 10px 16px;
   }

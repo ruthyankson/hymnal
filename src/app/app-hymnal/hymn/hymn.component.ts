@@ -21,19 +21,36 @@ export class HymnComponent {
 
   // Single hymn
   hymnHere?: HymnModel;
+  // Loading state
   isLoading = true;
 
+  /**
+   * Constructs a new instance of the class.
+   *
+   * @param {ActivatedRoute} route - The injected ActivatedRoute.
+   * @param {HymnService} hymnService - The injected HymnService.
+   * @param {Router} router - The injected Router.
+   */
   constructor(
     private route: ActivatedRoute,
     private hymnService: HymnService,
     private router: Router,
   ) {}
 
+  /**
+   * Initializes the component and calls the `getHymn` method.
+   *
+   * @return {void} This function does not return anything.
+   */
   ngOnInit(): void {
     this.getHymn();
   }
 
-  // Fetch a hymn from the server
+  /**
+   * Fetches a hymn from the server based on the hymn number provided in the route parameters.
+   *
+   * @return {void} This function does not return anything.
+   */
   getHymn(): void {
     const hymnNumber = Number(this.route.snapshot.paramMap.get('hymn_number'));
     if (hymnNumber) {
@@ -44,18 +61,34 @@ export class HymnComponent {
     }
   }
 
+  /**
+   * Formats the given text by calling the `formatText` method if the text is not undefined.
+   *
+   * @param {string | undefined} text - The text to be formatted.
+   * @return {string} The formatted text, or an empty string if the text is undefined.
+   */
   formatUndefinedPossibleText(text: string | undefined): string {
-    // let string_text: string | undefined;
     if (text) {
       return this.formatText(text);
     }
     return "";
   }
 
+  /**
+   * Replaces all newline characters in the given text with HTML line break tags.
+   *
+   * @param {string} text - The text to format.
+   * @return {string} The formatted text with line breaks replaced by HTML line break tags.
+   */
   formatText(text: string): string {
     return text.replace(/\n/g, '<br>');
   }
 
+  /**
+   * Navigates back to the 'hymns' route using the Angular Router.
+   *
+   * @return {void} This function does not return anything.
+   */
   goBack(): void {
     this.router.navigate(['hymns']);
   }

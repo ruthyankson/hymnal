@@ -3,8 +3,6 @@ import { HymnModel } from "../models/hymn.model";
 import { StanzaModel } from "../models/stanza.model";
 
 export const HYMNS_7: HymnModel[] = [
-  // new HymnModel(1, "some title", [new StanzaModel("verse1"),], "key"),
-
   new HymnModel(287, "LET EVERYTHING WITHIN ME", [
     new StanzaModel("Let everything within me, cry Holy\nLet everything within me, cry Holy\nHoly, Holy, Holy is the lamb that was slain."),
     new StanzaModel("Let everything within me, cry Glory\nLet everything within me, cry Glory\nGlory, glory, glory to the Lamb that was slain."),
