@@ -26,8 +26,14 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure you have the following software installed on your machine:
 
-- <a href="https://nodejs.org/" target="_blank">Node.js</a> (version 17.x or later)
-- <a href="https://angular.io/cli" target="_blank">Angular CLI</a> (version 12.x or later)
+<ul>
+  <li>
+    <a href="https://nodejs.org/" target="_blank">Node.js</a> (version 17.x or later)
+  </li>
+  <li>
+    <a href="https://angular.io/cli" target="_blank">Angular CLI</a> (version 12.x or later)
+  </li>
+</ul>
 *You may find further particulars in the package.json file*
 
 ## Installation
