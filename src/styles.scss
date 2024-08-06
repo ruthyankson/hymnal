@@ -236,9 +236,19 @@ html {
   padding-top: style-vars.$padding-default*5;
 }
 
+// Space top 2.5
+.space-2__5 {
+  padding-top: style-vars.$padding-default*7;
+}
+
 // Space top 3
 .space-3 {
   padding-top: style-vars.$padding-default*10;
+}
+
+// Space top 4
+.space-4 {
+  padding-top: style-vars.$padding-default*12;
 }
 
 // Space top 5
@@ -533,7 +543,7 @@ body.modal-open {
 
 /* Media queries */
 
-// Laptop screen max width 
+// Laptop screen max width
 @media (max-width: style-vars.$laptop-max-width) {
   .custom-container {
     padding: 15px 90px;
