@@ -10,7 +10,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Fear not, little flock, He goeth ahead,\nYour Shepherd selecteth the path you must tread;\nThe waters of Marah He'll sweeten for thee,\nHe drank all the bitter in Gethsemane."),
       new StanzaModel("Fear not, little flock, whatever your lot,\nHe enters all rooms, \"the doors being shut;\"\nHe never forsake, He never is gone,\nSo count on His presence in darkness and dawn.")
     ],
-    "i01lA29yqxs",
+    "https://www.youtube.com/watch?v=i01lA29yqxs",
     "C",
     new ChorusModel("Only believe, only believe,\nAll things are possible, only believe;\nOnly believe, only believe\nAll things are possible, only believe.\n(Lord, I believe …)\n(Lord, I receive …)\n(Jesus is here …)")
   ),
@@ -23,7 +23,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Through many dangers, toils and snares,\nI have already come;\n'Tis grace hath brought me safe thus far,\nAnd grace will lead me home."),
       new StanzaModel("When we've been there ten thousand years,\nBright shining as the sun;\nWe've no less days to sing God's praise\nThan when we first begun.")
     ],
-    "_gSCqV1Jz54",
+    "https://www.youtube.com/watch?v=NG0vH4WYChQ",
     "Ab"
   ),
 
@@ -35,7 +35,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("The gates of that holy place\nStand open by night and day;\nO look to the Lord who \"giveth more grace,\"\nWhose love has prepared the way.\nA home in those mansions fair\nHis hand hath reserved for all.\nFor the wedding feast prepare,\nObeying the gracious call."),
       new StanzaModel("Oh, Jesus is coming soon,\nOur trials will then be o'er.\nWhat if our Lord this moment should come\nFor those who are free from sin?\nThen would it bring you joy,\nOr Sorrow and deep despair?\nWhen Our Lord in glory comes,\nWe'll meet Him up in the air.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=mDvU1i0NzoM",
     "Eb",
     new ChorusModel("Since Jesus has set me free,\nI'm happy as heart can be;\nNo longer I bear the burdens of care.\nHis yoke is so sweet to me.\nMy soul was as black as night,\nBut darkness has taken flight;Now I shout the victory,\nFor Jesus has set me free.")
   ),
@@ -47,7 +47,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Once I was lost, and 'way down deep in sin;\nOnce was a slave to passions fierce within;\nOnce was afraid to trust a loving God;\nBut now I'm cleansed from every stain through Jesus' blood."),
       new StanzaModel("Once I was bound, but now I am set free;\nOnce I was blind, but now the light I see;\nOnce I was dead, but now in Christ I live,\nTo tell the world around the peace that He doth give.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=Pvy33Eo8xHE",
     "C",
     new ChorusModel("I love Him, I love Him\nBecause He first love me\nAnd purchased my salvation\nOn Calvary's tree.")
     ),
@@ -59,7 +59,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Sweet hour of prayer, sweet hour of prayer,\nThe joy I feel, the bliss I share,\nOf those whose anxious spirits burn\nWith strong desires for Thy return!\nWith such I hasten to the place\nWhere God, my Saviour, shows His face,\nAnd gladly take my station there,\nAnd wait for Thee, sweet hour of prayer."),
       new StanzaModel("Sweet hour of prayer, sweet hour of prayer,\nThy wings shall my petition bear\nTo Him whose truth and faithfulness\nEngage the waiting soul to bless;\nAnd since He bids me seek His face,\nBelieve His Word and trust His grace,\nI'll cast on Him my every care,\nAnd wait for Thee, sweet hour of prayer.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=krDrQD2kzOM",
     "Eb"
   ),
 
@@ -71,7 +71,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("It tells me what my Father hath\nIn store for every day,\nAnd though I tread a darksome path,\nYields sunshine all the way."),
       new StanzaModel("It tells of One whose loving heart\nCan feel my deepest woe,\nWho in each sorrow bears a part,That none can bear below.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=8GgQ3MdTn4A",
     "Ab",
     new ChorusModel("Oh, how I love Jesus,\nOh, how I love Jesus,\nOh, how I love Jesus,\nBecause He first loved me.\n(I'll never forsake Him …)\n(To me He is so wonderful…)")
   ),
@@ -83,7 +83,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Saints will sing redemption's\nStory with their voices clear and strong,\nWhen the redeemed are gathering in;\nThen the angles all will listen,\nFor they cannot join that song,\nWhen the redeemed are gathering in."),
       new StanzaModel("Then the Saviour will give orders\nTo prepare the banquet board,\nWhen the redeemed are gathering in;\nAnd we'll hear His invitation,\n\"Come, ye blessed of the Lord,\"\nWhen the redeemed are gathering in.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=711GtodcDEA",
     "G",
     new ChorusModel("When the redeemed are gathering in,\nWashed like the snow, and free from all sin;\nHow we will shout, and how we will sing,\nWhen the redeemed are gathering in.")
   ),
@@ -95,7 +95,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("When in valleys low I look toward the mountain height,\nAnd behold my Saviour there, leading in the fight,\nWith a tender hand outstretched toward the valley low;\nGuiding me, I can see, as I onward go."),
       new StanzaModel("When before me billows rise from the mighty deep.\nThen my Lord directs my bark, He doth safely keep,\nAnd He leads me gently on through this world below;\nHe's a real Friend to me, O I love Him so.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=b7YUgD9wnEc",
     "Ab",
     new ChorusModel("Oh, I want to see Him, look upon His face.\nThere to sing forever of His saving grace;\nOn the streets of Glory let me lift my voice;\nCares all past, home at last, ever to rejoice.")
   ),
@@ -105,7 +105,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Feeling So much better talking about this good old Way,\nFeeling so much better talking about the Lord;\n Let's go on, Let's go on talking about this good old Way.\nLet's go on, let's go on talking about the Lord"),
       new StanzaModel("The devil he don't like it, talking about this good old Way,\nThe devil he don't like it talking about the Lord;\nSo, Let's go on, Let's go on talking about this good old Way,\nLet's go on, let's go on talking about the Lord.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=anIws9VvLYo",
     "F"
   ),
 
@@ -114,7 +114,7 @@ export const HYMNS_1: HymnModel[] = [
       new StanzaModel("Teach Me, Lord, to wait down on my knees,\nTill in Your own good time You answer my pleas;\nTeach me not to rely on what others do,\nBut to wait in prayer for an answer from you."),
       new StanzaModel("Teach me, Lord, to wait while hearts are aflame,\nHelp me humble my pride and call on Your Name;\nKeep my faith renewed, Keep my eyes on Thee,\nHelp me be on this earth what You want me to be.")
     ],
-    "url",
+    "https://www.youtube.com/watch?v=H6sNS7iVFUw",
     "F",
     new ChorusModel("They that wait upon the Lord, shall renew their strength,\nThey shall mount up with wings as an eagle,\nThey shall run and not be weary, they shall walk and not faint;\nTeach me, Lord, teach me, Lord, to wait.")
   ),

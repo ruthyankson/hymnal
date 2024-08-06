@@ -1,15 +1,14 @@
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { SafeResourceUrl } from '@angular/platform-browser';
+import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hymn-video',
   templateUrl: './hymn-video.component.html',
-  styleUrl: './hymn-video.component.scss'
+  styleUrls: ['./hymn-video.component.scss']
 })
-export class HymnVideoComponent {
+export class HymnVideoComponent implements OnInit, AfterViewInit {
 
-  // The URL=VideoId of the video
-  @Input({required: false}) hymnUrl?: string;
+  // The URL of the video
+  @Input({ required: false }) hymnUrl?: string;
 
   /**
    * ViewChild reference to the YouTube player container element.
@@ -18,23 +17,25 @@ export class HymnVideoComponent {
   @ViewChild('youTubePlayer') youTubePlayer!: ElementRef<HTMLDivElement>;
 
   // The video ID
-  videoId = '';
+  videoId: string = '';
   // The video width and height
-  videoWidth = 800;
-  videoHeight = 600;
+  videoWidth: number = 800;
+  videoHeight: number = 600;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    const scriptTag = document.createElement('script');
+    // if (this.hymnUrl) {
+    //   this.videoId = extractYouTubeVideoId(this.hymnUrl) || '';
+    // }
     if (this.hymnUrl) {
-      scriptTag.src = this.hymnUrl;
-      document.body.appendChild(scriptTag);
-      console.log(this.hymnUrl);
-      if (this.hymnUrl) {
-        this.videoId = this.hymnUrl;
+      const videoId = extractYouTubeVideoId(this.hymnUrl);
+      if (videoId) {
+        this.videoId = videoId;
+        console.log(this.videoId);
+      } else {
+        console.error('Invalid YouTube URL');
       }
-      // console.log(videoId);
     }
   }
 
@@ -67,7 +68,16 @@ export class HymnVideoComponent {
     this.videoHeight = this.videoWidth * 0.6;
     this.changeDetectorRef.detectChanges();
   }
+}
 
-
-
+/**
+ * Extracts the video ID from a YouTube URL.
+ *
+ * @param {string} url - The YouTube video URL.
+ * @return {string | null} The extracted video ID, or null if not found.
+ */
+function extractYouTubeVideoId(url: string): string | null {
+  const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/.*[?&]v=([^&#]*)|(?:https?:\/\/)?youtu\.be\/([^&#]*)/;
+  const match = url.match(regex);
+  return match ? (match[1] || match[2]) : null;
 }
