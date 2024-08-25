@@ -464,6 +464,11 @@ html {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
+// Background for glowing text
+.text__back {
+  background-color: black;
+}
+
 // Styles for last image container at the end of the page
 .image-container {
   display: block;
@@ -496,6 +501,23 @@ html {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.feedback__text {
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.feedback__link {
+  padding: 10px 0;
+  border-top: aliceblue 1px solid;
+  border-bottom: aliceblue 1px solid;
+
+  &:hover {
+    background-color: style-vars.$primary-color;
+    color: white;
+  }
+}
+
 
 // Chorus Padding
 .chorus__padding {
