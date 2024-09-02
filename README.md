@@ -14,8 +14,9 @@ Welcome to the Only Believe Hymnal App, a comprehensive digital hymnal designed 
 
 Click to navigate to Only Believe Hymnal.
 
-[![Only Believe Hymnal](media/hymnal.png)](https://ruthyankson.github.io/hymnal/)
-
+<a href="https://ruthyankson.github.io/hymnal/" target="_blank">
+  <img src="media/hymnal.png" alt="Only Believe Hymnal">
+</a>
 
 ## Getting Started
 
@@ -25,8 +26,15 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure you have the following software installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version 17.x or later)
-- [Angular CLI](https://angular.io/cli) (version 12.x or later)
+<ul>
+  <li>
+    <a href="https://nodejs.org/" target="_blank">Node.js</a> (version 17.x or later)
+  </li>
+  <li>
+    <a href="https://angular.io/cli" target="_blank">Angular CLI</a> (version 12.x or later)
+  </li>
+</ul>
+
 *You may find further particulars in the package.json file*
 
 ## Installation
@@ -114,24 +122,24 @@ Here is a brief overview of the project's folder structure
   ```
 
 ## Built with
--[Angular](https://v17.angular.io/docs): The web framework used.
--[NgBootstrap](https://ng-bootstrap.github.io/#/home): CSS framework for responsive design.
--[Bootstrap Icons](https://icons.getbootstrap.com): Open source icon library.
--[NgSlickCarousel](https://www.npmjs.com/package/ngx-slick-carousel): Carousel used for home page.
--[SCSS](https://sass-lang.com): Sassy Cascading Style Sheets for responsive design.
--[AngularInMemoryWebAPI](https://github.com/angular/in-memory-web-api): An in-memory web api for app database.
+- <a href="https://angular.io/cli" target="_blank">Angular</a>: The web framework used.
+- <a href="https://ng-bootstrap.github.io/#/home" target="_blank">NgBootstrap</a>: CSS framework for responsive design.
+- <a href="https://icons.getbootstrap.com" target="_blank">Bootstrap Icons</a>: Open source icon library.
+- <a href="https://www.npmjs.com/package/ngx-slick-carousel" target="_blank">NgSlickCarousel</a>: Carousel used for home page.
+- <a href="https://sass-lang.com/documentation/syntax" target="_blank">SCSS</a>: Sassy Cascading Style Sheets for responsive design.
+- <a href="https://github.com/angular/in-memory-web-api" target="_blank">AngularInMemoryWebAPI</a>: An in-memory web api for app database.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
--Inspired by the Only Believe Hymnal book.
--Thanks to the Angular and Bootstrap teams for their awesome tools.
--Special thanks to Codemium for their invaluable support and resources towards the completion stage of this project.
+- Inspired by the Only Believe Hymnal book.
+- Thanks to the Angular and Bootstrap teams for their awesome tools.
+- Special thanks to Codemium for their invaluable support and resources towards the completion stage of this project.
 
 <hr>
 
-This README file provides a brief overview of the ArticleNet app, including its features, technology stack, prerequisites, installation steps, usage, and license information.
+This README file provides a brief overview of the Only Believe Hymnal app, including its features, technology stack, prerequisites, installation steps, usage, and license information.
 
 
