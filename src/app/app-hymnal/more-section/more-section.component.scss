@@ -1,0 +1,81 @@
+@use '../../shared/partial-styles/style-vars';
+@use '../../shared/partial-styles/style-mixins';
+
+// More Section
+
+// Overlay at the end of the section
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  transition: .5s ease;
+  background-color: style-vars.$primary-color-dark;
+}
+
+// Text at the end of the section
+.overlay__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.feedback__text {
+  color: rgb(255, 255, 255);
+  font-size: style-vars.$font-large;
+  font-weight: 800;
+  padding: 20px 0;
+}
+
+.feedback__link {
+  padding: 15px 0;
+  border: 2px solid aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00000015;
+  color: aliceblue;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: style-vars.$font-legible;
+    font-weight: 700;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:hover {
+    background-color: style-vars.$primary-color;
+  }
+}
+
+// Section before the footer
+.more {
+  padding: 2rem 0 1.4rem;
+}
+
+//At the end of the section and before the footer
+.last-section__before {
+  @include style-mixins.two-gradient(white, style-vars.$primary-color-dark);
+}
+
+
+// Phone screen max width
+@media (max-width: style-vars.$phone-max-width) {
+  // Custom container
+  .feedback__text {
+    font-size: 1.8rem;
+  }
+}
