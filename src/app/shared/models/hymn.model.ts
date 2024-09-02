@@ -8,6 +8,7 @@ export class HymnModel {
   hymn_number: number;
   title: string;
   stanzas: StanzaModel[];
+  hymn_url?: string;
   keynote?: string;
   chorus?: ChorusModel;
   song_writer?: AuthorModel;
@@ -22,14 +23,16 @@ export class HymnModel {
    * @param {ChorusModel} [chorus] - The chorus of the hymn (optional).
    * @param {AuthorModel} [song_writer] - The author of the hymn (optional).
    * @param {number} [id] - The unique id of the hymn (optional).
+   * @param {string} [hymn_url] - The url of the hymn (optional).
    */
-  constructor(hymn_number: number, title: string, stanzas: StanzaModel[], keynote?: string, chorus?: ChorusModel, song_writer?: AuthorModel, id?: number) {
+  constructor(hymn_number: number, title: string, stanzas: StanzaModel[], hymn_url?: string, keynote?: string, chorus?: ChorusModel, song_writer?: AuthorModel, id?: number) {
     this.id = id ? id : hymn_number; // Set unique id if not provided
     this.hymn_number = hymn_number;
     this.title = title;
+    this.stanzas = stanzas;
+    this.hymn_url = hymn_url;
     this.keynote = keynote;
     this.chorus = chorus;
-    this.stanzas = stanzas;
     this.song_writer = song_writer;
   }
 }

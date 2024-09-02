@@ -1,3 +1,5 @@
+@use '../../shared/partial-styles/style-vars';
+
 // Hymn List
 .hymn-list {
   width: 100%;
@@ -6,7 +8,8 @@
   transition: max-height 0.5s ease-out;
 
   &.scroll-effect {
-    max-height: 100vh; /* Adjust to the height you want to scroll to */
+    max-height: 100vh;
+    /* Adjust to the height you want to scroll to */
   }
 }
 
@@ -19,4 +22,13 @@
   padding: 2rem 0;
 }
 
-
+// Last Section
+.overlay__text {
+  .feedback__text, .feedback__link {
+    font-size: style-vars.$font-legible;
+    // Stanza and Chorus link
+    a {
+      text-decoration: none;
+    }
+  }
+}

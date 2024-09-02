@@ -42,6 +42,15 @@
       </div>
     </div>
 
+    <div class="space-2__5"></div>
+    <!-- Thin Divider -->
+    <div class="thin-divider"></div>
+
+    <!-- Hymn video -->
+    <section class="space-4">
+      <app-hymn-video *ngIf="hymnHere?.hymn_url" [hymnUrl]="hymnHere?.hymn_url"></app-hymn-video>
+    </section>
+
     <!-- Back button for navigating to Hymns page -->
     <div class="centered">
       <div class="space-5"></div>
@@ -53,11 +62,5 @@
   </div>
 
   <!-- More section -->
-  <div class="more last-section__before scroll-over centered"></div>
-  <div class="image-container">
-    <img src="assets/gifs/flying_eagle.gif" alt="Uplifting" class="last-image">
-    <div class="overlay">
-      <div class="overlay__text glow">Isn't this hymn Uplifting?!</div>
-    </div>
-  </div>
+  <app-more-section moreImg="assets/gifs/flying_eagle.gif" moreText="Isn't this hymn Uplifting?!"></app-more-section>
 </section>

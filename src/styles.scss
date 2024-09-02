@@ -169,15 +169,20 @@ html {
 }
 
 // Primary button
+// .primary-button {
+//   @include style-mixins.main-button()
+// }
+
 .primary-button {
-  @include style-mixins.main-button()
+  @include style-mixins.main-button($font-color: style-vars.$primary-color,
+  $button-background:white,
+  $button-background-hover: style-vars.$primary-color-half-transparent,
+  $hover-color: style-vars.$font-color-primary-heading)
 }
 
 // Secondary button
 .secondary-button {
-  @include style-mixins.main-button($font-color: style-vars.$primary-color-dark,
-  $button-background:style-vars.$font-color-primary-light,
-  $button-background-hover: style-vars.$primary-color-transparent)
+  @include style-mixins.main-button()
 }
 
 
@@ -195,7 +200,7 @@ html {
 // No outline primary button
 .primary-button__no-outline {
   @include style-mixins.no-outline-button(
-  $background-hover: style-vars.$primary-color-hover,
+  $background-hover: style-vars.$primary-color-light,
   $button-border-radius: 5px,
   $background-hover-transparent: style-vars.$primary-color-hover-light-transparent);
 }
@@ -236,9 +241,19 @@ html {
   padding-top: style-vars.$padding-default*5;
 }
 
+// Space top 2.5
+.space-2__5 {
+  padding-top: style-vars.$padding-default*7;
+}
+
 // Space top 3
 .space-3 {
   padding-top: style-vars.$padding-default*10;
+}
+
+// Space top 4
+.space-4 {
+  padding-top: style-vars.$padding-default*12;
 }
 
 // Space top 5
@@ -415,12 +430,6 @@ html {
   padding: 0 0.5rem;
 }
 
-// Section before the footer
-.more {
-  padding: 60px 0 40px;
-}
-
-
 // Text at the end of the section that is not a link
 .after-text {
   font-size: style-vars.$font-legible;
@@ -436,11 +445,6 @@ html {
   position: relative;
 }
 
-//At the end of the section and before the footer
-.last-section__before {
-  @include style-mixins.two-gradient(white, style-vars.$primary-color-dark);
-}
-
 .last-image {
   display: block;
   width: 100%;
@@ -454,37 +458,16 @@ html {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
+// Background for glowing text
+.text__back {
+  background-color: black;
+}
+
 // Styles for last image container at the end of the page
 .image-container {
   display: block;
   position: relative;
   width: 100%;
-}
-
-// Overlay at the end of the section
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.7;
-  transition: .5s ease;
-  background-color: style-vars.$primary-color-dark;
-}
-
-// Text at the end of the section
-.overlay__text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 // Chorus Padding
@@ -533,7 +516,7 @@ body.modal-open {
 
 /* Media queries */
 
-// Laptop screen max width 
+// Laptop screen max width
 @media (max-width: style-vars.$laptop-max-width) {
   .custom-container {
     padding: 15px 90px;
@@ -557,7 +540,7 @@ body.modal-open {
 @media (max-width: style-vars.$phone-max-width) {
   // Custom container
   .custom-container {
-    padding: 15px;
+    padding: 20px;
   }
 
   // Padding top for only mobile

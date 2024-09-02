@@ -7,6 +7,9 @@ import { HymnsComponent } from './hymns/hymns.component';
 import { HymnComponent } from './hymn/hymn.component';
 import { SongComponent } from './song/song.component';
 import { CarouselComponent } from '../standalone-components/carousel/carousel.component';
+import { HymnVideoComponent } from './hymn-video/hymn-video.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { MoreSectionComponent } from './more-section/more-section.component';
 
 
 
@@ -16,12 +19,15 @@ import { CarouselComponent } from '../standalone-components/carousel/carousel.co
     HomeComponent,
     HymnsComponent,
     HymnComponent,
-    SongComponent
+    SongComponent,
+    HymnVideoComponent,
+    MoreSectionComponent
   ],
   imports: [
     AppHymnalRoutingModule,
     SharedModule,
-    CarouselComponent
+    CarouselComponent,
+    YouTubePlayerModule
   ]
 })
 
