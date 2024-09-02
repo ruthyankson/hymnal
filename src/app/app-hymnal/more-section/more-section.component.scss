@@ -44,6 +44,7 @@
   box-shadow: 0 0 10px #00000015;
   color: aliceblue;
   cursor: pointer;
+  background-color: style-vars.$primary-color;
 
   a {
     text-decoration: none;
@@ -57,13 +58,8 @@
   }
 
   &:hover {
-    background-color: style-vars.$primary-color;
+    background-color: style-vars.$font-color-primary-light;
   }
-}
-
-// Section before the footer
-.more {
-  padding: 2rem 0 1.4rem;
 }
 
 //At the end of the section and before the footer
