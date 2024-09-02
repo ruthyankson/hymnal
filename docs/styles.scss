@@ -445,6 +445,12 @@ html {
   position: relative;
 }
 
+// Section before the footer
+.more {
+  padding: 5rem 0;
+}
+
+
 .last-image {
   display: block;
   width: 100%;
@@ -534,6 +540,11 @@ body.modal-open {
     padding: 0.6rem;
   }
 
+  .more {
+    padding: 4rem 0;
+  }
+
+
 }
 
 // Phone screen max width
@@ -584,6 +595,16 @@ body.modal-open {
   .chorus__padding {
     padding-bottom: 16px;
   }
+
+  .more {
+    padding: 3rem 0;
+  }
+
+  // Styles for last image container at the end of the page
+.image-container {
+  padding-bottom: 4rem;
+}
+
 
 }
 
