@@ -3,6 +3,7 @@ import { HymnModel } from '../../shared/models/hymn.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HymnService } from '../../shared/services/hymn.service';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { StanzaModel } from '../../shared/models/stanza.model';
 
 @Component({
   selector: 'app-hymn',
@@ -83,6 +84,18 @@ export class HymnComponent {
   formatText(text: string): string {
     return text.replace(/\n/g, '<br>');
   }
+
+  stanzasWithoutCurrent(stanza_id: string): StanzaModel[] | undefined {
+    let otherStanzas: StanzaModel[] | undefined;
+    otherStanzas = this.hymnHere?.stanzas.filter(stanza => stanza.id === (stanza_id));
+    console.log(otherStanzas);
+    return otherStanzas;
+  }
+
+  // stanzasWithoutCurrent(stanza_id: string): StanzaModel[] | undefined {
+  //   return this.hymnHere?.stanzas.filter(stanza => stanza.id !== stanza_id);
+  // }
+
 
   /**
    * Navigates back to the 'hymns' route using the Angular Router.
