@@ -17,8 +17,8 @@
       <p [innerHTML]="formatUndefinedPossibleText(hymnHere?.chorus?.refrain)" class="pt-2"></p>
       <!-- Links to Stanzas -->
       <div class="stanza__numbers">
-        Stanzas:
-        <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index" class="stanza__number">
+        <span class="smaller-text">Stanzas: </span>
+        <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index">
           <a [routerLink]="[]" [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
         </div>
       </div>
@@ -27,9 +27,23 @@
     <div class="picture-back mob__pt-2">
       <div class="inner-back">
         <div class="grid__container">
-          <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let i = index">
-            <div id="hymn__stanza{{ i }}" class="emphasized">Stanza {{ i + 1 }}</div>
+          <div class="hymn__stanza" *ngFor="let stanza of hymnHere?.stanzas; let stanza_index = index">
+            <div id="hymn__stanza{{ stanza_index }}" class="emphasized">Stanza {{ stanza_index + 1 }}</div>
             <p [innerHTML]="formatText(stanza.verse)" class="pt-2"></p>
+
+            <div class="space-1"></div>
+
+            <!-- Links to Choruses other stanzas -->
+            <div class="stanza__numbers">
+              <span class="smaller-text">Other Stanzas:</span>
+              <div *ngFor="let stanza of hymnHere?.stanzas; let stanza_number = index">
+                <a *ngIf="stanza_number !== stanza_index" [routerLink]="[]"
+                  [fragment]="'hymn__stanza' + stanza_number">[{{ stanza_number + 1 }}]</a>
+              </div>
+            </div>
+
+            <div class="space-1"></div>
+
             <!-- Link back to Chorus -->
             <p *ngIf="hymnHere?.chorus">
               <a [routerLink]="[]" [fragment]="'hymn__chorus'">

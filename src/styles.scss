@@ -81,6 +81,24 @@ html {
   color: style-vars.$secondary-color-goldenrod;
 }
 
+// Smaller Text
+.smaller-text {
+  font-size: style-vars.$font-medium;
+  color: style-vars.$font-color-primary-grey;
+}
+
+// Styling for illustrations
+.illustration {
+  text-align: center;
+  padding: 10px;
+  background-color: style-vars.$primary-color-hover-light;
+  width: 70%;
+
+  img {
+    width: 70%;
+  }
+}
+
 // Main grid
 %main-grid {
   display: grid;
@@ -601,9 +619,14 @@ body.modal-open {
   }
 
   // Styles for last image container at the end of the page
-.image-container {
-  padding-bottom: 4rem;
-}
+  .image-container {
+    padding-bottom: 4rem;
+  }
+
+  // Illustration style
+  .illustration {
+    width: 100%;
+  }
 
 
 }
